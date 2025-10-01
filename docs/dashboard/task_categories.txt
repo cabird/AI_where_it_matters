@@ -1,0 +1,29 @@
+Development
+  Coding/Programming
+  Bug Fixing/Debugging
+  Performance Optimization
+  Refactoring, Maintenance & Updates
+  AI development / integration into products
+
+Quality & Risk Management
+  Testing & Quality Assurance
+  Code Review/Pull Requests
+  Security & Compliance
+
+Design & Planning
+  System Architecture & Design
+  Requirements Gathering & Analysis
+  Task/Project Planning & Management
+
+Infrastructure & Operations
+  DevOps (CI/CD) / Deployment
+  Environment Setup & Maintenance
+  Infrastructure Monitoring & Alerts
+  Customer Support
+
+Meta Work
+  Documentation
+  Client/Stakeholder Communication
+  Mentoring & Onboarding
+  Learning New Technologies
+  Research & Brainstorming
