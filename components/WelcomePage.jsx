@@ -11,7 +11,7 @@ window.WelcomePage = function WelcomePage() {
 
             <h2>About the Study</h2>
             <p>
-                This research examines where, why, and how developers want AI support across 21
+                This research examines where, why, and how developers want AI support across 20
                 different software engineering tasks, organized into 5 main categories:
             </p>
             <ul>
