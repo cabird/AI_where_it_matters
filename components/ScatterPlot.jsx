@@ -1,5 +1,5 @@
 // Interactive scatter plot component using Recharts
-window.ScatterPlot = function ScatterPlot({ onPointClick }) {
+window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
   const { useState, useEffect, useRef } = React;
   const containerRef = useRef(null);
   const [isTooltipActive, setIsTooltipActive] = useState(false);
@@ -63,11 +63,6 @@ window.ScatterPlot = function ScatterPlot({ onPointClick }) {
     return null;
   };
 
-  // Handle chart mouse enter - reset the interaction lock
-  const handleChartMouseEnter = () => {
-    setIsInteractionLocked(false);
-  };
-
   // Handle chart mouse movement
   const handleChartMouseMove = (state) => {
     // If interaction is locked by a click, ignore mouse movements
@@ -89,10 +84,14 @@ window.ScatterPlot = function ScatterPlot({ onPointClick }) {
 
   // Handle chart mouse leave
   const handleChartMouseLeave = () => {
-    // Only hide the tooltip. Do NOT reset the lock here.
     setIsTooltipActive(false);
     setActivePayload(null);
     setActiveCoordinate(null);
+  };
+
+  // Handle chart mouse enter - reset the interaction lock
+  const handleChartMouseEnter = () => {
+    setIsInteractionLocked(false);
   };
 
   // Custom shape renderer that includes the label
@@ -233,6 +232,7 @@ window.ScatterPlot = function ScatterPlot({ onPointClick }) {
       </div>
 
       <ScatterChart
+        key={isModalOpen ? 'modal-open' : 'modal-closed'}
         width={chartSize}
         height={chartSize}
         margin={{ top: 20, right: 20, bottom: 60, left: 20 }}

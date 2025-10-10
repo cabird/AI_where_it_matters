@@ -45,7 +45,15 @@ function App() {
                 setReportLoading(false);
             })
             .catch(err => {
-                setReportContent(`<p>Error loading report: ${err.message}</p>`);
+                setReportContent(`
+                    <div style="padding: 40px; text-align: center;">
+                        <h2 style="color: #4a5568; margin-bottom: 16px;">Report Coming Soon</h2>
+                        <p style="color: #718096; line-height: 1.8;">
+                            This report is currently being prepared by the research team and will be available in the coming days.
+                            Please check back soon.
+                        </p>
+                    </div>
+                `);
                 setReportLoading(false);
             });
     };
@@ -89,6 +97,7 @@ function App() {
                     <window.VisualizationPage
                         onDataPointClick={handleDataPointClick}
                         onAboutClick={handleAboutClick}
+                        isModalOpen={reportModalOpen}
                     />
                 </div>
             </div>

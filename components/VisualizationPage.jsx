@@ -1,5 +1,5 @@
 // Visualization landing page with scatter plot and About button
-window.VisualizationPage = function VisualizationPage({ onDataPointClick, onAboutClick }) {
+window.VisualizationPage = function VisualizationPage({ onDataPointClick, onAboutClick, isModalOpen }) {
   const ScatterPlot = window.ScatterPlot;
 
   return (
@@ -64,7 +64,7 @@ window.VisualizationPage = function VisualizationPage({ onDataPointClick, onAbou
         </div>
 
         <div className="visualization-chart-container">
-          <ScatterPlot onPointClick={onDataPointClick} />
+          <ScatterPlot onPointClick={onDataPointClick} isModalOpen={isModalOpen} />
         </div>
       </div>
     </div>
