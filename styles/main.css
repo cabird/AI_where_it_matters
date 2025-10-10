@@ -448,14 +448,14 @@ body {
 .page-authors {
     color: #4a5568;
     font-size: 1rem;
-    margin-bottom: 15px;
+    margin-bottom: 40px;
     line-height: 1.5;
 }
 
 .page-subtitle {
     color: #4a5568;
     font-size: 1.25rem;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     font-weight: 400;
 }
 
