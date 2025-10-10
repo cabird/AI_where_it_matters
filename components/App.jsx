@@ -11,6 +11,11 @@ function App() {
     const [reportContent, setReportContent] = useState('');
     const [reportLoading, setReportLoading] = useState(false);
 
+    // Initialize app
+    useEffect(() => {
+        setLoading(false);
+    }, []);
+
     // Handle data point click from visualization
     const handleDataPointClick = (taskData) => {
         setSelectedReport(taskData);
