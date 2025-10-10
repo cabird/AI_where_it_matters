@@ -1,6 +1,6 @@
-# Report of Qualitative Analysis for Requirements Gathering & Analysis (Category: Infra-Ops)
+# Report of Qualitative Analysis for Requirements Gathering & Analysis (Category: Design & Planning)
 
-This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in **Requirements Gathering & Analysis** for **Infra-Ops**. I preserve the research team’s original codes and quotes, merge highly overlapping items into fewer reportable themes, and add analytical commentary on patterns, tensions, and implications for tool design.
+This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in **Requirements Gathering & Analysis** for **Design & Planning**. I preserve the research team’s original codes and quotes, merge highly overlapping items into fewer reportable themes, and add analytical commentary on patterns, tensions, and implications for tool design.
 
 ---
 
@@ -53,7 +53,7 @@ This theme extends to **documentation**: participants want AI to generate user-f
 
 #### Theme: Accurate and contextual system/architecture design space exploration (trade-offs, feasibility)
 
-Respondents want AI to analyze **design alternatives** and expose **trade-offs** across cost, performance, and feasibility—especially for platform choices in Infra-Ops (e.g., managed services vs. self-hosted). They also want guardrail-aware suggestions for **non-functional requirements** (scalability, reliability), **risk assessment**, calling out **dependencies**, and **reusability** (e.g., pointing to standard libraries to reduce redundant code and security risk). The desired outcome is **decision acceleration**—not AI choosing for them, but helping teams see implications sooner.
+Respondents want AI to analyze **design alternatives** and expose **trade-offs** across cost, performance, and feasibility—especially for platform choices in Design & Planning (e.g., managed services vs. self-hosted). They also want guardrail-aware suggestions for **non-functional requirements** (scalability, reliability), **risk assessment**, calling out **dependencies**, and **reusability** (e.g., pointing to standard libraries to reduce redundant code and security risk). The desired outcome is **decision acceleration**—not AI choosing for them, but helping teams see implications sooner.
 
 A complementary need is **requirement breakdown**: using AI to decompose top-level goals into evaluable options and highlight pros/cons with project-specific context. This demand is strongest when choices have large cost or operational impact and when institutional knowledge (e.g., “use the standard library”) can reduce errors.
 
@@ -175,7 +175,7 @@ The boundary is explicit: **assist, don’t decide**. Participants want AI to **
 
 #### Theme: Sensitive data handling
 
-Some developers draw a clear line around **sensitive data**: if the task requires handling confidential or regulated information, they would **not** want AI to process it—or they would require strong assurances on privacy, security, and data governance. This is especially relevant to Infra-Ops, where requirements often embed production details.
+Some developers draw a clear line around **sensitive data**: if the task requires handling confidential or regulated information, they would **not** want AI to process it—or they would require strong assurances on privacy, security, and data governance. This is especially relevant to Design & Planning, where requirements often embed production details.
 
 **Sub-themes identified:**
 
@@ -193,7 +193,7 @@ Some developers draw a clear line around **sensitive data**: if the task require
 
 * **Conditional acceptance**: Acceptance hinges on **context awareness**, **accuracy**, and **traceability**. Developers welcome AI that respects org conventions (e.g., mandated component libraries), cites sources, and connects decisions to requirements. They resist tools that hallucinate, assume unstated constraints, or hide uncertainty.
 
-* **Task-specific nuances**: Requirements in Infra-Ops often involve **platform choices**, **operational constraints**, and **non-functional requirements**. Developers especially want help comparing **managed vs. self-hosted** options, calling out **dependencies**, and steering toward **standard libraries**—all to minimize cost, risk, and redundancy.
+* **Task-specific nuances**: Requirements in Design & Planning often involve **platform choices**, **operational constraints**, and **non-functional requirements**. Developers especially want help comparing **managed vs. self-hosted** options, calling out **dependencies**, and steering toward **standard libraries**—all to minimize cost, risk, and redundancy.
 
 * **Trust and control dynamics**: Trust is built when AI **surfaces pros/cons**, **exposes uncertainty**, and **invites user choice**. It erodes when AI **chooses for users**, **assumes requirements**, or processes **sensitive data** without clear governance. The preferred center of gravity is **human oversight with AI acceleration**.
 
@@ -213,7 +213,7 @@ Some developers draw a clear line around **sensitive data**: if the task require
 
 ## 4) Implications for AI Tool Design
 
-AI for Requirements Gathering & Analysis in Infra-Ops should **capture and organize** multi-source input, **analyze trade-offs** with NFRs and dependencies in mind, **generate downstream artifacts**, and **validate** completeness and correctness—**without** taking over human judgment, originating unstated requirements, or mishandling sensitive data. The winning pattern is **assistive, contextual, transparent, and controllable**.
+AI for Requirements Gathering & Analysis in Design & Planning should **capture and organize** multi-source input, **analyze trade-offs** with NFRs and dependencies in mind, **generate downstream artifacts**, and **validate** completeness and correctness—**without** taking over human judgment, originating unstated requirements, or mishandling sensitive data. The winning pattern is **assistive, contextual, transparent, and controllable**.
 
 #### Key "Must Haves" (features designers should prioritize)
 
