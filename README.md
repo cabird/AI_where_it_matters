@@ -6,14 +6,12 @@ This directory contains all the files needed to deploy the interactive visualiza
 
 - **index.html** - Main HTML file
 - **chartData.js** - Chart data with z-scores and label positioning
-- **config.json** - Configuration for sidebar navigation
 - **paper.pdf** - Research paper PDF
-- **components/** - React components (8 files)
+- **components/** - React components
   - App.jsx
   - Modal.jsx
   - ReportViewer.jsx
   - ScatterPlot.jsx
-  - Sidebar.jsx
   - TableOfContents.jsx
   - VisualizationPage.jsx
   - WelcomePage.jsx

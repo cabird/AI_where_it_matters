@@ -63,7 +63,7 @@ window.WelcomePage = function WelcomePage() {
             </p>
 
             <p>
-                <em>Click any data point on the visualization or select a task from the sidebar to explore the findings.</em>
+                <em>Click any data point on the visualization to explore the findings.</em>
             </p>
         </div>
     );

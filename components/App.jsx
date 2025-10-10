@@ -1,7 +1,6 @@
 const { useState, useEffect } = React;
 
 function App() {
-    const [config, setConfig] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -11,24 +10,6 @@ function App() {
     const [selectedReport, setSelectedReport] = useState(null);
     const [reportContent, setReportContent] = useState('');
     const [reportLoading, setReportLoading] = useState(false);
-
-    useEffect(() => {
-        fetch('config.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Failed to load configuration');
-                }
-                return response.json();
-            })
-            .then(data => {
-                setConfig(data);
-                setLoading(false);
-            })
-            .catch(err => {
-                setError(err.message);
-                setLoading(false);
-            });
-    }, []);
 
     // Handle data point click from visualization
     const handleDataPointClick = (taskData) => {
