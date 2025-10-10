@@ -1,0 +1,266 @@
+{
+  "categoryGroups": [
+    {
+      "id": "ai_generated",
+      "name": "AI Generated Reports",
+      "categories": [
+        {
+          "id": "design_planning",
+          "name": "Design & Planning",
+          "tasks": [
+            {
+              "id": "requirements_gathering_analysis",
+              "name": "Requirements Gathering & Analysis",
+              "reportFile": "reports/report-design_planning-requirements_gathering_analysis.md"
+            },
+            {
+              "id": "system_architecture_design",
+              "name": "System Architecture & Design",
+              "reportFile": "reports/report-design_planning-system_architecture_design.md"
+            },
+            {
+              "id": "task_project_planning_management",
+              "name": "Task/Project Planning & Management",
+              "reportFile": "reports/report-design_planning-task_project_planning_management.md"
+            }
+          ]
+        },
+        {
+          "id": "development",
+          "name": "Development",
+          "tasks": [
+            {
+              "id": "coding_programming",
+              "name": "Coding/Programming",
+              "reportFile": "reports/report-development-coding_programming.md"
+            },
+            {
+              "id": "bug_fixing_debugging",
+              "name": "Bug Fixing & Debugging",
+              "reportFile": "reports/report-development-bug_fixing_debugging.md"
+            },
+            {
+              "id": "refactoring_maintenance_updates",
+              "name": "Refactoring & Maintenance/Updates",
+              "reportFile": "reports/report-development-refactoring_maintenance_updates.md"
+            },
+            {
+              "id": "performance_optimization",
+              "name": "Performance Optimization",
+              "reportFile": "reports/report-development-performance_optimization.md"
+            },
+            {
+              "id": "ai_development_integration_into_products",
+              "name": "AI Development/Integration into Products",
+              "reportFile": "reports/report-development-ai_development_integration_into_products.md"
+            }
+          ]
+        },
+        {
+          "id": "quality_risk",
+          "name": "Quality & Risk",
+          "tasks": [
+            {
+              "id": "testing_quality_assurance",
+              "name": "Testing & Quality Assurance",
+              "reportFile": "reports/report-quality_risk-testing_quality_assurance.md"
+            },
+            {
+              "id": "code_review_pull_requests",
+              "name": "Code Review & Pull Requests",
+              "reportFile": "reports/report-quality_risk-code_review_pull_requests.md"
+            },
+            {
+              "id": "security_compliance",
+              "name": "Security & Compliance",
+              "reportFile": "reports/report-quality_risk-security_compliance.md"
+            }
+          ]
+        },
+        {
+          "id": "infrastructure_operations",
+          "name": "Infrastructure & Operations",
+          "tasks": [
+            {
+              "id": "devops_ci_cd_deployment",
+              "name": "DevOps/CI/CD & Deployment",
+              "reportFile": "reports/report-infrastructure_operations-devops_ci_cd_deployment.md"
+            },
+            {
+              "id": "environment_setup_maintenance",
+              "name": "Environment Setup & Maintenance",
+              "reportFile": "reports/report-infrastructure_operations-environment_setup_maintenance.md"
+            },
+            {
+              "id": "infrastructure_monitoring_alerts",
+              "name": "Infrastructure Monitoring & Alerts",
+              "reportFile": "reports/report-infrastructure_operations-infrastructure_monitoring_alerts.md"
+            },
+            {
+              "id": "customer_support",
+              "name": "Customer Support",
+              "reportFile": "reports/report-infrastructure_operations-customer_support.md"
+            }
+          ]
+        },
+        {
+          "id": "meta_work",
+          "name": "Meta Work",
+          "tasks": [
+            {
+              "id": "documentation",
+              "name": "Documentation",
+              "reportFile": "reports/report-meta_work-documentation.md"
+            },
+            {
+              "id": "learning_new_technologies",
+              "name": "Learning New Technologies",
+              "reportFile": "reports/report-meta_work-learning_new_technologies.md"
+            },
+            {
+              "id": "research_brainstorming",
+              "name": "Research & Brainstorming",
+              "reportFile": "reports/report-meta_work-research_brainstorming.md"
+            },
+            {
+              "id": "client_stakeholder_communication_e_g_email_meetings",
+              "name": "Client/Stakeholder Communication (e.g., Email, Meetings)",
+              "reportFile": "reports/report-meta_work-client_stakeholder_communication_e_g_email_meetings.md"
+            },
+            {
+              "id": "mentoring_onboarding",
+              "name": "Mentoring & Onboarding",
+              "reportFile": "reports/report-meta_work-mentoring_onboarding.md"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manual_coded",
+      "name": "Manual Coded Reports",
+      "categories": [
+        {
+          "id": "design_planning_manual",
+          "name": "Design & Planning",
+          "tasks": [
+            {
+              "id": "task_project_planning_management_manual",
+              "name": "Task/Project Planning & Management",
+              "reportFile": "manually_coded_reports/report-data_design_planning_task_project_planning_management.md"
+            }
+          ]
+        },
+        {
+          "id": "development_manual",
+          "name": "Development",
+          "tasks": [
+            {
+              "id": "coding_programming_manual",
+              "name": "Coding/Programming",
+              "reportFile": "manually_coded_reports/report-data_development_coding_programming.md"
+            },
+            {
+              "id": "bug_fixing_debugging_manual",
+              "name": "Bug Fixing & Debugging",
+              "reportFile": "manually_coded_reports/report-data_development_bug_fixing_debugging.md"
+            },
+            {
+              "id": "refactoring_maintenance_updates_manual",
+              "name": "Refactoring & Maintenance/Updates",
+              "reportFile": "manually_coded_reports/report-data_development_refactoring_maintenance_updates.md"
+            },
+            {
+              "id": "performance_optimization_manual",
+              "name": "Performance Optimization",
+              "reportFile": "manually_coded_reports/report-data_development_performance_optimization.md"
+            },
+            {
+              "id": "ai_development_integration_into_products_manual",
+              "name": "AI Development/Integration into Products",
+              "reportFile": "manually_coded_reports/report-data_development_ai_development_integration_into_products.md"
+            }
+          ]
+        },
+        {
+          "id": "quality_risk_manual",
+          "name": "Quality & Risk",
+          "tasks": [
+            {
+              "id": "testing_quality_assurance_manual",
+              "name": "Testing & Quality Assurance",
+              "reportFile": "manually_coded_reports/report-data_quality_risk_testing_quality_assurance.md"
+            },
+            {
+              "id": "code_review_pull_requests_manual",
+              "name": "Code Review & Pull Requests",
+              "reportFile": "manually_coded_reports/report-data_quality_risk_code_review_pull_requests.md"
+            },
+            {
+              "id": "security_compliance_manual",
+              "name": "Security & Compliance",
+              "reportFile": "manually_coded_reports/report-data_quality_risk_security_compliance.md"
+            }
+          ]
+        },
+        {
+          "id": "infrastructure_operations_manual",
+          "name": "Infrastructure & Operations",
+          "tasks": [
+            {
+              "id": "devops_ci_cd_deployment_manual",
+              "name": "DevOps/CI/CD & Deployment",
+              "reportFile": "manually_coded_reports/report-data_infrastructure_operations_devops_ci_cd_deployment.md"
+            },
+            {
+              "id": "environment_setup_maintenance_manual",
+              "name": "Environment Setup & Maintenance",
+              "reportFile": "manually_coded_reports/report-data_infrastructure_operations_environment_setup_maintenance.md"
+            },
+            {
+              "id": "infrastructure_monitoring_alerts_manual",
+              "name": "Infrastructure Monitoring & Alerts",
+              "reportFile": "manually_coded_reports/report-data_infrastructure_operations_infrastructure_monitoring_alerts.md"
+            },
+            {
+              "id": "customer_support_manual",
+              "name": "Customer Support",
+              "reportFile": "manually_coded_reports/report-data_infrastructure_operations_customer_support.md"
+            }
+          ]
+        },
+        {
+          "id": "meta_work_manual",
+          "name": "Meta Work",
+          "tasks": [
+            {
+              "id": "documentation_manual",
+              "name": "Documentation",
+              "reportFile": "manually_coded_reports/report-data_meta_work_documentation.md"
+            },
+            {
+              "id": "learning_new_technologies_manual",
+              "name": "Learning New Technologies",
+              "reportFile": "manually_coded_reports/report-data_meta_work_learning_new_technologies.md"
+            },
+            {
+              "id": "research_brainstorming_manual",
+              "name": "Research & Brainstorming",
+              "reportFile": "manually_coded_reports/report-data_meta_work_research_brainstorming.md"
+            },
+            {
+              "id": "client_stakeholder_communication_e_g_email_meetings_manual",
+              "name": "Client/Stakeholder Communication (e.g., Email, Meetings)",
+              "reportFile": "manually_coded_reports/report-data_meta_work_client_stakeholder_communication_e_g_email_meetings.md"
+            },
+            {
+              "id": "mentoring_onboarding_manual",
+              "name": "Mentoring & Onboarding",
+              "reportFile": "manually_coded_reports/report-data_meta_work_mentoring_onboarding.md"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
