@@ -25,7 +25,7 @@ Researchers' coding contains no separate description beyond included quotes; the
 
 This theme reinforces the desire for AI that can take structured action on customer requests — not merely label them. Participants imagine AI parsing free-text descriptions and associated logs to determine next steps, such as initiating routine fixes, providing targeted documentation links, or escalating appropriately. The motivation is operational efficiency: many tickets are repetitive and ripe for automation. The same participant rationale appears across codes: reduce manual triage effort and enable faster resolution.
 
-Participants again limit the expectation to routine or patterned requests rather than bespoke engagements: the hope is for "screening, bucketing, and triage decisions based on the content" with the AI acting as a first-pass processor (Participant 89, Participant 114).
+Participants again limit the expectation to routine or patterned requests rather than bespoke engagements: the hope is for "screening, bucketing, and triage decisions based on the content" with the AI acting as a first-pass processor (Participants 89, 114).
 
 **Representative quotes**:
 - *"If an AI agent could actually look at customer support request text and logs and make screening, bucketing, and triage decisions based on the content, that would be super helpful."* (Participant 89)
@@ -140,12 +140,12 @@ High-level synthesis: Developers want AI tools that automate routine analysis an
 
 - **Triage & deflection automation**
   - Capability: Automated parsing of request text and attached logs to screen, bucket, and prioritize tickets; suggested auto-responses for well-known FAQs.
-  - Rationale: Participants explicitly want AI that can "make screening, bucketing, and triage decisions" to reduce toil (Participant 89, Participant 114).
+  - Rationale: Participants explicitly want AI that can "make screening, bucketing, and triage decisions" to reduce toil (Participants 89, 114).
   - Example: Provide a suggested resolution and confidence score for routine permission issues so agents can accept or edit before sending.
 
 - **Rep co-pilot for drafting & knowledge retrieval**
   - Capability: Draft response suggestions, surface relevant KB articles and configuration steps, and offer code or command snippets for technical replies.
-  - Rationale: Participants asked for "Be an assistant for customer service reps" and coding-style assistance (Participant 195, Participant 401).
+  - Rationale: Participants asked for "Be an assistant for customer service reps" and coding-style assistance (Participants 195, 401).
   - Example: When a ticket mentions a specific error, surface matching KB articles and a draft reply that the agent can edit.
 
 - **Metric and anomaly detection integration**
@@ -155,7 +155,7 @@ High-level synthesis: Developers want AI tools that automate routine analysis an
 
 - **Human-in-the-loop workflow controls**
   - Capability: Require explicit human approval for outbound messages, bulk sends, or escalation decisions; show provenance and confidence scores.
-  - Rationale: Participants insisted "AI cannot hit the 'send message' button" and wanted passive assistance (Participant 62, Participant 2).
+  - Rationale: Participants insisted "AI cannot hit the 'send message' button" and wanted passive assistance (Participants 62, 2).
   - Example: Provide an "approve and send" step where the agent reviews suggested text and related evidence before dispatch.
 
 #### Key "Must Not Haves" (design guardrails)

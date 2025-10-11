@@ -175,15 +175,15 @@ Developers want AI that reduces rote work, collaborates transparently, and under
 
 - **Context-Aware Suggestions (Context-Aware Bug Detection & Fix)**
   - Capability: Leverage repository history, dependency graphs, tests, and domain-specific documentation to produce contextually appropriate suggestions and highlight potential side effects.
-  - Rationale: Developers stressed that AI needs to "understand the context you are working in" to be useful and safe. (Participant 107, Participant 202)
+  - Rationale: Developers stressed that AI needs to "understand the context you are working in" to be useful and safe. (Participants 107, 202)
 
 - **Collaborative, Explainable Assistance (Comprehension & Collaboration Support)**
   - Capability: Provide explanations, ask clarifying questions, and present ranked suggestions rather than opaque edits; integrate with PR review and local development flows.
-  - Rationale: Users prefer an assistant that "points out where I could be wrong" and "reaffirms correctness" without taking over. (Participant 89, Participant 160)
+  - Rationale: Users prefer an assistant that "points out where I could be wrong" and "reaffirms correctness" without taking over. (Participants 89, 160)
 
 - **Proactive Detection Integrated with CI (Proactive Bug Detection & Mitigation)**
   - Capability: Surface likely bugs and test gaps in real time and integrate with CI to block regressions or suggest focused tests.
-  - Rationale: Participants asked for real-time, pipeline-integrated checks to catch bugs early. (Participant 167, Participant 241)
+  - Rationale: Participants asked for real-time, pipeline-integrated checks to catch bugs early. (Participants 167, 241)
 
 - **Human-in-the-Loop Controls and Traceability**
   - Capability: Require explicit human approval for code changes, show diffs, provenance and confidence levels, and enable rollback; keep audit logs linking suggestions to sources.

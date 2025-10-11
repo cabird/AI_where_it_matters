@@ -21,7 +21,7 @@ Desired outcomes include faster mean-time-to-detection and more informed go/no-g
 #### Theme: Pipeline bootstrapping, synthesis & quality review
 This theme captures the desire for AI to create, repair, and improve CI/CD pipelines — especially where documentation is poor or configurations are complex. The provided description: "Stand up/repair complex or poorly documented CI/CD; generate/modify pipelines; review/optimize configs; support local pipeline testing; enforce fundamentals." mirrors participants’ frustration and opportunity space. For example, one developer asked for help to "set up OneBranch CI/CD… notoriously poorly documented and hard to figure out." (Participant 41), while others want AI to "Develop CI/CD pipelines to address complex issue sets." (Participant 122).
 
-Participants also want AI to support local pipeline testing and optimization (Participant 259, Participant 360). The emphasis is on reducing time spent understanding legacy or opaque pipeline systems, enforcing CI/CD best practices, and making pipelines more maintainable. Boundaries include expectations that AI should improve developer productivity rather than obscure pipeline logic; review and optimization capabilities were explicitly requested: "CI/CD: Review code/configuration." (Participant 195).
+Participants also want AI to support local pipeline testing and optimization (Participants 259, 360). The emphasis is on reducing time spent understanding legacy or opaque pipeline systems, enforcing CI/CD best practices, and making pipelines more maintainable. Boundaries include expectations that AI should improve developer productivity rather than obscure pipeline logic; review and optimization capabilities were explicitly requested: "CI/CD: Review code/configuration." (Participant 195).
 
 **Representative quotes**:
 - *"Help set up OneBranch CI/CD… notoriously poorly documented and hard to figure out."* (Participant 41)  
@@ -194,7 +194,7 @@ Developers expect AI tools for DevOps CI/CD to be powerful assistants that incre
 
 - **Telemetry-driven triage and anomaly detection**
   - Capability: Analyze logs, metrics, and test errors to surface root-cause candidates, anomaly alerts, and deployment risk assessments; provide confidence scores and suggested next steps.
-  - Rationale: Participants asked for AI to "read the log in CI/CD, and provide analysis of the bugs in code" and to "Detect safe/unsafe time to deploy." (Participant 202, Participant 195).
+  - Rationale: Participants asked for AI to "read the log in CI/CD, and provide analysis of the bugs in code" and to "Detect safe/unsafe time to deploy." (Participants 202, 195).
   
 - **Pipeline bootstrapping, synthesis & quality review**
   - Capability: Generate or repair pipeline configurations from high-level intent, review existing CI/CD configs for anti-patterns, and suggest optimizations; support local pipeline simulation/testing.

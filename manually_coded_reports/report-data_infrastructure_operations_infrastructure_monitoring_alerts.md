@@ -35,7 +35,7 @@ Participants expect automation to handle known, repeatable issues while preservi
 ---
 
 #### Theme: Infra-aware monitoring setup & smart alerting
-This theme centers on AI that understands infrastructure code and topology to auto-configure monitoring and reduce noise. The coded description emphasizes “Understand infra code/topology to auto-configure monitors and custom alerts; leverage history and dependencies to reduce noise and improve coverage.” Participants imagined a copilot that reads infra definitions (e.g., EV2) and infers relevant monitors: “Custom monitoring and alerts without having to think about it… For copilot to read our ev2 and know how our infra is setup would be insane” (Participant 123). They want AI to both expand coverage (finding conditions humans would miss) and reduce false positives by leveraging historical incident patterns (Participant 173, Participant 271).
+This theme centers on AI that understands infrastructure code and topology to auto-configure monitoring and reduce noise. The coded description emphasizes “Understand infra code/topology to auto-configure monitors and custom alerts; leverage history and dependencies to reduce noise and improve coverage.” Participants imagined a copilot that reads infra definitions (e.g., EV2) and infers relevant monitors: “Custom monitoring and alerts without having to think about it… For copilot to read our ev2 and know how our infra is setup would be insane” (Participant 123). They want AI to both expand coverage (finding conditions humans would miss) and reduce false positives by leveraging historical incident patterns (Participants 173, 271).
 
 The motivation is to make alerting scalable and less brittle: rather than maintaining dozens of ad-hoc rules, AI could synthesize topology, service dependencies, and past incidents to suggest meaningful alerts and correlate related incidents for quicker diagnosis (Participant 271). Participants noted the desire for cohesion across related infra tasks—today they use multiple separate tools; they want a more integrated AI experience (Participant 269).
 
@@ -162,7 +162,7 @@ Participants expect such predictions to be grounded in historical patterns and r
 ### B. Where AI is Not Wanted
 
 #### Theme: No unsupervised control of production or critical actions
-This theme sets a clear red line: AI should not be allowed to take autonomous actions in production or make critical infra changes without human approval. The coded description states: “Final authority stays with humans for prod touches, emergency overrides, and critical infra changes; no autonomous actions.” Participants expressed concern about the cascading effects of mistakes: “For critical actions, I would not like AI to take actions on it's own… a mistake or a series of mistakes can cause heavy downtime” (Participant 271). Other responses echoed that emergency response and critical overrides demand human judgment and accountability (Participant 331, Participant 123).
+This theme sets a clear red line: AI should not be allowed to take autonomous actions in production or make critical infra changes without human approval. The coded description states: “Final authority stays with humans for prod touches, emergency overrides, and critical infra changes; no autonomous actions.” Participants expressed concern about the cascading effects of mistakes: “For critical actions, I would not like AI to take actions on it's own… a mistake or a series of mistakes can cause heavy downtime” (Participant 271). Other responses echoed that emergency response and critical overrides demand human judgment and accountability (Participants 331, 123).
 
 The boundary is specific: AI-assisted suggestions and preparatory automation are acceptable, but autonomous production control and emergency decision-making should require explicit human oversight.
 
@@ -268,7 +268,7 @@ Reiterating earlier security concerns, participants expressed general unease abo
 
 - Unique insights: The “Infra-aware monitoring setup” suggestion that AI could read infra code (e.g., EV2) and infer monitors is a concrete, forward-looking capability that goes beyond simple anomaly detection—this would require model access to infra-as-code and contextual reasoning about dependencies (Participant 123).
 
-- Ambivalent responses: Several participants simultaneously argued for automation of routine maintenance and for keeping final authority human-led (e.g., Participant 168, Participant 271). These ambivalent positions emphasize the need for configurable automation levels and clear escalation paths.
+- Ambivalent responses: Several participants simultaneously argued for automation of routine maintenance and for keeping final authority human-led (e.g., Participants 168, 271). These ambivalent positions emphasize the need for configurable automation levels and clear escalation paths.
 
 - Contradictions within individuals: Some participants wanted AI to “do all infra setup, troubleshooting, and maintenance” (Participant 168) while also endorsing limits on AI control for critical actions; this reflects a practical desire for full automation where safe but strict human control elsewhere.
 
@@ -282,49 +282,49 @@ High-level synthesis: Developers want AI tools that reliably reduce monitoring t
 
 - **Telemetry-driven anomaly detection, root cause analysis & failure prediction**
   - Capability: Continuous ingestion of logs/metrics/traces with model-driven anomaly detection, ranked hypotheses for root cause, and short-term failure forecasting.
-  - Rationale: Participants repeatedly asked for faster diagnosis and proactive mitigation (Participant 50, Participant 54, Participant 309).
+  - Rationale: Participants repeatedly asked for faster diagnosis and proactive mitigation (Participants 50, 54, 309).
   - Example: Provide prioritized root-cause candidates with linked evidence (logs, traces) so humans can act quickly.
 
 - **Alert triage & incident response automation (human-in-the-loop)**
   - Capability: Enrichment of alerts with context, suggested playbook steps, automated ticket templates, and safe auto-remediation for known, low-risk issues—with explicit human approval flows for higher-risk actions.
-  - Rationale: Reduce on-call load while preserving human oversight (Participant 14, Participant 200, Participant 362).
+  - Rationale: Reduce on-call load while preserving human oversight (Participants 14, 200, 362).
   - Example: Auto-populate IcM tickets and present “Runbook steps” with a one-click approval mechanism.
 
 - **Infra-aware monitoring setup & smart alerting**
   - Capability: Analyze infrastructure-as-code/topology to suggest monitors, derive dependencies, and propose alert thresholds based on historical incidents.
-  - Rationale: Participants want reduced manual setup and smarter alerts informed by topology (Participant 123, Participant 271).
+  - Rationale: Participants want reduced manual setup and smarter alerts informed by topology (Participants 123, 271).
   - Example: Scan infra manifests to propose a monitoring baseline and show expected coverage gaps.
 
 - **Knowledge synthesis and explainability**
   - Capability: Aggregate component-level data into concise incident summaries, show evidence links, and provide human-readable explanations of model outputs.
-  - Rationale: Participants want AI to help understand live incidents and support learning (Participant 246, Participant 16).
+  - Rationale: Participants want AI to help understand live incidents and support learning (Participants 246, 16).
   - Example: “Incident summary” card with top 3 hypotheses and the logs/metrics that support each.
 
 - **Configurable automation and audit trails**
   - Capability: Fine-grained controls for automation levels (observe-only, suggest, auto-remediate), role-based approvals, and immutable audit logs of AI-generated actions.
-  - Rationale: Many responses required human oversight and auditability for trust (Participant 271, Participant 331, Participant 262).
+  - Rationale: Many responses required human oversight and auditability for trust (Participants 271, 331, 262).
   - Example: Admin console to set which alert types can be auto-remediated and to review prior AI actions.
 
 #### Key "Must Not Haves" (design guardrails)
 
 - **No unsupervised control of production or critical actions**
-  - Risk: Autonomous AI changes in production can cause cascading outages; participants explicitly forbid unsupervised AI touches (Participant 123, Participant 271).
+  - Risk: Autonomous AI changes in production can cause cascading outages; participants explicitly forbid unsupervised AI touches (Participants 123, 271).
   - Guardrail: Require human sign-off for any production-altering or high-impact action; default to suggest-only for critical systems.
 
 - **No handling of secrets, keyvaults, or permission changes by AI**
-  - Risk: Exposure or misconfiguration of secrets and permissions can create severe security incidents (Participant 234, Participant 284).
+  - Risk: Exposure or misconfiguration of secrets and permissions can create severe security incidents (Participants 234, 284).
   - Guardrail: Disallow AI access to secret stores; require manual processes or strongly audited, deterministic automation for permission changes.
 
 - **Avoid ML-only solutions where precision is critical**
-  - Risk: Probabilistic outputs may be unacceptable for tasks that require determinism (Participant 195, Participant 44).
+  - Risk: Probabilistic outputs may be unacceptable for tasks that require determinism (Participants 195, 44).
   - Guardrail: Use deterministic automation or require additional verification steps for tasks with low error tolerance.
 
 - **No replacement of human judgment for emergency or business-impact decisions**
-  - Risk: AI lacks situational awareness and accountability needed for high-stakes choices (Participant 331, Participant 371).
+  - Risk: AI lacks situational awareness and accountability needed for high-stakes choices (Participants 331, 371).
   - Guardrail: Keep AI in a recommendation and information synthesis role for emergencies; humans retain final authority.
 
 - **Avoid opaque, non-explainable automation**
-  - Risk: Lack of explanation undermines learning and trust (Participant 16, Participant 262).
+  - Risk: Lack of explanation undermines learning and trust (Participants 16, 262).
   - Guardrail: Require explainable outputs and evidence links for all AI suggestions and actions.
 
 ---

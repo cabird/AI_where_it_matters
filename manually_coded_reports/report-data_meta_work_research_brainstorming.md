@@ -120,19 +120,19 @@ Designers building AI tools for Research Brainstorming should treat the assistan
 
 - **Source-linked Information Synthesis**
   - Capability: Summarize and collate from multiple sources with explicit citations, timestamps, and source quality indicators so developers can validate claims quickly.
-  - Rationale: Participants repeatedly demanded citations and up-to-date information as prerequisites for trusting summaries (Participant 20, Participant 353).
+  - Rationale: Participants repeatedly demanded citations and up-to-date information as prerequisites for trusting summaries (Participants 20, 353).
 
 - **Brainstorming Mode with Human-in-the-Loop**
   - Capability: Provide idea generation and roadmap breakdowns that are explicitly labeled as suggestions, include alternative approaches, and offer “ask clarifying questions” prompts to surface assumptions.
-  - Rationale: Developers want AI as a thought partner to generate and structure ideas while keeping humans responsible for final choices (Participant 160, Participant 17).
+  - Rationale: Developers want AI as a thought partner to generate and structure ideas while keeping humans responsible for final choices (Participants 160, 17).
 
 - **Contextual Personalization and Memory Controls**
   - Capability: Adapt recommendations and learning materials to the developer’s known skill level and project context, with clear opt-in/out controls for long-term memory and project histories.
-  - Rationale: Participants asked for tailored study materials and continuity across projects while implying desire for control over what is remembered (Participant 280, Participant 360).
+  - Rationale: Participants asked for tailored study materials and continuity across projects while implying desire for control over what is remembered (Participants 280, 360).
 
 - **Confidence & Verification Tools**
   - Capability: Present confidence scores, provenance links, and quick verification tooling (e.g., “show me the source,” “compare against official docs”) to make quality judgments easier.
-  - Rationale: Given concerns about hallucinations and outdated content, transparent confidence indicators support faster human validation (Participant 66, Participant 44).
+  - Rationale: Given concerns about hallucinations and outdated content, transparent confidence indicators support faster human validation (Participants 66, 44).
 
 #### Key "Must Not Haves" (design guardrails)
 
@@ -142,11 +142,11 @@ Designers building AI tools for Research Brainstorming should treat the assistan
 
 - **Do not replace human creative effort**
   - Risk: Over-automation can reduce learning and stifle original thinking.
-  - Example: Multiple respondents insisted brainstorming is a human-led creative exercise and should not be outsourced (Participant 18, Participant 366).
+  - Example: Multiple respondents insisted brainstorming is a human-led creative exercise and should not be outsourced (Participants 18, 366).
 
 - **Do not assume authority or make final decisions**
   - Risk: Allowing AI to auto-select or finalize solutions without human sign-off undermines developer control and can produce poor outcomes.
-  - Example: Participants want to validate AI work and keep decision authority (Participant 142, Participant 217).
+  - Example: Participants want to validate AI work and keep decision authority (Participants 142, 217).
 
 - **Do not hide provenance or recency of information**
   - Risk: Lack of source visibility undermines trust and leads developers back to official documentation.
@@ -156,9 +156,9 @@ Designers building AI tools for Research Brainstorming should treat the assistan
 
 ## Executive Summary
 
-- Developers want AI to synthesize large, distributed information sources and produce concise, source-linked summaries to speed research and documentation (e.g., Participant 20, Participant 336).  
-- They want AI as a brainstorming partner that can generate ideas and break down roadmaps, but not as a substitute for human judgment or creativity (e.g., Participant 160, Participant 17).  
-- Personalization—contextual answers, tailored learning materials, and long-term memory—is valued, provided users retain control over what the AI remembers (e.g., Participant 280, Participant 360).  
-- Major barriers are quality and trust: outdated data, hallucinations, and poor outputs drive developers to prefer official documentation over AI when reliability is uncertain (e.g., Participant 44, Participant 353).  
+- Developers want AI to synthesize large, distributed information sources and produce concise, source-linked summaries to speed research and documentation (e.g., Participants 20, 336).  
+- They want AI as a brainstorming partner that can generate ideas and break down roadmaps, but not as a substitute for human judgment or creativity (e.g., Participants 160, 17).  
+- Personalization—contextual answers, tailored learning materials, and long-term memory—is valued, provided users retain control over what the AI remembers (e.g., Participants 280, 360).  
+- Major barriers are quality and trust: outdated data, hallucinations, and poor outputs drive developers to prefer official documentation over AI when reliability is uncertain (e.g., Participants 44, 353).  
 - Designers should prioritize source-linked synthesis, human-in-the-loop brainstorming modes, personalization with explicit controls, and transparent confidence/provenance indicators; avoid promoting AI as an authoritative decision maker or hiding sources.  
 - Recommendation: Build AI tools that are explicitly labeled and tiered (e.g., “synthesis,” “ideas,” “personal tutor”), include verification affordances, and default to facilitation with clear human sign-off for decisions to align with developer expectations and preserve learning opportunities.

@@ -555,45 +555,45 @@ Developers want AI that reliably reduces administrative burden, synthesizes disp
 
 - **Context-aware planning, prioritization & forecasting**
   - Capability: Use project-level context (dependencies, impact, resources) to propose prioritized backlogs, realistic timelines, and risk forecasts.
-  - Rationale: Participants want AI to free them for strategic work while keeping plans grounded (Participant 403, Participant 28, Participant 299).
+  - Rationale: Participants want AI to free them for strategic work while keeping plans grounded (Participants 403, 28, 299).
 
 - **Work-item & coordination automation (agent PM)**
   - Capability: Create/update/move/assign tasks, tidy boards, schedule meetings, and generate status reports with explicit human approval flows and audit logs.
-  - Rationale: Reduces coordination toil and manual ADO work (Participant 70, Participant 205, Participant 173).
+  - Rationale: Reduces coordination toil and manual ADO work (Participants 70, 205, 173).
 
 - **Information synthesis & retrieval with provenance**
   - Capability: Aggregate emails, Teams history, docs, and repo traces into queryable summaries that cite sources and allow drill-down.
-  - Rationale: Developers need living summaries and historical context with provenance (Participant 183, Participant 172, Participant 327).
+  - Rationale: Developers need living summaries and historical context with provenance (Participants 183, 172, 327).
 
 - **Explainable design analysis & rationale**
   - Capability: Provide scenario simulations, design trade-offs, uncertainty estimates, and clear rationale chains for recommendations.
-  - Rationale: Facilitates faster decisions and trust: participants asked for rationale and trade-offs (Participant 9, Participant 267, Participant 301).
+  - Rationale: Facilitates faster decisions and trust: participants asked for rationale and trade-offs (Participants 9, 267, 301).
 
 - **Seamless integration and secure data handling**
   - Capability: Deep integration with planning tools (ADO, Jira), access controls, and sensitive-data safeguards.
-  - Rationale: Without integration and governance, AI cannot meaningfully reduce toil or be trusted (Participant 2, Participant 266, Participant 53).
+  - Rationale: Without integration and governance, AI cannot meaningfully reduce toil or be trusted (Participants 2, 266, 53).
 
 #### Key "Must Not Haves" (design guardrails)
 
 - **Autonomous decision-making on strategic/ambiguous issues**
   - Risk: Letting AI make final calls on vision, prioritization, or ambiguous trade-offs.
-  - Rationale: Participants insist on human accountability for strategic choices (Participant 10, Participant 57, Participant 267).
+  - Rationale: Participants insist on human accountability for strategic choices (Participants 10, 57, 267).
 
 - **Opaque actions without provenance or easy reversal**
   - Risk: AI moving tasks, changing assignments, or modifying plans without clear audit trails or rollback.
-  - Rationale: Users demand explainability and reversibility to retain agency (Participant 39, Participant 66, Participant 130).
+  - Rationale: Users demand explainability and reversibility to retain agency (Participants 39, 66, 130).
 
 - **Assignment/people-management without human context**
   - Risk: AI assigning work based solely on surface metrics ignoring strengths, workloads, and interpersonal dynamics.
-  - Rationale: People context and team dynamics must remain human-led (Participant 140, Participant 281).
+  - Rationale: People context and team dynamics must remain human-led (Participants 140, 281).
 
 - **Processing or exposing sensitive data without controls**
   - Risk: AI handling confidential information without governance, leading to leakage or policy breaches.
-  - Rationale: Participants flagged sensitive data as a no-go without strict safeguards (Participant 266, Participant 253).
+  - Rationale: Participants flagged sensitive data as a no-go without strict safeguards (Participants 266, 253).
 
 - **Deploying AI before hallucination and grounding issues are addressed**
   - Risk: Using AI-generated plans or designs that include fabricated facts or unsupported assumptions.
-  - Rationale: Hallucinations undermine trust and can cause costly mistakes (Participant 98, Participant 53, Participant 357).
+  - Rationale: Hallucinations undermine trust and can cause costly mistakes (Participants 98, 53, 357).
 
 ---
 

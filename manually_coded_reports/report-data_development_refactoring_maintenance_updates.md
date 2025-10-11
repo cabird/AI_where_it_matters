@@ -59,7 +59,7 @@ Context: responsibility and accountability are central, especially in production
 
 #### Theme: Quality & Trust Issues
 
-The code "Low trust in performance/correctness" encapsulates concerns that AI-refactors may be incorrect, introduce subtle bugs, or require more human time to review and fix than doing the refactor manually. Participants described past experiences where AI-led refactors were "really bad" or "more time consuming" than doing it themselves (Participant 159, Participant 35). This distrust is particularly acute when AI modifies large swaths of code at once; the perceived review burden rises and confidence declines: "I can't trust the AI to be correct, and when it changes too much code at once, I need to spend more time reviewing or even fixing the AI's changes" (Participant 325).
+The code "Low trust in performance/correctness" encapsulates concerns that AI-refactors may be incorrect, introduce subtle bugs, or require more human time to review and fix than doing the refactor manually. Participants described past experiences where AI-led refactors were "really bad" or "more time consuming" than doing it themselves (Participants 159, 35). This distrust is particularly acute when AI modifies large swaths of code at once; the perceived review burden rises and confidence declines: "I can't trust the AI to be correct, and when it changes too much code at once, I need to spend more time reviewing or even fixing the AI's changes" (Participant 325).
 
 Contextual factors shaping trust include the difficulty of validating correctness—if precision is critical or correctness is hard to verify, participants prefer human handling (Participant 385). The implication is clear: without strong correctness guarantees, rollback mechanisms, or traceable rationales, developers will refrain from delegating refactors to AI.
 
@@ -114,16 +114,16 @@ Overall, the thematic synthesis indicates that AI tools for Refactoring Maintena
 - **Rote Task Automation**
   - Capability: Automate repetitive refactors, dependency and package updates, and boilerplate generation with conservative, test-driven workflows.
   - Rationale: Developers want to offload "boring" maintenance and free time for higher-value work ("Refactoring for sure... would be amazing." — Participant 1).
-  - Example: Provide one-click apply/preview for bulk style changes plus automated test generation to validate refactors (Participant 203, Participant 62).
+  - Example: Provide one-click apply/preview for bulk style changes plus automated test generation to validate refactors (Participants 203, 62).
 
 - **Coordinated Multi-file / Cross-module Awareness**
   - Capability: Analyze codebase-wide dependencies and propagate type or API changes across files while surfacing affected areas and rationale.
   - Rationale: Refactors often require consistent multi-file changes; developers expect AI to "help implement those changes across the rest of the codebase" (Participant 2).
-  - Example: Show a dependency graph and list of modified files before applying multi-step refactors (Participant 47, Participant 332).
+  - Example: Show a dependency graph and list of modified files before applying multi-step refactors (Participants 47, 332).
 
 - **Standards Enforcement and Best-practice Suggestions**
   - Capability: Detect poor coding practices and suggest or apply corrections aligned to org or platform standards, with configurable policy profiles.
-  - Rationale: Developers want improved baseline quality and compliance (Participant 21, Participant 164, Participant 354).
+  - Rationale: Developers want improved baseline quality and compliance (Participants 21, 164, 354).
   - Example: Integrate corporate style guides (e.g., Azure/MSFT) into checks and offer guided fixes.
 
 - **Test-aware / CI-integrated Workflows**

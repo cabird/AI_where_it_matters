@@ -145,7 +145,7 @@ Under Limited Support with Domain/Company-Specific Knowledge, participants noted
 
 ## 3) Outliers and Edge Cases
 
-- Minority perspectives: A small number of participants explicitly ask for higher-level automation such as automated architecture diagrams and cross-team alignment reports (e.g., Participant 272, Participant 403), which goes beyond simple documentation generation and into strategic synthesis. These requests suggest opportunities for AI to support organizational meta-work if properly validated.
+- Minority perspectives: A small number of participants explicitly ask for higher-level automation such as automated architecture diagrams and cross-team alignment reports (e.g., Participants 272, 403), which goes beyond simple documentation generation and into strategic synthesis. These requests suggest opportunities for AI to support organizational meta-work if properly validated.
 
 - Unique insights: Some participants explicitly frame AI as valuable for “keeping track of work and publish Arch diagrams and documentations” (Participant 272), pointing to a use case where AI links planning and technical documentation. This is rarer but indicates potential product differentiation.
 
