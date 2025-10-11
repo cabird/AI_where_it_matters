@@ -14,9 +14,9 @@ Participants consistently want AI to handle end-to-end environment lifecycle tas
 The desired outcome is greater velocity and less cognitive load during project development and testing; participants mentioned not wanting to spend their days on preparatory tasks that are prerequisites for productive work (“I don't want to have to do all the setup and tedious things...that are pre-requisites for everything I do,” Participant 170). Boundaries are implicit: while participants want end-to-end automation, they expect that it meaningfully reduces manual effort rather than produce brittle, one-off scripts that require constant human fixing.
 
 Representative quotes:
-- "Setting up infra, migrating infra, maintaining/updating infra." (Participant 3)
-- "If AI can do all infra setup, troubleshooting, and maintenance, and monitoring and alerting, that would be great." (Participant 168)
-- "Environment setup and maintainence and Infra monitoring." (Participant 209)
+- *"Setting up infra, migrating infra, maintaining/updating infra."* (Participant 3)
+- *"If AI can do all infra setup, troubleshooting, and maintenance, and monitoring and alerting, that would be great."* (Participant 168)
+- *"Environment setup and maintainence and Infra monitoring."* (Participant 209)
 
 #### Theme: Reduce setup toil 
 This theme foregrounds the desire to shrink the hours spent rebuilding, wiring, or otherwise re-creating environments. The code description—"Shrink the hours spent rebuilding or wiring environments; automate the boring glue work around setup"—summarizes a common complaint about recurring, manual setup steps that add little product value. Respondents framed AI as a means to eliminate long, manual processes and the repetitive toil of monitoring and alerting, hoping it will "automate the boring things" (Participant 262) and meaningfully reduce the time sunk into environment rebuilds (“reduction in hours spent (re)building environments,” Participant 2).
@@ -24,9 +24,9 @@ This theme foregrounds the desire to shrink the hours spent rebuilding, wiring, 
 The outcome sought is pragmatic: fewer interruptions, faster onboarding of new environments, and less time debugging environment flakiness. Participants implicitly ask for reliability and reusability from AI solutions—not a one-off assistant that speeds up one iteration but fails to generalize across projects.
 
 Representative quotes:
-- "reduction in hours spent (re)building environments. reduction on toil hours spent for monitoring/alerting." (Participant 2)
-- "Remove long manual processes" (Participant 108)
-- "Hopefully it can automate the boring things" (Participant 262)
+- *"reduction in hours spent (re)building environments. reduction on toil hours spent for monitoring/alerting."* (Participant 2)
+- *"Remove long manual processes"* (Participant 108)
+- *"Hopefully it can automate the boring things"* (Participant 262)
 
 #### Theme: Cross-OS compatibility & script assistance
 Participants asked for AI that can generate setup scripts that “just work” across multiple Unix-like operating systems and distributions. The code description—"Generate/setup scripts that ‘just work’ across macOS/Linux variants and common distros during env setup"—reflects a need for cross-platform robustness: bash or provisioning scripts that handle differences between macOS, Ubuntu, CentOS, Azure Linux, etc. One respondent summarized this by asking AI to "make bash scripts which are compatible with different unix os like osx, ubuntu or centos, azurelinux etc." (Participant 161).
@@ -34,7 +34,7 @@ Participants asked for AI that can generate setup scripts that “just work” a
 This theme aims to reduce the friction caused by subtle OS differences and package manager idiosyncrasies, making developer environments and CI targets more consistent. The boundary here is technical correctness across platforms; users expect the AI-generated artifacts to run reliably without manual tweaking for each OS variant.
 
 Representative quotes:
-- "to be able to make bash scripts which are compatible with different unix os like osx, ubuntu or centos, azurelinux etc." (Participant 161)
+- *"to be able to make bash scripts which are compatible with different unix os like osx, ubuntu or centos, azurelinux etc."* (Participant 161)
 
 #### Theme: Toil
 The "Toil" theme captures general, repeated requests to remove tedious, repetitive tasks from developers’ workflows. The coding reiterates familiar concerns—reduction of hours rebuilding environments, removing long manual processes, and automating routine tasks—summarized in the brief description and reflected in multiple responses. Participants want a "more cohesive AI experience for Infra related work" so that interrelated infra tasks do not require separate, repetitive human interventions (“The items are generally interrelated, but we currently need to use AI to solve them separately repeatedly... still tedious,” Participant 269).
@@ -42,10 +42,10 @@ The "Toil" theme captures general, repeated requests to remove tedious, repetiti
 Toil is both a motivator and a design requirement: developers value AI that consolidates and streamlines related infra operations rather than producing piecemeal helpers that leave the overall toil problem unsolved. The desired outcome is a tangible decrease in daily friction, with AI acting as a consolidation layer for common setup and maintenance chores.
 
 Representative quotes:
-- "reduction in hours spent (re)building environments. reduction on toil hours spent for monitoring/alerting." (Participant 2)
-- "Remove long manual processes" (Participant 108)
-- "I don't want to have to do all the setup and tedious things...that are pre-requisites for everything I do." (Participant 170)
-- "We need a more cohesive AI experience for Infra related work...the items are generally interrelated..." (Participant 269)
+- *"reduction in hours spent (re)building environments. reduction on toil hours spent for monitoring/alerting."* (Participant 2)
+- *"Remove long manual processes"* (Participant 108)
+- *"I don't want to have to do all the setup and tedious things...that are pre-requisites for everything I do."* (Participant 170)
+- *"We need a more cohesive AI experience for Infra related work...the items are generally interrelated..."* (Participant 269)
 
 ---
 
@@ -57,9 +57,9 @@ Participants raised broad concerns about relying on AI for environment setup whe
 The context here is risk management: teams need repeatable, auditable changes and a strong assurance that automation will not produce flaky or contextually incorrect results. The feared outcomes include misconfigurations, environment drift, and interruptions to development or production pipelines. Participants prefer traditional programmatic automation where a deterministic, testable solution exists, turning to ML only for cases without clear algorithmic solutions.
 
 Representative quotes:
-- "Environment setup and maintenance, because this needs to be reliable and fully deterministic" (Participant 159)
-- "ML is not perfect; it is best used where algorithms are not available/feasible to implement." (Participant 195)
-- "Environment setup until we have a contextual understanding or correctness measured by AI properly..." (Participant 209)
+- *"Environment setup and maintenance, because this needs to be reliable and fully deterministic"* (Participant 159)
+- *"ML is not perfect; it is best used where algorithms are not available/feasible to implement."* (Participant 195)
+- *"Environment setup until we have a contextual understanding or correctness measured by AI properly..."* (Participant 209)
 
 #### Theme: Security-critical changes & access controls are off-limits
 Developers drew a sharp boundary around security-sensitive operations. The code description—"Don’t hand AI critical infra changes, security configurations, or permissions—blast radius is too large (outages/security risks)"—reflects a widely held risk-averse stance: misapplied permissions or incorrect security configs can create severe outages or breach risks. One participant explicitly said they "don't want AI to handle critical infrastructure changes, security configurations, or access controls, as mistakes in these areas could cause serious outages or security risks" (Participant 284).
@@ -67,31 +67,31 @@ Developers drew a sharp boundary around security-sensitive operations. The code 
 The implication is that even if AI assists with routine setup, any capability that modifies access controls, firewall rules, secrets management, or other security-critical configurations should be restricted or require human approval. Participants expect stringent safeguards, logging, and explicit human oversight for these changes.
 
 Representative quotes:
-- "I don't want AI to handle critical infrastructure changes, security configurations, or access controls, as mistakes in these areas could cause serious outages or security risks." (Participant 284)
+- *"I don't want AI to handle critical infrastructure changes, security configurations, or access controls, as mistakes in these areas could cause serious outages or security risks."* (Participant 284)
 
 #### Theme: Determinism
 Determinism appears as a separate theme reinforcing the expectation that environment setup tooling must be predictable and reproducible. The description is implied by the code and echoes the Quality and trust concerns: environment setup "needs to be reliable and fully deterministic" (Participant 159). Participants fear nondeterministic AI behavior that could produce divergent environments across runs, undermining reproducibility and debugging efforts.
 
 Representative quotes:
-- "Environment setup and maintenance, because this needs to be reliable and fully deterministic" (Participant 159)
+- *"Environment setup and maintenance, because this needs to be reliable and fully deterministic"* (Participant 159)
 
 #### Theme: Accuracy
 Accuracy is foregrounded as an operational requirement: when precision matters, traditional programmatic automation is preferred over ML approaches. The code description and participant quote make the point explicit: "ML is not perfect; it is best used where algorithms are not available/feasible to implement. For operations that needs to be precise, it is better to automate using traditional programming...It is a mistake to use ML where precision is required and the cost of getting it wrong is high" (Participant 195). The implied boundary is that AI should not be used in high-cost, high-precision contexts until its accuracy can be assured.
 
 Representative quotes:
-- "ML is not perfect; it is best used where algorithms are not available/feasible to implement. For operations that needs to be precise, it is better to automate using traditional programming..." (Participant 195)
+- *"ML is not perfect; it is best used where algorithms are not available/feasible to implement. For operations that needs to be precise, it is better to automate using traditional programming..."* (Participant 195)
 
 #### Theme: Context
 Participants worry that AI currently lacks the contextual understanding needed to make safe environment changes. The coded description emphasizes that environment updates must be judged correct relative to the full context; without that, AI-driven changes are risky. One respondent stated, "Environment setup until we have a contextual understanding or correctness measured by AI properly and be able to judge if its updating the Environment correctly with enough context available" (Participant 209). This concern spans dependency awareness, versioning, tenant- or project-specific constraints, and organizational standards.
 
 Representative quotes:
-- "Environment setup until we have a contextual understanding or correctness measured by AI properly and be able to judge if its updating the Environment correctly with enough context available." (Participant 209)
+- *"Environment setup until we have a contextual understanding or correctness measured by AI properly and be able to judge if its updating the Environment correctly with enough context available."* (Participant 209)
 
 #### Theme: Security
 Security as a standalone theme reiterates the risks tied to AI-driven infra changes. The code description and quote emphasize the gravity of potential security missteps and the need to avoid delegating these responsibilities to ML systems without strong controls. This aligns directly with the separate theme on security-critical changes but highlights security as a persistent, cross-cutting concern.
 
 Representative quotes:
-- "I don't want AI to handle critical infrastructure changes, security configurations, or access controls, as mistakes in these areas could cause serious outages or security risks." (Participant 284)
+- *"I don't want AI to handle critical infrastructure changes, security configurations, or access controls, as mistakes in these areas could cause serious outages or security risks."* (Participant 284)
 
 ---
 

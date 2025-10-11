@@ -11,13 +11,13 @@ This report is an AI-generated synthesis of manually coded survey responses from
 #### Theme: Triage, deflection & rep co-pilot for known issues
 Researchers coded this theme as: Use AI behind the scenes to reduce toil: parse tickets/logs, screen & bucket, detect patterns, auto-reply to FAQs/self-service, and assist reps.
 
-Participants envision AI as a behind-the-scenes workhorse that reduces repetitive labor and speeds resolution of familiar issues. The core use is automated intake: an AI that "look[s] at customer support request text and logs and make [s] screening, bucketing, and triage decisions based on the content" (PID89). This is framed as a productivity and scale play — by detecting common patterns such as permission errors or recurring configuration problems, AI could route or even reply to well-known requests, freeing humans for more complex work. Boundaries are implicit: participants focus on known issues and repetitive questions where automation reduces toil rather than replacing human judgment.
+Participants envision AI as a behind-the-scenes workhorse that reduces repetitive labor and speeds resolution of familiar issues. The core use is automated intake: an AI that "look[s] at customer support request text and logs and make [s] screening, bucketing, and triage decisions based on the content" (Participant 89). This is framed as a productivity and scale play — by detecting common patterns such as permission errors or recurring configuration problems, AI could route or even reply to well-known requests, freeing humans for more complex work. Boundaries are implicit: participants focus on known issues and repetitive questions where automation reduces toil rather than replacing human judgment.
 
-The desired outcomes are faster first-response, more accurate ticket routing, and higher self-service deflection. One participant explicitly hoped AI "can detect common pattern of our customer request triaging and reply to customer directly" (PID114), emphasizing both detection and safe, limited automation. Participants expect the AI to be accurate enough to avoid harm but primarily to operate as a triage and deflection layer.
+The desired outcomes are faster first-response, more accurate ticket routing, and higher self-service deflection. One participant explicitly hoped AI "can detect common pattern of our customer request triaging and reply to customer directly" (Participant 114), emphasizing both detection and safe, limited automation. Participants expect the AI to be accurate enough to avoid harm but primarily to operate as a triage and deflection layer.
 
 **Representative quotes**:
-- *"If an AI agent could actually look at customer support request text and logs and make screening, bucketing, and triage decisions based on the content, that would be super helpful."* (Participant PID89)
-- *"we got a lot of repetitive customer question, like permission issue. I hope AI can detect common pattern of our customer request triaging and reply to customer directly."* (Participant PID114)
+- *"If an AI agent could actually look at customer support request text and logs and make screening, bucketing, and triage decisions based on the content, that would be super helpful."* (Participant 89)
+- *"we got a lot of repetitive customer question, like permission issue. I hope AI can detect common pattern of our customer request triaging and reply to customer directly."* (Participant 114)
 - *"Customer service: Self-service for well-known issues; Be an assistant for customer service reps."* (Participant P195)
 
 #### Theme: Process customer requests
@@ -25,36 +25,36 @@ Researchers' coding contains no separate description beyond included quotes; the
 
 This theme reinforces the desire for AI that can take structured action on customer requests — not merely label them. Participants imagine AI parsing free-text descriptions and associated logs to determine next steps, such as initiating routine fixes, providing targeted documentation links, or escalating appropriately. The motivation is operational efficiency: many tickets are repetitive and ripe for automation. The same participant rationale appears across codes: reduce manual triage effort and enable faster resolution.
 
-Participants again limit the expectation to routine or patterned requests rather than bespoke engagements: the hope is for "screening, bucketing, and triage decisions based on the content" with the AI acting as a first-pass processor (PID89, PID114).
+Participants again limit the expectation to routine or patterned requests rather than bespoke engagements: the hope is for "screening, bucketing, and triage decisions based on the content" with the AI acting as a first-pass processor (Participant 89, Participant 114).
 
 **Representative quotes**:
-- *"If an AI agent could actually look at customer support request text and logs and make screening, bucketing, and triage decisions based on the content, that would be super helpful."* (Participant PID89)
-- *"we got a lot of repetitive customer question, like permission issue. I hope AI can detect common pattern of our customer request triaging and reply to customer directly."* (Participant PID114)
+- *"If an AI agent could actually look at customer support request text and logs and make screening, bucketing, and triage decisions based on the content, that would be super helpful."* (Participant 89)
+- *"we got a lot of repetitive customer question, like permission issue. I hope AI can detect common pattern of our customer request triaging and reply to customer directly."* (Participant 114)
 - *"Customer service: Self-service for well-known issues; Be an assistant for customer service reps."* (Participant P195)
 
 #### Theme: AI for customer reps
 Researchers coded this as: (no separate description provided in the manual coding).
 
-This theme focuses on AI as a knowledge and productivity assistant for human agents rather than a substitute. Examples include code-completion-like help ("Coding: Be a coding assistant" — PID195) and surfacing relevant knowledge-base entries or alerting reps to metric aberrations (PID401). The motivation is to enable human reps to work faster and more accurately: AI can suggest resolutions, draft responses, and highlight anomalies requiring attention.
+This theme focuses on AI as a knowledge and productivity assistant for human agents rather than a substitute. Examples include code-completion-like help ("Coding: Be a coding assistant" — Participant 195) and surfacing relevant knowledge-base entries or alerting reps to metric aberrations (Participant 401). The motivation is to enable human reps to work faster and more accurately: AI can suggest resolutions, draft responses, and highlight anomalies requiring attention.
 
 Participants expect these tools to be augmentative — improving throughput and catching exceptions — while leaving judgment and customer-facing actions to humans. The desired outcomes are reduced context-switching for reps, quicker drafting of technically accurate responses, and proactive detection of service issues.
 
 **Representative quotes**:
-- *"Coding: Be a coding assistant"* (Participant PID195)
-- *"Helping with Customer Service through knowledge bases and flagging aberrations in metrics"* (Participant PID401)
+- *"Coding: Be a coding assistant"* (Participant 195)
+- *"Helping with Customer Service through knowledge bases and flagging aberrations in metrics"* (Participant 401)
 - *"Customer service: Self-service for well-known issues; Be an assistant for customer service reps."* (Participant P195)
 
 #### Theme: Find patterns in metrics
 Researchers coded this as: (no separate description provided in the manual coding).
 
-Participants also want AI to operate on quantitative signals — detecting anomalies in support-related metrics or surfacing systemic problems from telemetry. PID401 described "flagging aberrations in metrics" as a support function, which complements text-based triage by revealing outages, regressions, or trends that warrant mass communication or prioritization. The motivation is proactive support: using AI to connect customer reports with operational metrics to reduce mean time to detection and resolution.
+Participants also want AI to operate on quantitative signals — detecting anomalies in support-related metrics or surfacing systemic problems from telemetry. Participant 401 described "flagging aberrations in metrics" as a support function, which complements text-based triage by revealing outages, regressions, or trends that warrant mass communication or prioritization. The motivation is proactive support: using AI to connect customer reports with operational metrics to reduce mean time to detection and resolution.
 
 This capability is positioned as an enabling input for both automated triage and human decision-making: pattern detection can trigger bulk communications, create high-priority tickets, or provide evidence for escalation, but participants imply humans should validate major customer communications driven by metric-based triggers.
 
 **Representative quotes**:
-- *"Helping with Customer Service through knowledge bases and flagging aberrations in metrics"* (Participant PID401)
+- *"Helping with Customer Service through knowledge bases and flagging aberrations in metrics"* (Participant 401)
 - *"Customer service: Self-service for well-known issues; Be an assistant for customer service reps."* (Participant P195)
-- *"we got a lot of repetitive customer question, like permission issue. I hope AI can detect common pattern of our customer request triaging and reply to customer directly."* (Participant PID114)
+- *"we got a lot of repetitive customer question, like permission issue. I hope AI can detect common pattern of our customer request triaging and reply to customer directly."* (Participant 114)
 
 ---
 
@@ -63,46 +63,46 @@ This capability is positioned as an enabling input for both automated triage and
 #### Theme: Human-led frontline support (empathy, control, brand)
 Researchers coded this as: Customer-facing interactions should feel human; avoid friction and brand risk. AI can assist passively, but a human must retain final send/approval.
 
-Participants strongly emphasize that customer-facing conversations are sensitive to tone, brand, and empathy. Multiple respondents find being forced into AI interactions frustrating and fear automated replies will degrade product support quality or damage brand trust. For example, one participant said, "As a customer, being forced to an AI is frustrating. I would prefer the AI tooling to be passive, but provide me ... prompts on suggested resolutions or ways forward" (PID2). Another warned that "AI should not be handling customer support. Pushing this role to AI will cause customers frustration via generated responses and reduce the quality of our product support" (PID41).
+Participants strongly emphasize that customer-facing conversations are sensitive to tone, brand, and empathy. Multiple respondents find being forced into AI interactions frustrating and fear automated replies will degrade product support quality or damage brand trust. For example, one participant said, "As a customer, being forced to an AI is frustrating. I would prefer the AI tooling to be passive, but provide me ... prompts on suggested resolutions or ways forward" (Participant 2). Another warned that "AI should not be handling customer support. Pushing this role to AI will cause customers frustration via generated responses and reduce the quality of our product support" (Participant 41).
 
-The boundary is clear: passive assistance (suggestions, drafts, or background triage) is acceptable, but AI-driven visible interactions must not replace human-fronted support. Participants demand human control over final communications — "AI cannot hit the ‘send message’ button: I as a human must pull the trigger" (PID62) — to protect customer experience and brand integrity.
+The boundary is clear: passive assistance (suggestions, drafts, or background triage) is acceptable, but AI-driven visible interactions must not replace human-fronted support. Participants demand human control over final communications — "AI cannot hit the ‘send message’ button: I as a human must pull the trigger" (Participant 62) — to protect customer experience and brand integrity.
 
 **Representative quotes**:
-- *"Customer support. As a customer, being forced to an AI is frustrating. I would prefer the AI tooling to be passive, but provide me ... prompts on suggested resolutions or ways forward."* (Participant PID2)
-- *"AI should not be handling customer support. Pushing this role to AI will cause customers frustration via generated responses and reduce the quality of our product support."* (Participant PID41)
-- *"AI cannot hit the ‘send message’ button: I as a human must pull the trigger (be it even to bulk messages)."* (Participant PID62)
+- *"Customer support. As a customer, being forced to an AI is frustrating. I would prefer the AI tooling to be passive, but provide me ... prompts on suggested resolutions or ways forward."* (Participant 2)
+- *"AI should not be handling customer support. Pushing this role to AI will cause customers frustration via generated responses and reduce the quality of our product support."* (Participant 41)
+- *"AI cannot hit the ‘send message’ button: I as a human must pull the trigger (be it even to bulk messages)."* (Participant 62)
 
 #### Theme: Contextual customer engineering (not automatable)
 Researchers coded this as: Deeply contextual, bespoke work with customer teams requires human expertise and judgment.
 
-Participants draw a firm line around bespoke, high-touch support that involves deep engineering collaboration with customer teams. One respondent emphasized that their role is "hands-on-keyboard" and involves daily work with customer development teams and leadership, which "cannot be done by AI" (PID393). The concern is that these engagements require judgment, domain expertise, and human relationships that AI cannot replicate.
+Participants draw a firm line around bespoke, high-touch support that involves deep engineering collaboration with customer teams. One respondent emphasized that their role is "hands-on-keyboard" and involves daily work with customer development teams and leadership, which "cannot be done by AI" (Participant 393). The concern is that these engagements require judgment, domain expertise, and human relationships that AI cannot replicate.
 
 The feared outcome is misalignment or harm from offloading nuanced, context-rich work to automation. Participants want AI to assist with routine tasks but not to replace the human expertise needed for tailored implementations, escalations, or negotiated solutions.
 
 **Representative quotes**:
-- *"The customer support that I provide cannot be done by AI. I work directly with the customer's development team and leadership every day to develop the solutions that operate within their Azure environments. It's a hands-on-keyboard role."* (Participant PID393)
-- *"Customer support. As a customer, being forced to an AI is frustrating. I would prefer the AI tooling to be passive..."* (Participant PID2)
+- *"The customer support that I provide cannot be done by AI. I work directly with the customer's development team and leadership every day to develop the solutions that operate within their Azure environments. It's a hands-on-keyboard role."* (Participant 393)
+- *"Customer support. As a customer, being forced to an AI is frustrating. I would prefer the AI tooling to be passive..."* (Participant 2)
 - *"We need to work on its accuracy in the context of customer support as it is directly interacting with humans which can cause errors to negatively affect the product brand directly."* (Participant P269)
 
 #### Theme: Humans handle customers
 Researchers coded this as: (no separate description provided in the manual coding).
 
-This theme reinforces the preference for humans as the primary face of support. Participants expressed that AI should be a background assistant offering prompts or suggested next steps, not the primary interlocutor. The recurring view is that human interaction preserves quality and prevents frustration; "I would prefer the AI tooling to be passive, but provide me ... prompts" (PID2) encapsulates this stance. The implied boundary is that AI-generated outputs should be mediated by humans before reaching customers.
+This theme reinforces the preference for humans as the primary face of support. Participants expressed that AI should be a background assistant offering prompts or suggested next steps, not the primary interlocutor. The recurring view is that human interaction preserves quality and prevents frustration; "I would prefer the AI tooling to be passive, but provide me ... prompts" (Participant 2) encapsulates this stance. The implied boundary is that AI-generated outputs should be mediated by humans before reaching customers.
 
 **Representative quotes**:
-- *"Customer support. As a customer, being forced to an AI is frustrating. I would prefer the AI tooling to be passive..."* (Participant PID2)
-- *"AI should not be handling customer support. Pushing this role to AI will cause customers frustration..."* (Participant PID41)
+- *"Customer support. As a customer, being forced to an AI is frustrating. I would prefer the AI tooling to be passive..."* (Participant 2)
+- *"AI should not be handling customer support. Pushing this role to AI will cause customers frustration..."* (Participant 41)
 - *"The customer sensitive interactions are always nice when it feels like you are still dealing with humans, I don't want AI to input here."* (Participant P170)
 
 #### Theme: Human oversight
 Researchers coded this as: (no separate description provided in the manual coding).
 
-Participants explicitly call for human approval and final control over customer-facing actions. The clearest articulation is "AI cannot hit the 'send message' button: I as a human must pull the trigger" (PID62). This demand for human-in-the-loop governance stems from concerns about accuracy, brand risk, and accountability. Even when AI drafts replies or recommends actions, human oversight is non-negotiable for outbound communications, bulk messaging, or escalation decisions.
+Participants explicitly call for human approval and final control over customer-facing actions. The clearest articulation is "AI cannot hit the 'send message' button: I as a human must pull the trigger" (Participant 62). This demand for human-in-the-loop governance stems from concerns about accuracy, brand risk, and accountability. Even when AI drafts replies or recommends actions, human oversight is non-negotiable for outbound communications, bulk messaging, or escalation decisions.
 
 This theme codifies the operational constraint that AI may be empowered to propose but not to execute customer communications without explicit human consent.
 
 **Representative quotes**:
-- *"AI cannot hit the 'send message' button: I as a human must pull the trigger (be it even to bulk messages)."* (Participant PID62)
+- *"AI cannot hit the 'send message' button: I as a human must pull the trigger (be it even to bulk messages)."* (Participant 62)
 - *"I hate the idea of AI becoming another screen for customer support and adding friction there, but we also don't fund customer support enough..."* (Participant P89)
 - *"We need to work on its accuracy in the context of customer support as it is directly interacting with humans which can cause errors to negatively affect the product brand directly."* (Participant P269)
 
@@ -122,9 +122,9 @@ This theme codifies the operational constraint that AI may be empowered to propo
 
 ## 3) Outliers and Edge Cases
 
-- Minority perspectives: A few responses emphasize more optimistic automation — explicitly asking for AI that can reply directly to customers for common problems (PID114). This view is a minority relative to those insisting on human final approval.
+- Minority perspectives: A few responses emphasize more optimistic automation — explicitly asking for AI that can reply directly to customers for common problems (Participant 114). This view is a minority relative to those insisting on human final approval.
 
-- Unique insights: The combination of coding assistance and customer support augmentation (PID195) highlights crossover opportunities where AI that helps engineers could be repurposed to assist support agents with technical diagnostics and response drafting.
+- Unique insights: The combination of coding assistance and customer support augmentation (Participant 195) highlights crossover opportunities where AI that helps engineers could be repurposed to assist support agents with technical diagnostics and response drafting.
 
 - Ambivalent responses: Some participants express tension in the same quote — they dislike AI as a customer-facing screen but also acknowledge under-resourced support teams (P89). This ambivalence suggests pragmatic openness to automation under strong guardrails.
 
@@ -140,39 +140,39 @@ High-level synthesis: Developers want AI tools that automate routine analysis an
 
 - **Triage & deflection automation**
   - Capability: Automated parsing of request text and attached logs to screen, bucket, and prioritize tickets; suggested auto-responses for well-known FAQs.
-  - Rationale: Participants explicitly want AI that can "make screening, bucketing, and triage decisions" to reduce toil (PID89, PID114).
+  - Rationale: Participants explicitly want AI that can "make screening, bucketing, and triage decisions" to reduce toil (Participant 89, Participant 114).
   - Example: Provide a suggested resolution and confidence score for routine permission issues so agents can accept or edit before sending.
 
 - **Rep co-pilot for drafting & knowledge retrieval**
   - Capability: Draft response suggestions, surface relevant KB articles and configuration steps, and offer code or command snippets for technical replies.
-  - Rationale: Participants asked for "Be an assistant for customer service reps" and coding-style assistance (PID195, PID401).
+  - Rationale: Participants asked for "Be an assistant for customer service reps" and coding-style assistance (Participant 195, Participant 401).
   - Example: When a ticket mentions a specific error, surface matching KB articles and a draft reply that the agent can edit.
 
 - **Metric and anomaly detection integration**
   - Capability: Correlate tickets with telemetry and flag aberrations in metrics to prioritize incidents and recommend mass communications or escalations.
-  - Rationale: "Flagging aberrations in metrics" was cited as useful for proactive customer support (PID401).
+  - Rationale: "Flagging aberrations in metrics" was cited as useful for proactive customer support (Participant 401).
   - Example: Link spike in errors to a reported outage and surface suggested triage steps.
 
 - **Human-in-the-loop workflow controls**
   - Capability: Require explicit human approval for outbound messages, bulk sends, or escalation decisions; show provenance and confidence scores.
-  - Rationale: Participants insisted "AI cannot hit the 'send message' button" and wanted passive assistance (PID62, PID2).
+  - Rationale: Participants insisted "AI cannot hit the 'send message' button" and wanted passive assistance (Participant 62, Participant 2).
   - Example: Provide an "approve and send" step where the agent reviews suggested text and related evidence before dispatch.
 
 #### Key "Must Not Haves" (design guardrails)
 
 - **No fully autonomous customer-facing replies**
   - Risk: Automated visible replies can frustrate customers and damage brand trust.
-  - Rationale: Multiple participants warned against AI handling customer support end-to-end (PID41, P269).
+  - Rationale: Multiple participants warned against AI handling customer support end-to-end (Participant 41, P269).
   - Example: Disallow systems that automatically reply to customer tickets without human approval.
 
 - **Do not replace contextual customer engineering**
   - Risk: Loss of domain expertise and relationship management in bespoke engagements.
-  - Rationale: Complex, hands-on engineering work "cannot be done by AI" (PID393).
+  - Rationale: Complex, hands-on engineering work "cannot be done by AI" (Participant 393).
   - Example: Prevent routing of high-touch, account-specific technical engagements to automated flows.
 
 - **Avoid opaque decision-making**
   - Risk: Agents won't trust or use AI if recommendations lack provenance or confidence metrics.
-  - Rationale: Participants want accuracy and control; opacity undermines both (P269, PID62).
+  - Rationale: Participants want accuracy and control; opacity undermines both (P269, Participant 62).
   - Example: Include clear citations to KB articles, logs, or metric anomalies that informed a suggestion.
 
 - **Do not introduce extra friction in the agent UX**

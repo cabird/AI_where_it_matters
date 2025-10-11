@@ -15,10 +15,10 @@ Developers consistently want AI to shift security and compliance work from react
 Participants framed the motivation as time savings, fewer incidents, and earlier remediation. Boundaries mentioned include the need for accurate early warnings (to avoid noise) and visibility into trends across projects so teams can prioritize fixes. The desired outcomes are fewer regressions, faster incident prevention, and the ability to act on systematic risk signals rather than isolated tickets.
 
 **Representative quotes**:
-- "I’d like AI to play a major role in real-time risk prediction, compliance monitoring, and automated root cause analysis…" (Participant 9)  
-- "I want AI to proactively evaluate contributions for potential security issues before I merge changes." (Participant 41)  
-- "We need an at-scale telemetry platform that I can leverage AI for to detect security, compliance and reliability risks broadly." (Participant 183)  
-- "AI shows promise in detecting deviations from a known good baseline. I want these agents to alert us to potential issues while they're still low-sev..." (Participant 167)
+- *"I’d like AI to play a major role in real-time risk prediction, compliance monitoring, and automated root cause analysis…"* (Participant 9)  
+- *"I want AI to proactively evaluate contributions for potential security issues before I merge changes."* (Participant 41)  
+- *"We need an at-scale telemetry platform that I can leverage AI for to detect security, compliance and reliability risks broadly."* (Participant 183)  
+- *"AI shows promise in detecting deviations from a known good baseline. I want these agents to alert us to potential issues while they're still low-sev..."* (Participant 167)
 
 ---
 
@@ -29,10 +29,10 @@ Within this theme, developers want AI to take over repetitive compliance tasks, 
 Developers emphasized two intertwined requirements: automation to reduce overhead, and high confidence/accuracy so that outputs are trusted. They want AI to flag compliance failures with an explicit confidence level and to leave final validation to humans. A design boundary repeatedly mentioned is minimizing false positives and making the AI’s scope of certainty clear so reviewers can prioritize human attention rather than re-do repetitive checks.
 
 **Representative quotes**:
-- "Code review feedback including security and compliance checks." (Participant 71)  
-- "AI should be able to handle a first-draft and information retrieval." (Participant 203)  
-- "Having LLMs be able to ensure we apply best practices from lengthy documentation is very advantageous." (Participant 140)  
-- "Handle S360 items on its own only asking for final confirmation from the user… and mention… the confidence of the review." (Participant 410)
+- *"Code review feedback including security and compliance checks."* (Participant 71)  
+- *"AI should be able to handle a first-draft and information retrieval."* (Participant 203)  
+- *"Having LLMs be able to ensure we apply best practices from lengthy documentation is very advantageous."* (Participant 140)  
+- *"Handle S360 items on its own only asking for final confirmation from the user… and mention… the confidence of the review."* (Participant 410)
 
 ---
 
@@ -43,10 +43,10 @@ Developers see substantial value in AI-generated tests, adversarial probing, and
 The motivation is clear: augment human testers to increase coverage and discover edge cases quickly, thereby catching vulnerabilities before they reach production. A boundary implicit in responses is the need for tests that are contextually appropriate and maintainable, not just voluminous. Developers also want AI to help refactor and keep tests up-to-date so the test-suite remains useful over time.
 
 **Representative quotes**:
-- "I want AI to automatically detect security risks and create chaos testing environments…" (Participant 46)  
-- "Creating and maintaining software tests, along with catching software errors and security vulnerabilities before checking in code." (Participant 47)  
-- "Security and Compliance … AI can play a huge role here and ease developers' life in writing exhaustive test cases. AI can act as a great adversary." (Participant 299)  
-- "AI should be able to generate tests automatically when given the context of the files to cover." (Participant 332)
+- *"I want AI to automatically detect security risks and create chaos testing environments…"* (Participant 46)  
+- *"Creating and maintaining software tests, along with catching software errors and security vulnerabilities before checking in code."* (Participant 47)  
+- *"Security and Compliance … AI can play a huge role here and ease developers' life in writing exhaustive test cases. AI can act as a great adversary."* (Participant 299)  
+- *"AI should be able to generate tests automatically when given the context of the files to cover."* (Participant 332)
 
 ---
 
@@ -57,9 +57,9 @@ Developers want AI that goes beyond generic suggestions and produces fixes tuned
 The motivation is to reduce the manual burden of implementing known fixes and to make remediation faster and less error-prone. Conditions participants mentioned include retaining reviewability and requiring human sign-off for actual production changes; AI-generated fixes should be reviewable and conform to the team's standards rather than blindly applied.
 
 **Representative quotes**:
-- "It would be nice to have an AI understand the local context for a security issue, and make a PR, or other reviewable action to take." (Participant 205)  
-- "Handle S360 items on its own only asking for final confirmation from the user…" (Participant 410)  
-- "There are lots of security requirements being pushed down to each team. They know the answer and how it should be fixed, but lack the local context." (Participant 205)
+- *"It would be nice to have an AI understand the local context for a security issue, and make a PR, or other reviewable action to take."* (Participant 205)  
+- *"Handle S360 items on its own only asking for final confirmation from the user…"* (Participant 410)  
+- *"There are lots of security requirements being pushed down to each team. They know the answer and how it should be fixed, but lack the local context."* (Participant 205)
 
 ---
 
@@ -76,10 +76,10 @@ The second coded sub-theme, "No autonomous AI actions or direct production/syste
 - **No autonomous AI actions or direct production/system changes without sign-off**: Developers strongly oppose AI automatically committing code, applying security fixes, updating configs, or handling S360 items without explicit human oversight and approval.
 
 **Representative quotes**:
-- "I wouldn’t want AI to handle final decision-making in high-stakes risk scenarios…" (Participant 9)  
-- "I want to make the final decision about what risks are worth taking." (Participant 14)  
-- "Directly touching production without oversight." (Participant 23)  
-- "I don't want the AI to automatically take action in my Azure subscription, where it could incorrectly adjust configuration causing live site issues." (Participant 205)
+- *"I wouldn’t want AI to handle final decision-making in high-stakes risk scenarios…"* (Participant 9)  
+- *"I want to make the final decision about what risks are worth taking."* (Participant 14)  
+- *"Directly touching production without oversight."* (Participant 23)  
+- *"I don't want the AI to automatically take action in my Azure subscription, where it could incorrectly adjust configuration causing live site issues."* (Participant 205)
 
 ---
 
@@ -94,10 +94,10 @@ The second coded sub-theme, "Privacy and sensitive data handling," captures cate
 - **Privacy and sensitive data handling**: AI should not directly access or process sensitive information (user/customer data, confidential project data), as this could risk breaches and privacy violations.
 
 **Representative quotes**:
-- "I think letting current AI handle security and compliance work is risky and I wouldn't trust it." (Participant 1)  
-- "I do not want the AI to write threat models or security design documentation. Existing AI systems are too primitive…" (Participant 167)  
-- "AI should not be allowed to handle User or customer's data as it could lead to a breach…" (Participant 282)  
-- "I don't want AI to directly handle sensitive information, as I don't trust that information it sees stays truly secure." (Participant 397)
+- *"I think letting current AI handle security and compliance work is risky and I wouldn't trust it."* (Participant 1)  
+- *"I do not want the AI to write threat models or security design documentation. Existing AI systems are too primitive…"* (Participant 167)  
+- *"AI should not be allowed to handle User or customer's data as it could lead to a breach…"* (Participant 282)  
+- *"I don't want AI to directly handle sensitive information, as I don't trust that information it sees stays truly secure."* (Participant 397)
 
 ---
 

@@ -220,49 +220,49 @@ AI for Requirements Gathering & Analysis in Design & Planning should **capture a
 * **Multi-source aggregation & synthesis**
 
   * Pull from emails, chats, docs, and transcripts; de-duplicate, cluster, and summarize; flag ambiguities. Rationale: *Aggregate heterogenous requirements data streams*; *Synthesize large amounts of information*.
-  * Example: PIDs 183, 204, 280, 401.
+  * Example: Participant 183, Participant 204, Participant 280, Participant 401.
 
 * **Requirements validation & gap detection**
 
   * Check completeness and correctness; highlight missing requirements, security use cases, and contradictions. Rationale: *Validate gathered requirements for completeness/accuracy*; *Pinpoint missing requirements or design gaps*.
-  * Example: PIDs 39, 352, 354.
+  * Example: Participant 39, Participant 352, Participant 354.
 
 * **Context-aware design exploration with NFRs**
 
   * Compare options (cost/perf/operability), call out dependencies, suggest reuse of standard libraries, and align to org standards. Rationale: *Design space exploration*; *NFR suggestions, risk, dependencies, reusability*.
-  * Example: PIDs 12, 111, 272, 281, 371.
+  * Example: Participant 12, Participant 111, Participant 272, Participant 281, Participant 371.
 
 * **Artifact generation from vetted requirements**
 
   * Produce features, user stories, tasks, and user-facing documentation with back-references to source requirements. Rationale: *Automate workflow artifacts*; *Automate user-facing documentation*.
-  * Example: PIDs 154, 157, 159.
+  * Example: Participant 154, Participant 157, Participant 159.
 
 * **Meeting-aware capture and iterative assistance**
 
   * Attend meetings (record/transcribe), extract requirements, propose clarifying questions/surveys, and support scheduling for follow-ups. Rationale: *Automate requirements gathering*; *Iterative and accurate gathering w/ users*.
-  * Example: PIDs 153, 198, 237.
+  * Example: Participant 153, Participant 198, Participant 237.
 
 #### Key "Must Not Haves" (design guardrails)
 
 * **No autonomous requirements origination or unilateral decisions**
 
   * AI must not infer unstated requirements or choose technologies without user confirmation. Rationale: *Full automation (prefer hybrid)*; *Sole decision making*.
-  * Example: PIDs 70, 290, 371.
+  * Example: Participant 70, Participant 290, Participant 371.
 
 * **No opacity about uncertainty or assumptions**
 
   * The system must clearly differentiate guess vs. simulation, present confidence, and show evidence trails. Rationale: *Differentiate between guess and simulation*.
-  * Example: PID 290.
+  * Example: Participant 290.
 
 * **No mishandling of sensitive data**
 
   * Respect data boundaries; provide governance controls and on-prem/tenant-isolated options. Rationale: *Sensitive data handling*.
-  * Example: PID 266.
+  * Example: Participant 266.
 
 * **No overreach into high-stakes correctness without checks**
 
   * Require human review for accuracy-critical outputs, with verification workflows. Rationale: *Accuracy is important*; *Technical correctness concerns*.
-  * Example: PIDs 330, 353.
+  * Example: Participant 330, Participant 353.
 
 ---
 

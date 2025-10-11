@@ -15,10 +15,10 @@ Participants consistently framed refactoring and maintenance as ripe for automat
 Desired outcomes include time savings, fewer human-hours on monotony, and more time for problem-solving and feature design. Participants also set boundaries tied to verifiability: where CI or reliable tests exist, automation is acceptable because regressions are easier to catch ("tedious but easy to test (assuming strong CI...)" — Participant 62). Several responses highlight that AI should be used to "mimic test code based on good examples" and manage style changes across large codebases (Participant 262), reinforcing that automated refactors must be testable and trackable.
 
 **Representative quotes**:
-- "Refactoring for sure. It's often the most boring task for me, and being able to mostly automate it would be amazing. Current progress is already great for a lot of use cases." (Participant 1)
-- "Refactoring would be the biggest help! It's almost always tedious and well-defined tasks... it is over large file and multi-file workflows." (Participant 26)
-- "Refactoring: tedious but easy to test (assuming strong CI a.k.a. Continuous integration testing)." (Participant 62)
-- "AI can take on some of the time-intensive but repetitive refactoring work or routine boilerplate code generation." (Participant 203)
+- *"Refactoring for sure. It's often the most boring task for me, and being able to mostly automate it would be amazing. Current progress is already great for a lot of use cases."* (Participant 1)
+- *"Refactoring would be the biggest help! It's almost always tedious and well-defined tasks... it is over large file and multi-file workflows."* (Participant 26)
+- *"Refactoring: tedious but easy to test (assuming strong CI a.k.a. Continuous integration testing)."* (Participant 62)
+- *"AI can take on some of the time-intensive but repetitive refactoring work or routine boilerplate code generation."* (Participant 203)
 
 #### Theme: Multi-/Cross- Context Support
 
@@ -27,9 +27,9 @@ The manual code "Coordinated multi-file/multi-module changes" captures a distinc
 Context and boundaries: this capability is most valuable in large, interconnected repositories where manual tracking of all affected places is error-prone. Participants expect AI to "know which files are related" and "find the files that are used in context to the currently open files" (Participant 332). They also expect architectural reasoning—drawing conclusions at the class or module level—so that AI-suggested multi-step changes don't break invariants or create inconsistent abstractions (Participant 47).
 
 **Representative quotes**:
-- "More cross-codebase awareness, so I can make a single change... and AI will help implement those changes across the rest of the codebase." (Participant 2)
-- "Improvements in understanding large code bases and drawing architectural conclusions will be necessary... Multi-step changes across boundaries for large code bases is necessary in our environment." (Participant 47)
-- "AI should know which files are related to the code. AI should also know what the code that is spread across these files is doing." (Participant 332)
+- *"More cross-codebase awareness, so I can make a single change... and AI will help implement those changes across the rest of the codebase."* (Participant 2)
+- *"Improvements in understanding large code bases and drawing architectural conclusions will be necessary... Multi-step changes across boundaries for large code bases is necessary in our environment."* (Participant 47)
+- *"AI should know which files are related to the code. AI should also know what the code that is spread across these files is doing."* (Participant 332)
 
 #### Theme: Quality, Performance, and Security Enhancements
 
@@ -38,9 +38,9 @@ Under the code "Enforcing coding standards and best practices," participants wan
 Developers envision AI that supplements reviews and testing: automating unit test suggestion and refactoring while reminding teams of coding standards (Participant 164). Some even expect platform-specific awareness, for example that the tool checks "overall azure, msft and coding standards" in code and docs (Participant 354). This theme is motivated by the desire to raise baseline code quality and to make refactors not only syntactically correct but also aligned with best practices and compliance requirements. The desired outcome is consistent, secure, and maintainable code with less manual enforcement overhead.
 
 **Representative quotes**:
-- "Help identify bad coding practices." (Participant 21)
-- "automation of refactoring and unit tests; coding best practices suggestions during reviews" (Participant 164)
-- "it also is aware of the overall azure, msft and coding standards so it should check that in coding and docs" (Participant 354)
+- *"Help identify bad coding practices."* (Participant 21)
+- *"automation of refactoring and unit tests; coding best practices suggestions during reviews"* (Participant 164)
+- *"it also is aware of the overall azure, msft and coding standards so it should check that in coding and docs"* (Participant 354)
 
 ---
 
@@ -53,9 +53,9 @@ Researchers summarized this theme as skepticism about full automation and a pref
 Context: responsibility and accountability are central, especially in production systems where engineers must sign off on changes. Boundaries include an explicit human-in-the-loop for large or structural modifications. Participants accept AI as a feedback provider—akin to a human reviewer—but not as an autonomous refactorer: "I do not want AI to 'handle' any of it, given that I am accountable for it. But I welcome AI systems that provide feedback on my design and implementation" (Participant 167). Another succinct boundary: "I don't want AI to make substantial refactoring changes without interaction/consultation first" (Participant 39).
 
 **Representative quotes**:
-- "I don't want AI to make substantial refactoring changes without interaction/consultation first... next thing I know there are new classes and new files" (Participant 39)
-- "AI should not perform any large-scale refactoring or optimizations." (Participant 182)
-- "I do not want AI to 'handle' any of it, given that I am accountable for it. But I welcome AI systems that provide feedback..." (Participant 167)
+- *"I don't want AI to make substantial refactoring changes without interaction/consultation first... next thing I know there are new classes and new files"* (Participant 39)
+- *"AI should not perform any large-scale refactoring or optimizations."* (Participant 182)
+- *"I do not want AI to 'handle' any of it, given that I am accountable for it. But I welcome AI systems that provide feedback..."* (Participant 167)
 
 #### Theme: Quality & Trust Issues
 
@@ -64,9 +64,9 @@ The code "Low trust in performance/correctness" encapsulates concerns that AI-re
 Contextual factors shaping trust include the difficulty of validating correctness—if precision is critical or correctness is hard to verify, participants prefer human handling (Participant 385). The implication is clear: without strong correctness guarantees, rollback mechanisms, or traceable rationales, developers will refrain from delegating refactors to AI.
 
 **Representative quotes**:
-- "I can't trust the AI to be correct, and when it changes too much code at once, I need to spend more time reviewing or even fixing the AI's changes" (Participant 325)
-- "I do not want AI handling tasks where precision is important or where correctness is more difficult to validate than just doing it myself..." (Participant 385)
-- "Refactoring - AI tends to be really bad at this and I'm very opinionated." (Participant 159)
+- *"I can't trust the AI to be correct, and when it changes too much code at once, I need to spend more time reviewing or even fixing the AI's changes"* (Participant 325)
+- *"I do not want AI handling tasks where precision is important or where correctness is more difficult to validate than just doing it myself..."* (Participant 385)
+- *"Refactoring - AI tends to be really bad at this and I'm very opinionated."* (Participant 159)
 
 #### Theme: Domain, Context, or Knowledge Gaps
 
@@ -75,9 +75,9 @@ This theme highlights worries that AI lacks holistic understanding of architectu
 Participants also express that complex, system-wide refactors are likely to be mishandled by AI: "Refactoring a system wide feature, AI won't do it correctly" (Participant 361). The boundary here is clear: AI is acceptable for boilerplate or well-instrumented tasks but not for nuanced architectural decisions or domain-heavy refactors where implicit knowledge and multi-step reasoning are required.
 
 **Representative quotes**:
-- "I prefer not to use AI for tasks where I can't provide sufficient context... if the code change requires specialized domain knowledge or tribal knowledge not found within the repository, I'd rather handle it myself." (Participant 204)
-- "Complex refactoring's and anything not boilerplate." (Participant 259)
-- "Refactoring a system wide feature, AI won't do it correctly." (Participant 361)
+- *"I prefer not to use AI for tasks where I can't provide sufficient context... if the code change requires specialized domain knowledge or tribal knowledge not found within the repository, I'd rather handle it myself."* (Participant 204)
+- *"Complex refactoring's and anything not boilerplate."* (Participant 259)
+- *"Refactoring a system wide feature, AI won't do it correctly."* (Participant 361)
 
 ---
 
