@@ -58,7 +58,7 @@ window.WelcomePage = function WelcomePage() {
             <p>
                 For the full study methodology and quantitative findings, please refer to the
                 research paper: <a href="paper.pdf" target="_blank" rel="noopener noreferrer">
-                    "Understanding Developer Preferences for AI-Powered Coding Assistance Across Software Engineering Tasks"
+                    " AI Where It Matters: Where, Why, and How Developers Want AI Support in Daily Work"
                 </a>
             </p>
 
