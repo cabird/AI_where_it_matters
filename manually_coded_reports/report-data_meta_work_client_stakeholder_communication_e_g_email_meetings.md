@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Client Stakeholder Communication E G Email Meetings (Category: Meta Work)
+# Qualitative Analysis for Client/Stakeholder Communication
+# Category: Meta-Work
 
-This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Client Stakeholder Communication (e.g., email, meetings) within the Meta Work category. I preserved the research team’s thematic structure and codes, integrated representative participant quotes, and added cross-cutting analysis and practical design implications. The analysis focuses only on the supplied coded data.
+This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Client/Stakeholder Communication (Meta-Work). I preserved the research team’s thematic structure and codes, integrated representative participant quotes, and added cross-cutting analysis and practical design implications. The analysis focuses only on the supplied coded data.
 
 ---
 

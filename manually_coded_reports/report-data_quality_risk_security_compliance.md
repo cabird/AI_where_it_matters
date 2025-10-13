@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Security Compliance (Category: Quality Risk)
+# Qualitative Analysis for Security & Compliance
+# Category: Quality & Risk Management
 
-This document is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Security Compliance (within the Quality Risk category). The analysis preserves the research team's thematic structure and codes, integrates representative participant quotes, and draws practical implications for AI tool design. I synthesized the coded descriptions and quotes to highlight developers' desired AI capabilities, explicit limits, cross-cutting tensions, outliers, and concrete design guardrails.
+This document is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Security & Compliance (Quality & Risk Management). The analysis preserves the research team's thematic structure and codes, integrates representative participant quotes, and draws practical implications for AI tool design. I synthesized the coded descriptions and quotes to highlight developers' desired AI capabilities, explicit limits, cross-cutting tensions, outliers, and concrete design guardrails.
 
 ---
 

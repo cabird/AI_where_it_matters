@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Customer Support (Category: Infrastructure Operations)
+# Qualitative Analysis for Customer Support
+# Category: Infrastructure Operations
 
-This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Customer Support within Infrastructure Operations. I preserved the research team's thematic structure and codes, summarized participant quotes, and analyzed patterns and implications. The approach was to integrate each code's description and representative quotes into coherent narratives, identify tensions across themes, and surface actionable design guidance for AI tools in this domain.
+This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Customer Support (Infrastructure Operations). I preserved the research team's thematic structure and codes, summarized participant quotes, and analyzed patterns and implications. The approach was to integrate each code's description and representative quotes into coherent narratives, identify tensions across themes, and surface actionable design guidance for AI tools in this domain.
 
 ---
 

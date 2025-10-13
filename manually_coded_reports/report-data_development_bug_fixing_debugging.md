@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Bug Fixing Debugging (Category: Development)
+# Qualitative Analysis for Bug Fixing/Debugging
+# Category: Development
 
-This report is an AI-generated synthesis of manually coded survey responses about AI usage in Bug Fixing Debugging within Development. I preserved the research team's thematic structure and codes, integrated representative participant quotes, and analyzed patterns, tensions, and design implications. The approach was to synthesize code descriptions and participant excerpts into coherent narratives that highlight where developers want AI support, where they resist it, and what design guardrails are necessary.
+This report is an AI-generated synthesis of manually coded survey responses about AI usage in Bug Fixing/Debugging (Development). I preserved the research team's thematic structure and codes, integrated representative participant quotes, and analyzed patterns, tensions, and design implications. The approach was to synthesize code descriptions and participant excerpts into coherent narratives that highlight where developers want AI support, where they resist it, and what design guardrails are necessary.
 
 ---
 

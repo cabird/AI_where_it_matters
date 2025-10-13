@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Documentation (Category: Meta Work)
+# Qualitative Analysis for Documentation
+# Category: Meta-Work
 
-This document is an AI-generated synthesis of manually coded survey responses about AI usage in Documentation within the Meta Work category. I synthesized the human-coded themes and quotes, preserved the research team’s thematic structure and code labels, and produced integrated narratives, patterns, and design implications based on the provided excerpts.
+This document is an AI-generated synthesis of manually coded survey responses about AI usage in Documentation (Meta-Work). I synthesized the human-coded themes and quotes, preserved the research team’s thematic structure and code labels, and produced integrated narratives, patterns, and design implications based on the provided excerpts.
 
 ---
 

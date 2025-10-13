@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Requirements Gathering & Analysis (Category: Design & Planning)
+# Qualitative Analysis for Requirements Engineering
+# Category: Design & Planning
 
-This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Requirements Gathering & Analysis for Design & Planning. I preserve the research team’s original codes and quotes, merge highly overlapping items into fewer reportable themes, and add analytical commentary on patterns, tensions, and implications for tool design.
+This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Requirements Engineering (Design & Planning). I preserve the research team’s original codes and quotes, merge highly overlapping items into fewer reportable themes, and add analytical commentary on patterns, tensions, and implications for tool design.
 
 ---
 

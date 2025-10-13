@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Infrastructure Monitoring Alerts (Category: Infrastructure Operations)
+# Qualitative Analysis for Infrastructure Monitoring & Alerts
+# Category: Infrastructure Operations
 
-This report is an AI-generated synthesis of manually coded survey responses about AI use in Infrastructure Monitoring Alerts. I preserved the research team's themes, codes, and descriptions and integrated participant quotes to produce coherent narratives. The analysis highlights where developers want AI to assist, where they resist AI involvement, cross-cutting patterns and tensions, outliers, and concrete implications for AI tool design.
+This report is an AI-generated synthesis of manually coded survey responses about AI use in Infrastructure Monitoring & Alerts (Infrastructure Operations). I preserved the research team's themes, codes, and descriptions and integrated participant quotes to produce coherent narratives. The analysis highlights where developers want AI to assist, where they resist AI involvement, cross-cutting patterns and tensions, outliers, and concrete implications for AI tool design.
 
 ---
 

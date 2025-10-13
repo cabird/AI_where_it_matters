@@ -1,4 +1,5 @@
-# Report of Qualitative Analysis for Performance Optimization (Category: Development)
+# Qualitative Analysis for Performance Optimization
+# Category: Development
 
 This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Performance Optimization (Development). I preserved the research team's thematic structure, integrated provided code descriptions, and analyzed patterns and tensions across responses. The analysis draws on representative participant quotes to illustrate motivations, boundaries, and concerns developers have about AI in performance work.
 

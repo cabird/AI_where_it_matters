@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Learning New Technologies (Category: Meta Work)
+# Qualitative Analysis for Learning
+# Category: Meta-Work
 
-This report is an AI-generated synthesis of manually coded survey responses about AI usage for "Learning New Technologies" within the Meta Work category. I preserved the research team’s themes, codes, and descriptions and synthesized participant quotes and context into a coherent analysis. The approach was to integrate each manually coded theme with representative participant language, surface tensions across themes, and translate findings into actionable design implications for AI tools supporting developer learning.
+This report is an AI-generated synthesis of manually coded survey responses about AI usage for Learning (Meta-Work). I preserved the research team’s themes, codes, and descriptions and synthesized participant quotes and context into a coherent analysis. The approach was to integrate each manually coded theme with representative participant language, surface tensions across themes, and translate findings into actionable design implications for AI tools supporting developer learning.
 
 ---
 

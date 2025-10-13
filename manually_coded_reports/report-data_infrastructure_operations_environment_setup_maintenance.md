@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Environment Setup Maintenance (Category: Infrastructure Operations)
+# Qualitative Analysis for Environment Setup & Maintenance
+# Category: Infrastructure Operations
 
-This document is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Environment Setup Maintenance within Infrastructure Operations. I preserved the research team's thematic structure and codes, integrated participant quotes, and analyzed patterns and implications to produce actionable insights for AI tool design. The analysis draws directly on the provided codes, code descriptions, and quote excerpts to maintain fidelity to the original manual coding.
+This document is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Environment Setup & Maintenance (Infrastructure Operations). I preserved the research team's thematic structure and codes, integrated participant quotes, and analyzed patterns and implications to produce actionable insights for AI tool design. The analysis draws directly on the provided codes, code descriptions, and quote excerpts to maintain fidelity to the original manual coding.
 
 ---
 

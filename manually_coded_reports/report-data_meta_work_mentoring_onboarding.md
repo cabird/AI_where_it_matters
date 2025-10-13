@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Mentoring Onboarding (Category: Meta Work)
+# Qualitative Analysis for Mentoring & Onboarding
+# Category: Meta Work
 
-This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Mentoring Onboarding within the Meta Work category. It preserves the research team's thematic structure and codes, and integrates representative participant quotes to synthesize motivations, tensions, and design implications. The analysis draws on the provided codes and descriptions, identifying patterns, edge cases, and practical recommendations for AI tool design.
+This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Mentoring & Onboarding (Meta-Work). It preserves the research team's thematic structure and codes, and integrates representative participant quotes to synthesize motivations, tensions, and design implications. The analysis draws on the provided codes and descriptions, identifying patterns, edge cases, and practical recommendations for AI tool design.
 
 ---
 

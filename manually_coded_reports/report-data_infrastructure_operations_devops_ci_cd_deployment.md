@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Devops Ci Cd Deployment (Category: Infrastructure Operations)
+# Qualitative Analysis for DevOps(CI/CD)
+# Category: Infrastructure Operations
 
-This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Devops CI/CD deployment within Infrastructure Operations. The analysis preserves the research team's thematic structure and codes, integrates participant quotes, and draws patterns and design implications from the coded data. My approach was to group and synthesize the coded excerpts under each theme, highlight tensions between desired and prohibited AI uses, and produce actionable guidance for AI tool designers working in CI/CD and deployment contexts.
+This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in DevOps(CI/CD) (Infrastructure Operations). The analysis preserves the research team's thematic structure and codes, integrates participant quotes, and draws patterns and design implications from the coded data. My approach was to group and synthesize the coded excerpts under each theme, highlight tensions between desired and prohibited AI uses, and produce actionable guidance for AI tool designers working in CI/CD and deployment contexts.
 
 ---
 

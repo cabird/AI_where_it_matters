@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Coding Programming (Category: Development)
+# Qualitative Analysis for Coding/Programming
+# Category: Development
 
-This report is an AI-generated synthesis of manually coded survey responses from developers about AI usage in Coding Programming (Development). I preserved the research team's themes, codes, and code descriptions and integrated representative participant quotes to build coherent narratives. Analysis highlights patterns, tensions, and practical design implications for AI tools aimed at developers.
+This report is an AI-generated synthesis of manually coded survey responses from developers about AI usage in Coding/Programming (Development). I preserved the research team's themes, codes, and code descriptions and integrated representative participant quotes to build coherent narratives. Analysis highlights patterns, tensions, and practical design implications for AI tools aimed at developers.
 
 ---
 

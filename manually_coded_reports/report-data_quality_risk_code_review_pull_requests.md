@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Code Review Pull Requests (Category: Quality Risk)
+# Qualitative Analysis for Code Review/Pull Requests
+# Category: Quality & Risk Management
 
-This document is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Code Review Pull Requests within the Quality Risk category. I preserved the research team’s theme and code labels, integrated participant quotes, and analyzed patterns and tensions to produce actionable design implications for AI tools in this space.
+This document is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Code Review/Pull Requests (Quality & Risk Management). I preserved the research team’s theme and code labels, integrated participant quotes, and analyzed patterns and tensions to produce actionable design implications for AI tools in this space.
 
 ---
 

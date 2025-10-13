@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Research Brainstorming (Category: Meta Work)
+# Qualitative Analysis for Research & Brainstorming
+# Category: Meta Work
 
-This document is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Research Brainstorming within Meta Work. The analysis preserves the research team's thematic structure and descriptions, weaves participant quotes into coherent narratives, identifies patterns and tensions across themes, and offers design implications grounded in the coded data.
+This document is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Research & Brainstorming (Meta-Work). The analysis preserves the research team's thematic structure and descriptions, weaves participant quotes into coherent narratives, identifies patterns and tensions across themes, and offers design implications grounded in the coded data.
 
 ---
 

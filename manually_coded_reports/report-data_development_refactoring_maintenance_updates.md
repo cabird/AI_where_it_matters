@@ -1,6 +1,7 @@
-# Report of Qualitative Analysis for Refactoring Maintenance Updates (Category: Development)
+# Qualitative Analysis for Refactoring & Maintenance/Updates
+# Category: Development
 
-This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Refactoring Maintenance Updates. The analysis preserves the human-coded themes and codes, integrates representative participant quotes, and draws analytic insights about patterns, tensions, and implications for AI tool design. The synthesis approach prioritized faithful representation of researchers' descriptions and clustered participant sentiments to highlight motivations, boundaries, and design-relevant behaviors.
+This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Refactoring & Maintenance/Updates (Development). The analysis preserves the human-coded themes and codes, integrates representative participant quotes, and draws analytic insights about patterns, tensions, and implications for AI tool design. The synthesis approach prioritized faithful representation of researchers' descriptions and clustered participant sentiments to highlight motivations, boundaries, and design-relevant behaviors.
 
 ---
 
