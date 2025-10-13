@@ -22,6 +22,16 @@ function App() {
         setReportLoading(true);
         setReportModalOpen(true);
 
+        // Track report click in Google Analytics
+        if (window.gtag) {
+            window.gtag('event', 'report_view', {
+                'event_category': 'Report',
+                'event_label': taskData.task,
+                'task_category': taskData.category,
+                'task_full_name': taskData.fullName
+            });
+        }
+
         // Load manual report only
         fetch(taskData.manualReportPath)
             .then(response => {
@@ -61,6 +71,14 @@ function App() {
     // Handle About button click
     const handleAboutClick = () => {
         setAboutModalOpen(true);
+
+        // Track about page view in Google Analytics
+        if (window.gtag) {
+            window.gtag('event', 'about_view', {
+                'event_category': 'Navigation',
+                'event_label': 'About Page'
+            });
+        }
     };
 
     // Close modals and return to visualization

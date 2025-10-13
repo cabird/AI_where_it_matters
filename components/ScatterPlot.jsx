@@ -280,7 +280,16 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
     return (
       <div style={{ width: '100%', padding: '0 20px' }}>
         <button
-          onClick={() => setShowMobileChart(true)}
+          onClick={() => {
+            setShowMobileChart(true);
+            // Track mobile chart view in Google Analytics
+            if (window.gtag) {
+              window.gtag('event', 'mobile_chart_open', {
+                'event_category': 'Chart',
+                'event_label': 'Mobile Chart View'
+              });
+            }
+          }}
           style={{
             width: '100%',
             padding: '40px 20px',
