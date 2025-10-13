@@ -6,6 +6,7 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
   const [activePayload, setActivePayload] = useState(null);
   const [activeCoordinate, setActiveCoordinate] = useState(null);
   const [isInteractionLocked, setIsInteractionLocked] = useState(false);
+  const [chartSize, setChartSize] = useState(900);
 
   // Check if Recharts is loaded
   if (!window.Recharts) {
@@ -14,8 +15,26 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
 
   const { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine, ReferenceDot, Label, ResponsiveContainer, Symbols } = window.Recharts;
 
-  // Fixed size
-  const chartSize = 900;
+  // Responsive chart size based on viewport
+  useEffect(() => {
+    const updateSize = () => {
+      const width = window.innerWidth;
+      if (width < 768) {
+        // Mobile: chart fits within viewport with padding
+        setChartSize(Math.min(width - 40, 600));
+      } else if (width < 1024) {
+        // Tablet
+        setChartSize(Math.min(width - 80, 700));
+      } else {
+        // Desktop
+        setChartSize(900);
+      }
+    };
+
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
 
   // Category colors - professional, aesthetic-friendly
   const categoryColors = {
@@ -154,7 +173,7 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
           x={cx + offset.dx}
           y={cy + offset.dy}
           fill="#1a202c"
-          fontSize="12"
+          fontSize={labelFontSize}
           textAnchor="middle"
           dominantBaseline="middle"
           style={{ pointerEvents: 'none' }}
@@ -207,26 +226,35 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
     }
   };
 
+  // Responsive font sizes and positioning
+  const isMobile = chartSize < 650;
+  const isTablet = chartSize >= 650 && chartSize < 800;
+  const quadrantFontSize = isMobile ? 16 : isTablet ? 20 : 28;
+  const labelFontSize = isMobile ? 10 : 12;
+  const legendTop = isMobile ? '10px' : '40px';
+  const legendLeft = isMobile ? '10px' : '100px';
+  const legendFontSize = isMobile ? '11px' : '13px';
+
   return (
-    <div ref={containerRef} style={{ width: chartSize + 'px', height: chartSize + 'px', background: 'white', borderRadius: '12px', padding: '20px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 30px rgba(0, 0, 0, 0.1)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div ref={containerRef} style={{ width: chartSize + 'px', height: chartSize + 'px', background: 'white', borderRadius: '12px', padding: isMobile ? '10px' : '20px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.07), 0 10px 30px rgba(0, 0, 0, 0.1)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       {/* Custom Legend */}
       <div style={{
         position: 'absolute',
-        top: '40px',
-        left: '100px',
+        top: legendTop,
+        left: legendLeft,
         background: 'rgba(255, 255, 255, 0.95)',
         border: '1px solid #e0e0e0',
         borderRadius: '6px',
-        padding: '10px 14px',
+        padding: isMobile ? '6px 8px' : '10px 14px',
         boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
         zIndex: 10
       }}>
         {categories.map((cat, idx) => (
-          <div key={cat} style={{ display: 'flex', alignItems: 'center', marginBottom: idx < categories.length - 1 ? '8px' : '0' }}>
-            <svg width="16" height="16" style={{ marginRight: '8px', flexShrink: 0 }}>
-              {renderLegendShape(categoryShapes[cat], categoryColors[cat], 12)}
+          <div key={cat} style={{ display: 'flex', alignItems: 'center', marginBottom: idx < categories.length - 1 ? (isMobile ? '4px' : '8px') : '0' }}>
+            <svg width={isMobile ? '12' : '16'} height={isMobile ? '12' : '16'} style={{ marginRight: isMobile ? '4px' : '8px', flexShrink: 0 }}>
+              {renderLegendShape(categoryShapes[cat], categoryColors[cat], isMobile ? 10 : 12)}
             </svg>
-            <span style={{ fontSize: '13px', color: '#4a5568', whiteSpace: 'nowrap' }}>{cat}</span>
+            <span style={{ fontSize: legendFontSize, color: '#4a5568', whiteSpace: 'nowrap' }}>{cat}</span>
           </div>
         ))}
       </div>
@@ -288,7 +316,7 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
             value: "SUSTAIN",
             position: "top",
             fill: "#6b7280",
-            fontSize: 28,
+            fontSize: quadrantFontSize,
             fontWeight: 600,
             opacity: 0.4,
             textAnchor: "bottom",
@@ -303,7 +331,7 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
             value: "IMPROVE",
             position: "top",
             fill: "#6b7280",
-            fontSize: 28,
+            fontSize: quadrantFontSize,
             fontWeight: 600,
             opacity: 0.4,
             textAnchor: "bottom",
@@ -318,7 +346,7 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
             value: "DE-PRIORITIZE",
             position: "top",
             fill: "#6b7280",
-            fontSize: 28,
+            fontSize: quadrantFontSize,
             fontWeight: 600,
             opacity: 0.4,
             textAnchor: "bottom",
@@ -333,7 +361,7 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
             value: "BUILD",
             position: "top",
             fill: "#6b7280",
-            fontSize: 28,
+            fontSize: quadrantFontSize,
             fontWeight: 600,
             opacity: 0.4,
             textAnchor: "bottom",
