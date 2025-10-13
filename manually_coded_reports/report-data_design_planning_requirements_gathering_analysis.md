@@ -10,9 +10,9 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 #### Theme: Automate requirements gathering and analysis
 
-Participants consistently envision AI helping with the heavy lift of capturing, consolidating, and refining requirements, especially across **heterogeneous sources** and long project timelines. Developers want AI to “be part of the meetings,” summarize discussions, and **keep track of details** that risk being dropped when documentation lags real-time conversation. Several respondents emphasize that iteration with users is unavoidable; they want AI to **facilitate** that iteration (e.g., surveys, scheduling, transcript synthesis) while keeping human validation in the loop.
+Participants consistently envision AI helping with the heavy lift of capturing, consolidating, and refining requirements, especially across heterogeneous sources and long project timelines. Developers want AI to "be part of the meetings," summarize discussions, and keep track of details that risk being dropped when documentation lags real-time conversation. Several respondents emphasize that iteration with users is unavoidable; they want AI to facilitate that iteration (e.g., surveys, scheduling, transcript synthesis) while keeping human validation in the loop.
 
-This theme also includes a strong desire for **context awareness**—AI should understand the project’s working style and org-specific conventions to avoid generic advice. Beyond capture, developers want AI to reconcile differences, **identify ambiguities and inconsistencies**, and produce concise, consumable summaries that reduce cognitive load.
+This theme also includes a strong desire for context awareness—AI should understand the project's working style and org-specific conventions to avoid generic advice. Beyond capture, developers want AI to reconcile differences, identify ambiguities and inconsistencies, and produce concise, consumable summaries that reduce cognitive load.
 
 **Sub-themes identified:**
 
@@ -34,9 +34,9 @@ This theme also includes a strong desire for **context awareness**—AI should u
 
 #### Theme: Automate workflow artifacts generation (features, tasks, user stories) from requirements
 
-Developers want AI to transform vetted requirements into **ready-to-use workflow assets**—features, user stories, and task breakdowns—while preserving accuracy and traceability back to stakeholder intent. The goal is to compress the handoff between requirements analysis and execution by reducing administrative overhead and ensuring nothing gets lost in translation.
+Developers want AI to transform vetted requirements into ready-to-use workflow assets—features, user stories, and task breakdowns—while preserving accuracy and traceability back to stakeholder intent. The goal is to compress the handoff between requirements analysis and execution by reducing administrative overhead and ensuring nothing gets lost in translation.
 
-This theme extends to **documentation**: participants want AI to generate user-facing documentation aligned with the captured requirements and the organization’s style, again with human oversight for correctness and tone. The expected outcome is faster planning cycles and more time for higher-value technical work.
+This theme extends to documentation: participants want AI to generate user-facing documentation aligned with the captured requirements and the organization's style, again with human oversight for correctness and tone. The expected outcome is faster planning cycles and more time for higher-value technical work.
 
 **Sub-themes identified:**
 
@@ -53,9 +53,9 @@ This theme extends to **documentation**: participants want AI to generate user-f
 
 #### Theme: Accurate and contextual system/architecture design space exploration (trade-offs, feasibility)
 
-Respondents want AI to analyze **design alternatives** and expose **trade-offs** across cost, performance, and feasibility—especially for platform choices in Design & Planning (e.g., managed services vs. self-hosted). They also want guardrail-aware suggestions for **non-functional requirements** (scalability, reliability), **risk assessment**, calling out **dependencies**, and **reusability** (e.g., pointing to standard libraries to reduce redundant code and security risk). The desired outcome is **decision acceleration**—not AI choosing for them, but helping teams see implications sooner.
+Respondents want AI to analyze design alternatives and expose trade-offs across cost, performance, and feasibility—especially for platform choices in Design & Planning (e.g., managed services vs. self-hosted). They also want guardrail-aware suggestions for non-functional requirements (scalability, reliability), risk assessment, calling out dependencies, and reusability (e.g., pointing to standard libraries to reduce redundant code and security risk). The desired outcome is decision acceleration—not AI choosing for them, but helping teams see implications sooner.
 
-A complementary need is **requirement breakdown**: using AI to decompose top-level goals into evaluable options and highlight pros/cons with project-specific context. This demand is strongest when choices have large cost or operational impact and when institutional knowledge (e.g., “use the standard library”) can reduce errors.
+A complementary need is requirement breakdown: using AI to decompose top-level goals into evaluable options and highlight pros/cons with project-specific context. This demand is strongest when choices have large cost or operational impact and when institutional knowledge (e.g., "use the standard library") can reduce errors.
 
 **Sub-themes identified:**
 
@@ -74,9 +74,9 @@ A complementary need is **requirement breakdown**: using AI to decompose top-lev
 
 #### Theme: Automate context-aware design generation from gathered requirements
 
-While several respondents caution that AI design isn’t yet “a strong forte,” many still **want AI to generate draft designs**—**but only when grounded** in validated requirements and **org-specific constraints** (e.g., mandated UI component systems). Developers expect AI to propose **design and architecture** aligned to the team’s coding practices and to continuously reflect updates in requirements.
+While several respondents caution that AI design isn't yet "a strong forte," many still want AI to generate draft designs—but only when grounded in validated requirements and org-specific constraints (e.g., mandated UI component systems). Developers expect AI to propose design and architecture aligned to the team's coding practices and to continuously reflect updates in requirements.
 
-This theme ties design generation to **validation** against requirements: beyond creating designs, AI should help confirm that proposed solutions **actually satisfy** the stated requirements, reducing the risk of mismatch.
+This theme ties design generation to validation against requirements: beyond creating designs, AI should help confirm that proposed solutions actually satisfy the stated requirements, reducing the risk of mismatch.
 
 **Sub-themes identified:**
 
@@ -96,7 +96,7 @@ This theme ties design generation to **validation** against requirements: beyond
 
 #### Theme: Validate gathered requirements (completeness and accuracy/correctness) and pinpoint gaps
 
-Many developers see AI’s value in **quality control**: ensuring captured requirements are **complete**, **accurate/correct**, and **free of omissions**. They specifically want help **pinpointing missing requirements or design gaps** and surfacing **well-known missing use cases** (e.g., security concerns). This completes the loop from capture → analysis → **validation**, creating higher confidence before committing to design or implementation.
+Many developers see AI's value in quality control: ensuring captured requirements are complete, accurate/correct, and free of omissions. They specifically want help pinpointing missing requirements or design gaps and surfacing well-known missing use cases (e.g., security concerns). This completes the loop from capture → analysis → validation, creating higher confidence before committing to design or implementation.
 
 **Sub-themes identified:**
 
@@ -115,7 +115,7 @@ Many developers see AI’s value in **quality control**: ensuring captured requi
 
 #### Theme: Automatic feature prioritization and insight generation
 
-Participants want help **prioritizing features** using data-informed analysis and synthesizing large volumes of relevant material into **actionable insights**. The focus is on accelerating decision-making by connecting the dots across requirements, telemetry, and historical artifacts while filtering noise. Some respondents also highlight **understanding the codebase and internal context** as a precursor to higher-quality prioritization.
+Participants want help prioritizing features using data-informed analysis and synthesizing large volumes of relevant material into actionable insights. The focus is on accelerating decision-making by connecting the dots across requirements, telemetry, and historical artifacts while filtering noise. Some respondents also highlight understanding the codebase and internal context as a precursor to higher-quality prioritization.
 
 **Sub-themes identified:**
 
@@ -135,9 +135,9 @@ Participants want help **prioritizing features** using data-informed analysis an
 
 #### Theme: Requirements gathering (human-driven) and accuracy-sensitive work
 
-A strong contingent asserts that **requirements gathering is fundamentally human**, rooted in person-to-person communication, empathy, and shared understanding. They fear losing essential nuance if AI intermediates too much, and they want **direct involvement** to ensure they fully comprehend customer needs and remain accountable for outcomes. Relatedly, some developers are wary of relying on AI where **accuracy is paramount**, noting current tools do not inspire sufficient confidence.
+A strong contingent asserts that requirements gathering is fundamentally human, rooted in person-to-person communication, empathy, and shared understanding. They fear losing essential nuance if AI intermediates too much, and they want direct involvement to ensure they fully comprehend customer needs and remain accountable for outcomes. Relatedly, some developers are wary of relying on AI where accuracy is paramount, noting current tools do not inspire sufficient confidence.
 
-These concerns are not outright rejections of AI, but they set **clear boundaries**: AI may assist with organization and drafting once humans understand the ask, but it **shouldn’t originate** requirements or be depended on for high-stakes correctness without rigorous oversight.
+These concerns are not outright rejections of AI, but they set clear boundaries: AI may assist with organization and drafting once humans understand the ask, but it shouldn't originate requirements or be depended on for high-stakes correctness without rigorous oversight.
 
 **Sub-themes identified:**
 
@@ -156,9 +156,9 @@ These concerns are not outright rejections of AI, but they set **clear boundarie
 
 #### Theme: Full automation (prefer human-AI hybrid) and sole decision making
 
-Several respondents reject **full autonomy** in Requirements and Design. They prefer **human-AI hybrid** workflows where AI supports exploration, synthesis, and documentation, but humans **retain judgment and make decisions**. There’s discomfort with AI **assuming requirements** or **choosing technologies** without explicit input; some note that trade-offs involve context beyond AI’s reach.
+Several respondents reject full autonomy in Requirements and Design. They prefer human-AI hybrid workflows where AI supports exploration, synthesis, and documentation, but humans retain judgment and make decisions. There's discomfort with AI assuming requirements or choosing technologies without explicit input; some note that trade-offs involve context beyond AI's reach.
 
-The boundary is explicit: **assist, don’t decide**. Participants want AI to **differentiate between guess and simulation**, offer options with clear rationale, and prompt users for preferences rather than silently selecting paths.
+The boundary is explicit: assist, don't decide. Participants want AI to differentiate between guess and simulation, offer options with clear rationale, and prompt users for preferences rather than silently selecting paths.
 
 **Sub-themes identified:**
 
@@ -175,7 +175,7 @@ The boundary is explicit: **assist, don’t decide**. Participants want AI to **
 
 #### Theme: Sensitive data handling
 
-Some developers draw a clear line around **sensitive data**: if the task requires handling confidential or regulated information, they would **not** want AI to process it—or they would require strong assurances on privacy, security, and data governance. This is especially relevant to Design & Planning, where requirements often embed production details.
+Some developers draw a clear line around sensitive data: if the task requires handling confidential or regulated information, they would not want AI to process it—or they would require strong assurances on privacy, security, and data governance. This is especially relevant to Design & Planning, where requirements often embed production details.
 
 **Sub-themes identified:**
 
@@ -189,31 +189,31 @@ Some developers draw a clear line around **sensitive data**: if the task require
 
 ## 2) Cross-Cutting Patterns
 
-* **Complementary desires and concerns**: Many “want AI” themes seek automation of capture, consolidation, and analysis, while the “not want AI” themes warn against **autonomy** in **requirements origination** and **final decisions**. The synthesis is a **copilot** posture: AI accelerates and augments; humans validate and decide.
+* **Complementary desires and concerns**: Many "want AI" themes seek automation of capture, consolidation, and analysis, while the "not want AI" themes warn against autonomy in requirements origination and final decisions. The synthesis is a copilot posture: AI accelerates and augments; humans validate and decide.
 
-* **Conditional acceptance**: Acceptance hinges on **context awareness**, **accuracy**, and **traceability**. Developers welcome AI that respects org conventions (e.g., mandated component libraries), cites sources, and connects decisions to requirements. They resist tools that hallucinate, assume unstated constraints, or hide uncertainty.
+* **Conditional acceptance**: Acceptance hinges on context awareness, accuracy, and traceability. Developers welcome AI that respects org conventions (e.g., mandated component libraries), cites sources, and connects decisions to requirements. They resist tools that hallucinate, assume unstated constraints, or hide uncertainty.
 
-* **Task-specific nuances**: Requirements in Design & Planning often involve **platform choices**, **operational constraints**, and **non-functional requirements**. Developers especially want help comparing **managed vs. self-hosted** options, calling out **dependencies**, and steering toward **standard libraries**—all to minimize cost, risk, and redundancy.
+* **Task-specific nuances**: Requirements in Design & Planning often involve platform choices, operational constraints, and non-functional requirements. Developers especially want help comparing managed vs. self-hosted options, calling out dependencies, and steering toward standard libraries—all to minimize cost, risk, and redundancy.
 
-* **Trust and control dynamics**: Trust is built when AI **surfaces pros/cons**, **exposes uncertainty**, and **invites user choice**. It erodes when AI **chooses for users**, **assumes requirements**, or processes **sensitive data** without clear governance. The preferred center of gravity is **human oversight with AI acceleration**.
+* **Trust and control dynamics**: Trust is built when AI surfaces pros/cons, exposes uncertainty, and invites user choice. It erodes when AI chooses for users, assumes requirements, or processes sensitive data without clear governance. The preferred center of gravity is human oversight with AI acceleration.
 
 ---
 
 ## 3) Outliers and Edge Cases
 
-* **Skeptical minority**: A few respondents express **blanket skepticism** about AI’s current ability to perform these tasks effectively (e.g., *“absolutely no promise”*). (Participant 357)
+* **Skeptical minority**: A few respondents express blanket skepticism about AI's current ability to perform these tasks effectively (e.g., *"absolutely no promise"*). (Participant 357)
 
-* **Optimistic minority**: Conversely, a small group is **broadly positive**, indicating AI can contribute “in any capacity” if it helps them be more effective. (Participants 369, 387)
+* **Optimistic minority**: Conversely, a small group is broadly positive, indicating AI can contribute "in any capacity" if it helps them be more effective. (Participants 369, 387)
 
-* **Ambivalence within individuals**: Some want robust AI support in design exploration and documentation **but reject** AI as an originator of requirements or a final decision maker. (Participants 70, 371)
+* **Ambivalence within individuals**: Some want robust AI support in design exploration and documentation but reject AI as an originator of requirements or a final decision maker. (Participants 70, 371)
 
-* **Temporal aspirations**: A few frame design generation as a **future** capability—desired but **not yet** reliable—signaling openness to progress with ongoing caution. (Participant 256)
+* **Temporal aspirations**: A few frame design generation as a future capability—desired but not yet reliable—signaling openness to progress with ongoing caution. (Participant 256)
 
 ---
 
 ## 4) Implications for AI Tool Design
 
-AI for Requirements Gathering & Analysis in Design & Planning should **capture and organize** multi-source input, **analyze trade-offs** with NFRs and dependencies in mind, **generate downstream artifacts**, and **validate** completeness and correctness—**without** taking over human judgment, originating unstated requirements, or mishandling sensitive data. The winning pattern is **assistive, contextual, transparent, and controllable**.
+AI for Requirements Gathering & Analysis in Design & Planning should capture and organize multi-source input, analyze trade-offs with NFRs and dependencies in mind, generate downstream artifacts, and validate completeness and correctness—without taking over human judgment, originating unstated requirements, or mishandling sensitive data. The winning pattern is assistive, contextual, transparent, and controllable.
 
 #### Key "Must Haves" (features designers should prioritize)
 
@@ -268,10 +268,10 @@ AI for Requirements Gathering & Analysis in Design & Planning should **capture a
 
 ## Executive Summary
 
-* Developers **want AI** to capture, consolidate, and **synthesize requirements** from many sources, keep details from being lost, and support iterative clarification.
-* Developers **don’t want AI** to originate requirements or make unilateral decisions; **human-AI hybrid** workflows are preferred.
-* Tools must provide **context-aware design exploration** (NFRs, dependencies, reuse) and generate **artifacts** (stories/tasks/docs) from **vetted** requirements.
+* Developers **want AI** to capture, consolidate, and synthesize requirements from many sources, keep details from being lost, and support iterative clarification.
+* Developers **don't want AI** to originate requirements or make unilateral decisions; **human-AI hybrid** workflows are preferred.
+* Tools must provide **context-aware design exploration** (NFRs, dependencies, reuse) and generate **artifacts** (stories/tasks/docs) from vetted requirements.
 * **Validation and gap detection** are critical: AI should check completeness, correctness, and missing security/use cases.
-* **Trust hinges on transparency**: show evidence, highlight uncertainty, align to org conventions, and respect **sensitive data** constraints.
+* **Trust hinges on transparency**: show evidence, highlight uncertainty, align to org conventions, and respect sensitive data constraints.
 * **Design for assistive autonomy**: accelerate decisions without replacing human judgment; make it easy to confirm, override, and trace AI outputs.
 
