@@ -141,7 +141,7 @@ function App() {
             <window.Modal
                 isOpen={aboutModalOpen}
                 onClose={handleCloseAboutModal}
-                title="About This Dashboard"
+                title="About This Data Explorer"
             >
                 <window.WelcomePage />
             </window.Modal>

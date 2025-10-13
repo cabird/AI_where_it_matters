@@ -1,10 +1,10 @@
 window.WelcomePage = function WelcomePage() {
     return (
         <div className="welcome-page">
-            <h1>Developer AI Preferences Research Dashboard</h1>
+            <h1>Developer AI Preferences Data Explorer</h1>
 
             <p>
-                This dashboard presents qualitative analysis of developer preferences for AI support
+                This data explorer presents qualitative analysis of developer preferences for AI support
                 across all aspects of their daily work. The findings are based on a
                 research study involving 860 professional software developers.
             </p>
@@ -22,9 +22,9 @@ window.WelcomePage = function WelcomePage() {
                 <li><strong>Meta Work</strong> - Documentation, learning, communication, and mentoring</li>
             </ul>
 
-            <h2>How to Use This Dashboard</h2>
+            <h2>How to Use This Data Explorer</h2>
             <p>
-                This dashboard features an interactive visualization showing the relationship between
+                This data explorer features an interactive visualization showing the relationship between
                 developers' openness to AI support and their current AI usage across all 20 tasks.
             </p>
             <p><strong>Explore the visualization:</strong> Hover over data points to see task details, or click any point to read the full qualitative report for that task
