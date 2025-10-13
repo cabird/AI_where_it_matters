@@ -825,3 +825,185 @@ body {
     max-width: 800px;
     margin: 0 auto;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    /* Visualization Page */
+    .visualization-page {
+        padding: 20px 10px;
+    }
+
+    .visualization-content {
+        padding: 30px 20px;
+        border-radius: 12px;
+    }
+
+    .page-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 20px;
+        border-radius: 15px;
+    }
+
+    .page-icon svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+        margin-bottom: 8px;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .page-authors {
+        font-size: 0.875rem;
+        margin-bottom: 30px;
+    }
+
+    .study-info {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        padding: 10px 0;
+        gap: 4px;
+    }
+
+    .info-label,
+    .info-value {
+        font-size: 14px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .paper-link,
+    .about-button {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 24px;
+        font-size: 13px;
+    }
+
+    .chart-instructions {
+        font-size: 0.875rem;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+    }
+
+    .visualization-chart-container {
+        padding: 10px 0 20px 0;
+        overflow-x: auto;
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+        padding: 10px;
+    }
+
+    .modal-container {
+        height: 95vh;
+        border-radius: 8px;
+    }
+
+    .modal-header {
+        padding: 16px 20px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+
+    .modal-category-badge {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .modal-content .report-content h1 {
+        font-size: 24px;
+    }
+
+    .modal-content .report-content h2 {
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .modal-content .report-content h3 {
+        font-size: 18px;
+        margin-top: 24px;
+    }
+
+    .modal-content .report-content p,
+    .modal-content .report-content li {
+        font-size: 14px;
+    }
+
+    /* Welcome Page */
+    .welcome-page {
+        padding: 30px 20px;
+    }
+
+    .welcome-page h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .welcome-page h2 {
+        font-size: 20px;
+        margin-top: 30px;
+        margin-bottom: 14px;
+    }
+
+    .welcome-page p,
+    .welcome-page li {
+        font-size: 14px;
+    }
+
+    /* Report Viewer */
+    .report-viewer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .report-content {
+        padding: 30px 20px;
+    }
+
+    .toc {
+        position: static;
+        max-height: none;
+    }
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .visualization-content {
+        padding: 50px 30px;
+    }
+
+    .page-title {
+        font-size: 2.25rem;
+    }
+
+    .visualization-chart-container {
+        overflow-x: auto;
+    }
+
+    .modal-content {
+        padding: 30px 40px;
+    }
+}
