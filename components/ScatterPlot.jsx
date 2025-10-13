@@ -304,7 +304,7 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
             <line x1="6" y1="20" x2="6" y2="14"/>
           </svg>
           <div>Tap to View Interactive Chart</div>
-          <div style={{ fontSize: '14px', fontWeight: '400', opacity: '0.9' }}>Zoom, pinch, and pan to explore</div>
+          <div style={{ fontSize: '14px', fontWeight: '400', opacity: '0.9' }}>Zoom, pinch, pan, and tap data points for reports</div>
         </button>
       </div>
     );
@@ -354,7 +354,7 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
           </button>
           <div>
             <div style={{ fontSize: '18px', fontWeight: '600', color: '#1a202c' }}>Interactive Chart</div>
-            <div style={{ fontSize: '12px', color: '#718096', marginTop: '4px' }}>Pinch to zoom in/out • Scroll to explore</div>
+            <div style={{ fontSize: '12px', color: '#718096', marginTop: '4px' }}>Pinch to zoom in/out • Scroll to explore • Tap on a data point to see an in-depth report</div>
           </div>
         </div>
 
