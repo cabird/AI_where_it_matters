@@ -1,6 +1,6 @@
 # Report of Qualitative Analysis for Requirements Gathering & Analysis (Category: Design & Planning)
 
-This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in **Requirements Gathering & Analysis** for **Design & Planning**. I preserve the research team’s original codes and quotes, merge highly overlapping items into fewer reportable themes, and add analytical commentary on patterns, tensions, and implications for tool design.
+This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Requirements Gathering & Analysis for Design & Planning. I preserve the research team’s original codes and quotes, merge highly overlapping items into fewer reportable themes, and add analytical commentary on patterns, tensions, and implications for tool design.
 
 ---
 
@@ -177,10 +177,6 @@ The boundary is explicit: assist, don't decide. Participants want AI to differen
 
 Some developers draw a clear line around sensitive data: if the task requires handling confidential or regulated information, they would not want AI to process it—or they would require strong assurances on privacy, security, and data governance. This is especially relevant to Design & Planning, where requirements often embed production details.
 
-**Sub-themes identified:**
-
-* **Sensitive data handling**: Preference to avoid or strictly control AI processing of sensitive information.
-
 **Representative quotes**:
 
 * *“Anything with sensitive data.”* (Participant 266)
@@ -268,10 +264,10 @@ AI for Requirements Gathering & Analysis in Design & Planning should capture and
 
 ## Executive Summary
 
-* Developers **want AI** to capture, consolidate, and synthesize requirements from many sources, keep details from being lost, and support iterative clarification.
-* Developers **don't want AI** to originate requirements or make unilateral decisions; **human-AI hybrid** workflows are preferred.
-* Tools must provide **context-aware design exploration** (NFRs, dependencies, reuse) and generate **artifacts** (stories/tasks/docs) from vetted requirements.
-* **Validation and gap detection** are critical: AI should check completeness, correctness, and missing security/use cases.
-* **Trust hinges on transparency**: show evidence, highlight uncertainty, align to org conventions, and respect sensitive data constraints.
-* **Design for assistive autonomy**: accelerate decisions without replacing human judgment; make it easy to confirm, override, and trace AI outputs.
+* Developers want AI to capture, consolidate, and synthesize requirements from many sources, keep details from being lost, and support iterative clarification.
+* Developers don't want AI to originate requirements or make unilateral decisions; human-AI hybrid workflows are preferred.
+* Tools must provide context-aware design exploration (NFRs, dependencies, reuse) and generate artifacts (stories/tasks/docs) from vetted requirements.
+* Validation and gap detection are critical: AI should check completeness, correctness, and missing security/use cases.
+* Trust hinges on transparency show evidence, highlight uncertainty, align to org conventions, and respect sensitive data constraints.
+* Design for assistive autonomy accelerate decisions without replacing human judgment; make it easy to confirm, override, and trace AI outputs.
 
