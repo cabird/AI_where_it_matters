@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 ---
 
+## Executive Summary
+
+- Developers broadly welcome AI for repetitive, verifiable tasks—boilerplate, unit tests, and background maintenance—to increase productivity.
+- They want repository- and cross-file-aware AI that can perform consistent multi-file changes and surface related code examples.
+- Trust is contingent: AI must provide explainable suggestions, provenance, and integrate with human code review; autonomous changes without review are unacceptable.
+- Security, architecture, and privacy-sensitive code are off-limits for unsupervised AI authorship; at best AI can assist in review or flag risks.
+- A key tension: developers want automation to save time but also want to preserve coding as a learning craft and keep final responsibility.
+- Recommendation: Build tools that automate routine work, provide repository-level understanding and traceable suggestions, and enforce guardrails that require human approval for high-risk or context-dependent changes.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -177,14 +189,3 @@ Developers want AI that meaningfully reduces routine work, understands whole rep
 - **Replacing Learning Opportunities**
   - Risk: Over-automation can erode developer skill growth and enjoyment.
   - Rationale: Preserve tasks that are core to learning and craftsmanship: "I want AI to stay out of learning." (Participant 145).
-
----
-
-## Executive Summary
-
-- Developers broadly welcome AI for repetitive, verifiable tasks—boilerplate, unit tests, and background maintenance—to increase productivity.
-- They want repository- and cross-file-aware AI that can perform consistent multi-file changes and surface related code examples.
-- Trust is contingent: AI must provide explainable suggestions, provenance, and integrate with human code review; autonomous changes without review are unacceptable.
-- Security, architecture, and privacy-sensitive code are off-limits for unsupervised AI authorship; at best AI can assist in review or flag risks.
-- A key tension: developers want automation to save time but also want to preserve coding as a learning craft and keep final responsibility.
-- Recommendation: Build tools that automate routine work, provide repository-level understanding and traceable suggestions, and enforce guardrails that require human approval for high-risk or context-dependent changes.

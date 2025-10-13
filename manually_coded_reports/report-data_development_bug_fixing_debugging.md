@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses abou
 
 ---
 
+## Executive Summary
+
+- Developers want AI to automate repetitive, low-cognitive debugging tasks (log parsing, templates, basic refactors) so they can focus on complex problem solving.
+- They want AI as a collaborative assistant that explains reasoning and asks clarifying questions, not as a fully autonomous fixer.
+- Critical design implications: prioritize context-awareness, explainability, CI/test integration, and human-in-the-loop controls.
+- Guardrails required: prevent autonomous security fixes, avoid overconfident/unexplained changes, and ensure context verification before applying fixes.
+- Tension: strong desire for efficiency gains coexists with distrust of current AI reliability and concern for skill erosion.
+- Recommendation: build AI tools that save time on rote work, integrate with repo and test metadata for context, surface confidence and provenance, and defer final actions to human owners.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -207,14 +219,3 @@ Developers want AI that reduces rote work, collaborates transparently, and under
 - **Do Not Remove Learning Opportunities (Enjoyment & Skill-building Preservation)**
   - Risk: Fully automated solutions can hinder skill development and reduce long-term team capability.
   - Rationale: Developers want AI to "enhance human engineer's learning ... not replace tasks" that build expertise. (Participant 16)
-
----
-
-## Executive Summary
-
-- Developers want AI to automate repetitive, low-cognitive debugging tasks (log parsing, templates, basic refactors) so they can focus on complex problem solving.
-- They want AI as a collaborative assistant that explains reasoning and asks clarifying questions, not as a fully autonomous fixer.
-- Critical design implications: prioritize context-awareness, explainability, CI/test integration, and human-in-the-loop controls.
-- Guardrails required: prevent autonomous security fixes, avoid overconfident/unexplained changes, and ensure context verification before applying fixes.
-- Tension: strong desire for efficiency gains coexists with distrust of current AI reliability and concern for skill erosion.
-- Recommendation: build AI tools that save time on rote work, integrate with repo and test metadata for context, surface confidence and provenance, and defer final actions to human owners.

@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 ---
 
+## Executive Summary
+
+* Developers want AI to capture, consolidate, and synthesize requirements from many sources, keep details from being lost, and support iterative clarification.
+* Developers don't want AI to originate requirements or make unilateral decisions; human-AI hybrid workflows are preferred.
+* Tools must provide context-aware design exploration (NFRs, dependencies, reuse) and generate artifacts (stories/tasks/docs) from vetted requirements.
+* Validation and gap detection are critical: AI should check completeness, correctness, and missing security/use cases.
+* Trust hinges on transparency: show evidence, highlight uncertainty, align to org conventions, and respect sensitive data constraints.
+* Design for assistive autonomy: accelerate decisions without replacing human judgment; make it easy to confirm, override, and trace AI outputs.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -260,15 +272,3 @@ AI for Requirements Gathering & Analysis in Design & Planning should capture and
 
   * Require human review for accuracy-critical outputs, with verification workflows. Rationale: *Accuracy is important*; *Technical correctness concerns*.
   * Example: Participants 330, 353.
-
----
-
-## Executive Summary
-
-* Developers want AI to capture, consolidate, and synthesize requirements from many sources, keep details from being lost, and support iterative clarification.
-* Developers don't want AI to originate requirements or make unilateral decisions; human-AI hybrid workflows are preferred.
-* Tools must provide context-aware design exploration (NFRs, dependencies, reuse) and generate artifacts (stories/tasks/docs) from vetted requirements.
-* Validation and gap detection are critical: AI should check completeness, correctness, and missing security/use cases.
-* Trust hinges on transparency: show evidence, highlight uncertainty, align to org conventions, and respect sensitive data constraints.
-* Design for assistive autonomy: accelerate decisions without replacing human judgment; make it easy to confirm, override, and trace AI outputs.
-

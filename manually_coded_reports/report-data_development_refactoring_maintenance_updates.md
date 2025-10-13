@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 ---
 
+## Executive Summary
+
+- Developers broadly welcome AI for repetitive, well-scoped refactoring and maintenance (package updates, boilerplate, style changes) to free time for higher-value work.
+- They want AI to reason across files and modules—propagating changes and understanding dependencies—while enforcing coding standards and generating tests where possible.
+- Strong resistance exists to autonomous, large-scale structural changes: engineers insist on human oversight, explicit approvals, and accountability.
+- Trust depends on verifiability: CI/test integration, transparent rationales, previews, and risk assessments are critical design requirements.
+- The key tension is between productivity gains from automation and risk control; designers should favor conservative, reviewable automation with configurable policies and explicit human-in-the-loop gates.
+- Recommendation: build AI refactoring tools that are test-aware, codebase-aware, standards-integrated, and that default to conservative, explainable suggestions requiring human approval for structural changes.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -158,14 +170,3 @@ Overall, the thematic synthesis indicates that AI tools for Refactoring Maintena
 - **Default Enabling of Large-scale Refactors**
   - Risk: Tools that default to enabling or suggesting major refactors without opt-in increase the chance of unwanted scope creep.
   - Rationale: Users want "interaction/consultation first" for substantial changes (Participant 39).
-
----
-
-## Executive Summary
-
-- Developers broadly welcome AI for repetitive, well-scoped refactoring and maintenance (package updates, boilerplate, style changes) to free time for higher-value work.
-- They want AI to reason across files and modules—propagating changes and understanding dependencies—while enforcing coding standards and generating tests where possible.
-- Strong resistance exists to autonomous, large-scale structural changes: engineers insist on human oversight, explicit approvals, and accountability.
-- Trust depends on verifiability: CI/test integration, transparent rationales, previews, and risk assessments are critical design requirements.
-- The key tension is between productivity gains from automation and risk control; designers should favor conservative, reviewable automation with configurable policies and explicit human-in-the-loop gates.
-- Recommendation: build AI refactoring tools that are test-aware, codebase-aware, standards-integrated, and that default to conservative, explainable suggestions requiring human approval for structural changes.

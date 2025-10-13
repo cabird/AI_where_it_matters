@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 ---
 
+## Executive Summary
+
+- Developers want AI to speed up and standardize code-level performance tasks (code optimization, refactoring, test generation) while preserving correctness and standards.
+- Developers do not want AI making autonomous architectural or system-level performance changes without deep context, explainability, and human approval.
+- Design implication: prioritize context-aware recommendations, integrated test generation, and explainable rationales tied to telemetry and dependency information.
+- Design implication: enforce human-in-the-loop approval, provide reversible changes, and surface confidence and trade-offs for every suggestion.
+- Tension: conditional acceptance — developers welcome automation for bounded tasks but require safeguards for anything that affects system reliability or professional craftsmanship.
+- Recommendation: build AI tools that augment developer skill (assistive suggestions + test artifacts + clear ownership) rather than replace human judgement in architecture and final decision-making.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -154,14 +166,3 @@ Developers want AI that augments their performance optimization workflow — spe
   - Risk: Recommendations without tests, benchmarks, or rollback strategies may introduce subtle regressions.
   - Rationale: Multiple participants warned that poor performance settings could create hard-to-debug problems (Participant 164, 318).
   - Example: "a bad performance setting might bring a lot of hard to debug problems" (Participant 164)
-
----
-
-## Executive Summary
-
-- Developers want AI to speed up and standardize code-level performance tasks (code optimization, refactoring, test generation) while preserving correctness and standards.
-- Developers do not want AI making autonomous architectural or system-level performance changes without deep context, explainability, and human approval.
-- Design implication: prioritize context-aware recommendations, integrated test generation, and explainable rationales tied to telemetry and dependency information.
-- Design implication: enforce human-in-the-loop approval, provide reversible changes, and surface confidence and trade-offs for every suggestion.
-- Tension: conditional acceptance — developers welcome automation for bounded tasks but require safeguards for anything that affects system reliability or professional craftsmanship.
-- Recommendation: build AI tools that augment developer skill (assistive suggestions + test artifacts + clear ownership) rather than replace human judgement in architecture and final decision-making.

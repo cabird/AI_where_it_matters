@@ -5,6 +5,18 @@ This document is an AI-generated synthesis of manually coded survey responses ab
 
 ---
 
+## Executive Summary
+
+- Developers want AI to automate and maintain documentation (from code/PRs/tests), synthesize dispersed context, improve discovery, and support onboarding — to save time and reduce stale docs.
+- Developers do not want AI to act autonomously, to replace personal authorship for human-facing docs, or to present unchecked assertions without provenance.
+- Critical design implication: build tools that generate drafts and suggestions but require human review and provide clear provenance and confidence signals.
+- Critical design implication: integrate with internal permissions and vocabularies so AI can reliably access and interpret company-specific sources.
+- Notable tension: strong desire for automation is balanced by concerns about hallucinations, loss of voice, and contextual limitations — acceptance is conditional.
+- Recommendation: prioritize features for auto-generation, contextual summarization, and smart search with mandatory approval flows, source citations, and role-aware onboarding capabilities.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -199,14 +211,3 @@ Overall, developers want AI tools that save time on repetitive documentation tas
 - **Assuming domain expertise where none exists**
   - Risk: AI asserting domain-specific details beyond its internalized knowledge causes errors. Rationale: Participants noted limited support for domain/company-specific knowledge (“standard chatGPT AI is not that useful” — Participant 189).
   - Guardrail: Signal knowledge gaps, surface confidence levels, and prompt users to supply missing internal context before generating authoritative content.
-
----
-
-## Executive Summary
-
-- Developers want AI to automate and maintain documentation (from code/PRs/tests), synthesize dispersed context, improve discovery, and support onboarding — to save time and reduce stale docs.
-- Developers do not want AI to act autonomously, to replace personal authorship for human-facing docs, or to present unchecked assertions without provenance.
-- Critical design implication: build tools that generate drafts and suggestions but require human review and provide clear provenance and confidence signals.
-- Critical design implication: integrate with internal permissions and vocabularies so AI can reliably access and interpret company-specific sources.
-- Notable tension: strong desire for automation is balanced by concerns about hallucinations, loss of voice, and contextual limitations — acceptance is conditional.
-- Recommendation: prioritize features for auto-generation, contextual summarization, and smart search with mandatory approval flows, source citations, and role-aware onboarding capabilities.

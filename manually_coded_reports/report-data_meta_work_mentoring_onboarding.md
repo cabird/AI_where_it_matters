@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 ---
 
+## Executive Summary
+
+- Developers broadly welcome AI for structured, administrative onboarding tasks—creating learning plans, drafting documentation, and surfacing resources—to reduce tedious work and accelerate ramp-up.
+- Developers strongly resist replacing human mentors for relationship-building, cultural onboarding, and empathy-driven coaching; these are seen as inherently human responsibilities.
+- Design implication: prioritize assistive, human-in-the-loop features (editable training plans, draft docs with provenance, approval gates) rather than autonomous mentoring agents.
+- Guardrails needed: avoid autonomous people-facing AI, require provenance for generated content, and preserve mentoring opportunities for human growth.
+- Notable tension: conditional acceptance—AI is valuable for rote tasks but trusted only when human oversight is enforced because of hallucination and cultural nuance risks.
+- Recommendation: build configurable, transparent onboarding assistants that automate low-risk tasks while explicitly deferring subjective, cultural, and developmental activities to human mentors.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -148,14 +160,3 @@ Designing AI for Mentoring Onboarding requires a balanced, configurable approach
 - **Unrestricted AI initiative in onboarding workflows**
   - Risk: Systems that act without explicit human consent (e.g., auto-enrolling a new joiner in tasks or sending guidance) may produce incorrect or contextually inappropriate actions.
   - Rationale/Example: Preference for AI as assistant not replacement ("would not be helpful for AI to do..."—Participant 27; "there needs to be a human connection"—Participant 70).
-
----
-
-## Executive Summary
-
-- Developers broadly welcome AI for structured, administrative onboarding tasks—creating learning plans, drafting documentation, and surfacing resources—to reduce tedious work and accelerate ramp-up.
-- Developers strongly resist replacing human mentors for relationship-building, cultural onboarding, and empathy-driven coaching; these are seen as inherently human responsibilities.
-- Design implication: prioritize assistive, human-in-the-loop features (editable training plans, draft docs with provenance, approval gates) rather than autonomous mentoring agents.
-- Guardrails needed: avoid autonomous people-facing AI, require provenance for generated content, and preserve mentoring opportunities for human growth.
-- Notable tension: conditional acceptance—AI is valuable for rote tasks but trusted only when human oversight is enforced because of hallucination and cultural nuance risks.
-- Recommendation: build configurable, transparent onboarding assistants that automate low-risk tasks while explicitly deferring subjective, cultural, and developmental activities to human mentors.

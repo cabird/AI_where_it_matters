@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 ---
 
+## Executive Summary
+
+- Developers want AI to automate triage, deflection, and behind-the-scenes processing of routine customer requests to reduce repetitive work and speed resolution.
+- Developers do not want AI to replace human-fronted support or to autonomously send customer-facing messages; human approval and empathy are essential.
+- Critical design implication: prioritize human-in-the-loop workflows, transparency (provenance/confidence), and augmentation features (drafting, KB surfacing, metric correlation).
+- Critical design implication: disallow fully autonomous outbound messaging and avoid automating bespoke, contextual engineering engagements.
+- Notable tension: teams are resource-constrained and pragmatic — they welcome automation for scale but only under strict guardrails to protect brand and customer experience.
+- Forward-looking recommendation: build modular AI copilots that operate on logs and metrics to propose actions, surface evidence, and require explicit human approval before any customer-facing execution.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -180,14 +192,3 @@ High-level synthesis: Developers want AI tools that automate routine analysis an
   - Risk: AI as "another screen" that increases workload rather than reduces it.
   - Rationale: One participant warned against AI adding a new layer of friction (P89).
   - Example: Integrate suggestions into existing agent workflows rather than forcing context switches.
-
----
-
-## Executive Summary
-
-- Developers want AI to automate triage, deflection, and behind-the-scenes processing of routine customer requests to reduce repetitive work and speed resolution.
-- Developers do not want AI to replace human-fronted support or to autonomously send customer-facing messages; human approval and empathy are essential.
-- Critical design implication: prioritize human-in-the-loop workflows, transparency (provenance/confidence), and augmentation features (drafting, KB surfacing, metric correlation).
-- Critical design implication: disallow fully autonomous outbound messaging and avoid automating bespoke, contextual engineering engagements.
-- Notable tension: teams are resource-constrained and pragmatic — they welcome automation for scale but only under strict guardrails to protect brand and customer experience.
-- Forward-looking recommendation: build modular AI copilots that operate on logs and metrics to propose actions, surface evidence, and require explicit human approval before any customer-facing execution.

@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 ---
 
+## Executive Summary
+
+- Developers want AI as an assistant—suggestions, autocompletion, and Q&A—not as an autonomous decision-maker.
+- Major concerns center on accountability, quality/maintainability of AI outputs, and preserving professional craftsmanship.
+- Designers must prioritize human-in-the-loop workflows, provenance metadata, and readable, reviewable code generation.
+- Guardrails should prevent autonomous production deployments and limit AI contributions in critical or craft-intensive areas.
+- Tension exists between organizational momentum to integrate AI and individual developers’ demands for control and craft preservation.
+- Recommendation: Build AI tools that augment developer skill, make AI contributions auditable, and let teams configure safe limits for AI involvement.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -123,14 +135,3 @@ Developers want AI that augments craft, preserves accountability, and produces a
 - **Defaulting to stochastic outputs where deterministic APIs are preferable**
   - Risk: Introduces unpredictability and reduces reliability of core interfaces.
   - Rationale: Participant 66 contrasts stochastic LLM outputs with predictable code-based APIs and favors the latter for reliability.
-
----
-
-## Executive Summary
-
-- Developers want AI as an assistant—suggestions, autocompletion, and Q&A—not as an autonomous decision-maker.
-- Major concerns center on accountability, quality/maintainability of AI outputs, and preserving professional craftsmanship.
-- Designers must prioritize human-in-the-loop workflows, provenance metadata, and readable, reviewable code generation.
-- Guardrails should prevent autonomous production deployments and limit AI contributions in critical or craft-intensive areas.
-- Tension exists between organizational momentum to integrate AI and individual developers’ demands for control and craft preservation.
-- Recommendation: Build AI tools that augment developer skill, make AI contributions auditable, and let teams configure safe limits for AI involvement.

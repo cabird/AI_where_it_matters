@@ -5,6 +5,18 @@ This document is an AI-generated synthesis of manually coded survey responses fr
 
 ---
 
+## Executive Summary
+
+- Developers want AI to automate repetitive environment setup tasks—provisioning, config, upgrades, migrations—to reduce setup toil and speed project development.
+- Developers do not want AI to make autonomous security-critical or high-precision infra changes; such actions require deterministic, auditable automation or human oversight.
+- Design implication: AI should produce deterministic, auditable artifacts (declarative configs, scripts, diffs) and integrate into existing automation pipelines rather than performing opaque actions.
+- Design implication: Provide human-in-the-loop gates and explicit safeguards around access controls, secrets, and other high-blast-radius operations.
+- Notable tension: Strong desire for full automation coexists with insistence on determinism, accuracy, and contextual understanding—AI must meet strict correctness standards to be trusted.
+- Recommendation: Prioritize features that reduce toil and generate cross-OS, idempotent artifacts while building explicit guardrails for security, transparency, and verifiability.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -154,14 +166,3 @@ Overall, developers want AI tools that reduce repetitive setup work, produce cro
 
 - **No one-off helpers that increase overall toil**
   - Risk: Narrow AI fixes that must be re-run or reconfigured per-project can leave teams with repeated, fragmented toil. Rationale: Participants asked for cohesive experiences rather than repeated separate fixes (Participant 269).
-
----
-
-## Executive Summary
-
-- Developers want AI to automate repetitive environment setup tasks—provisioning, config, upgrades, migrations—to reduce setup toil and speed project development.
-- Developers do not want AI to make autonomous security-critical or high-precision infra changes; such actions require deterministic, auditable automation or human oversight.
-- Design implication: AI should produce deterministic, auditable artifacts (declarative configs, scripts, diffs) and integrate into existing automation pipelines rather than performing opaque actions.
-- Design implication: Provide human-in-the-loop gates and explicit safeguards around access controls, secrets, and other high-blast-radius operations.
-- Notable tension: Strong desire for full automation coexists with insistence on determinism, accuracy, and contextual understanding—AI must meet strict correctness standards to be trusted.
-- Recommendation: Prioritize features that reduce toil and generate cross-OS, idempotent artifacts while building explicit guardrails for security, transparency, and verifiability.

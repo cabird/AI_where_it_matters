@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses abou
 
 ---
 
+## Executive Summary
+
+- Developers want AI to reduce monitoring toil by detecting anomalies, synthesizing telemetry, suggesting root causes, and predicting failures—especially where pattern recognition and scale matter.
+- Developers do not want AI to act autonomously on production systems, manage secrets/permissions, or make emergency business-impact decisions without human oversight.
+- Design must prioritize explainability, configurable automation levels (observe/suggest/act), and auditable workflows so humans remain in the loop.
+- High-value features include telemetry-driven root-cause hypothesis generation, infra-aware monitor setup, alert enrichment with playbooks, and incident knowledge synthesis.
+- Major tensions center on balancing automation benefits with safety, precision, and learning—developers want AI to help them learn, not replace their expertise.
+- Recommendation: Build AI-as-copilot solutions with strict guardrails (no autonomous prod changes or secret handling), transparent reasoning, and admin controls to tune automation per service risk level.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -327,14 +339,3 @@ High-level synthesis: Developers want AI tools that reliably reduce monitoring t
 - **Avoid opaque, non-explainable automation**
   - Risk: Lack of explanation undermines learning and trust (Participants 16, 262).
   - Guardrail: Require explainable outputs and evidence links for all AI suggestions and actions.
-
----
-
-## Executive Summary
-
-- Developers want AI to reduce monitoring toil by detecting anomalies, synthesizing telemetry, suggesting root causes, and predicting failures—especially where pattern recognition and scale matter.
-- Developers do not want AI to act autonomously on production systems, manage secrets/permissions, or make emergency business-impact decisions without human oversight.
-- Design must prioritize explainability, configurable automation levels (observe/suggest/act), and auditable workflows so humans remain in the loop.
-- High-value features include telemetry-driven root-cause hypothesis generation, infra-aware monitor setup, alert enrichment with playbooks, and incident knowledge synthesis.
-- Major tensions center on balancing automation benefits with safety, precision, and learning—developers want AI to help them learn, not replace their expertise.
-- Recommendation: Build AI-as-copilot solutions with strict guardrails (no autonomous prod changes or secret handling), transparent reasoning, and admin controls to tune automation per service risk level.

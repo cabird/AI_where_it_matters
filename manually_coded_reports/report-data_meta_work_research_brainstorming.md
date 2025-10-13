@@ -5,6 +5,18 @@ This document is an AI-generated synthesis of manually coded survey responses fr
 
 ---
 
+## Executive Summary
+
+- Developers want AI to synthesize large, distributed information sources and produce concise, source-linked summaries to speed research and documentation (e.g., Participants 20, 336).  
+- They want AI as a brainstorming partner that can generate ideas and break down roadmaps, but not as a substitute for human judgment or creativity (e.g., Participants 160, 17).  
+- Personalization—contextual answers, tailored learning materials, and long-term memory—is valued, provided users retain control over what the AI remembers (e.g., Participants 280, 360).  
+- Major barriers are quality and trust: outdated data, hallucinations, and poor outputs drive developers to prefer official documentation over AI when reliability is uncertain (e.g., Participants 44, 353).  
+- Designers should prioritize source-linked synthesis, human-in-the-loop brainstorming modes, personalization with explicit controls, and transparent confidence/provenance indicators; avoid promoting AI as an authoritative decision maker or hiding sources.  
+- Recommendation: Build AI tools that are explicitly labeled and tiered (e.g., “synthesis,” “ideas,” “personal tutor”), include verification affordances, and default to facilitation with clear human sign-off for decisions to align with developer expectations and preserve learning opportunities.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -152,14 +164,3 @@ Designers building AI tools for Research Brainstorming should treat the assistan
 - **Do not hide provenance or recency of information**
   - Risk: Lack of source visibility undermines trust and leads developers back to official documentation.
   - Example: Preference for “going straight to official technical documentation” when provenance is unclear (Participant 353).
-
----
-
-## Executive Summary
-
-- Developers want AI to synthesize large, distributed information sources and produce concise, source-linked summaries to speed research and documentation (e.g., Participants 20, 336).  
-- They want AI as a brainstorming partner that can generate ideas and break down roadmaps, but not as a substitute for human judgment or creativity (e.g., Participants 160, 17).  
-- Personalization—contextual answers, tailored learning materials, and long-term memory—is valued, provided users retain control over what the AI remembers (e.g., Participants 280, 360).  
-- Major barriers are quality and trust: outdated data, hallucinations, and poor outputs drive developers to prefer official documentation over AI when reliability is uncertain (e.g., Participants 44, 353).  
-- Designers should prioritize source-linked synthesis, human-in-the-loop brainstorming modes, personalization with explicit controls, and transparent confidence/provenance indicators; avoid promoting AI as an authoritative decision maker or hiding sources.  
-- Recommendation: Build AI tools that are explicitly labeled and tiered (e.g., “synthesis,” “ideas,” “personal tutor”), include verification affordances, and default to facilitation with clear human sign-off for decisions to align with developer expectations and preserve learning opportunities.

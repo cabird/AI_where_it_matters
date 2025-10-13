@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses abou
 
 ---
 
+## Executive Summary
+
+- Developers want AI as an adaptive tutor and curator—personalized guidance that scaffolds learning from basics to advanced concepts (Personalized Learning Guide, Code: 1.0).
+- They want AI to facilitate hands-on practice—gathering resources, providing exercises, and improving onboarding—without replacing "learning by doing" (Resource for Hands-on & On-the-Job Learning, Code: 2.0).
+- AI should act as a synthesis layer that surfaces new tools, summarizes documentation, and points to sources, but outputs must be current and linked to provenance (Information Synthesis for Learning Support, Code: 3.0).
+- Critical design implications: prioritize adaptivity, interactive practice, explainability, and up-to-date source attribution; do not automate away the learner’s role or obscure uncertainty.
+- The main tension is conditional acceptance: developers will use AI if it augments learning and preserves verification and control, but will reject it if it substitutes for practice or provides untrustworthy guidance.
+- Recommendation: build AI learning tools that default to augmentation (guided exercises, citations, adjustable depth), surface model uncertainty, and include features that explicitly preserve and encourage hands-on engagement.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -161,14 +173,3 @@ Developers want AI that augments the learning process—acting as an adaptive tu
 - **Avoid one-size-fits-all depth levels**
   - Risk: Prescriptive, non-adaptive explanations frustrate both novices and advanced users; provide adjustable depth and paths.
   - Rationale: Participants asked for progression from simple to complex and ability to request deeper answers (Participant 380).
-
----
-
-## Executive Summary
-
-- Developers want AI as an adaptive tutor and curator—personalized guidance that scaffolds learning from basics to advanced concepts (Personalized Learning Guide, Code: 1.0).
-- They want AI to facilitate hands-on practice—gathering resources, providing exercises, and improving onboarding—without replacing "learning by doing" (Resource for Hands-on & On-the-Job Learning, Code: 2.0).
-- AI should act as a synthesis layer that surfaces new tools, summarizes documentation, and points to sources, but outputs must be current and linked to provenance (Information Synthesis for Learning Support, Code: 3.0).
-- Critical design implications: prioritize adaptivity, interactive practice, explainability, and up-to-date source attribution; do not automate away the learner’s role or obscure uncertainty.
-- The main tension is conditional acceptance: developers will use AI if it augments learning and preserves verification and control, but will reject it if it substitutes for practice or provides untrustworthy guidance.
-- Recommendation: build AI learning tools that default to augmentation (guided exercises, citations, adjustable depth), surface model uncertainty, and include features that explicitly preserve and encourage hands-on engagement.

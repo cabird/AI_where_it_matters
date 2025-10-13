@@ -5,6 +5,18 @@ This document is an AI-generated synthesis of manually coded survey responses fr
 
 ---
 
+## Executive Summary
+
+- Developers want AI to act as a context-aware assistant for security/compliance checks, risk triage, test generation, and PR automation — not as an autonomous decision-maker.
+- The primary refusal boundary is autonomy: teams reject AI that auto-commits, auto-merges, or takes final accountability for release readiness.
+- Trust hinges on accuracy, explainability, and confidence signaling; hallucinations and false positives are key adoption blockers.
+- Design implications: build context integration, confidence reporting, audit logs, and explicit human-approval gates; enable safe custom agents for team-specific automation.
+- Notable tension: participants welcome AI preparing fixes or PR drafts but insist that humans retain final review and sign-off.
+- Recommendation: prioritize conservative, explainable assistive features (security gates, impact analysis, test scaffolding) that augment reviewer capacity while enforcing strict human-in-the-loop controls.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -215,14 +227,3 @@ Developers want AI that amplifies human reviewers by automating repetitive, well
 - **No Self-Approval or Self-Evaluation**
   - Risk: Automated systems approving their own changes or evaluating their outputs creates feedback loop risks (“You must not have a Gen AI system evaluate itself.” — Participant 345).
   - Guardrail: Require independent human or separate system validation for any AI-suggested change before acceptance.
-
----
-
-## Executive Summary
-
-- Developers want AI to act as a context-aware assistant for security/compliance checks, risk triage, test generation, and PR automation — not as an autonomous decision-maker.
-- The primary refusal boundary is autonomy: teams reject AI that auto-commits, auto-merges, or takes final accountability for release readiness.
-- Trust hinges on accuracy, explainability, and confidence signaling; hallucinations and false positives are key adoption blockers.
-- Design implications: build context integration, confidence reporting, audit logs, and explicit human-approval gates; enable safe custom agents for team-specific automation.
-- Notable tension: participants welcome AI preparing fixes or PR drafts but insist that humans retain final review and sign-off.
-- Recommendation: prioritize conservative, explainable assistive features (security gates, impact analysis, test scaffolding) that augment reviewer capacity while enforcing strict human-in-the-loop controls.

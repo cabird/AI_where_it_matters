@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 ---
 
+## Executive Summary
+
+- Developers want AI to assist with telemetry-driven triage, anomaly detection, and release risk assessment to speed troubleshooting and inform deployment decisions.
+- They welcome AI that bootstraps, synthesizes, and reviews CI/CD pipelines — especially for poorly documented or complex systems — and that reduces repetitive operational toil.
+- Strong, repeated prohibitions exist against unsupervised production actions: final deployments, live changes, and security fixes must remain human-gated.
+- Critical design implications: AI tools must offer explainability, provenance, local testing/sandboxing, and explicit approval workflows to earn trust.
+- The main tension is between automation for efficiency and preserving human learning and accountability; acceptable AI is assistive, not autonomous.
+- Recommendation: Build AI features that automate preparation and analysis (telemetry, pipeline generation, local testing) while enforcing human gates, auditability, and educational explanations for every recommendation.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -234,14 +246,3 @@ Developers expect AI tools for DevOps CI/CD to be powerful assistants that incre
   - Risk: Over-automation can stunt junior engineers’ development.
   - Guardrail: Design features that expose reasoning, encourage human review, and provide educational materials tied to suggestions.
   - Example: "I want AI to guide and assist human engineer development, not replace lower experience engineers..." (Participant 16)
-
----
-
-## Executive Summary
-
-- Developers want AI to assist with telemetry-driven triage, anomaly detection, and release risk assessment to speed troubleshooting and inform deployment decisions.
-- They welcome AI that bootstraps, synthesizes, and reviews CI/CD pipelines — especially for poorly documented or complex systems — and that reduces repetitive operational toil.
-- Strong, repeated prohibitions exist against unsupervised production actions: final deployments, live changes, and security fixes must remain human-gated.
-- Critical design implications: AI tools must offer explainability, provenance, local testing/sandboxing, and explicit approval workflows to earn trust.
-- The main tension is between automation for efficiency and preserving human learning and accountability; acceptable AI is assistive, not autonomous.
-- Recommendation: Build AI features that automate preparation and analysis (telemetry, pipeline generation, local testing) while enforcing human gates, auditability, and educational explanations for every recommendation.

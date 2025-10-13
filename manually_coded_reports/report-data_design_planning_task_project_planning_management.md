@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 ---
 
+## Executive Summary
+
+- Developers want AI to automate repetitive planning tasks (task creation, board management, documentation) and synthesize dispersed knowledge so humans can focus on design and strategy.
+- Developers do not want AI to make final strategic, empathetic, or customer-facing decisions; human accountability and intuition must be preserved.
+- Critical design implications: prioritize integration with planning tools, provenance/traceability, explainability (rationale and trade-offs), and safe human-in-the-loop workflows.
+- Guardrails required: prevent autonomous strategic actions, ensure reversibility and audit trails, and protect sensitive data and people-context decisions.
+- Key tension: strong desire for automation of routine work versus deep skepticism about AI accuracy, hallucinations, and loss of human agency.
+- Recommendation: build incremental, tightly-scoped AI features (synthesis, drafting, suggestion, automation of explicit operations) with transparent controls and clear escalation paths to humans.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -595,14 +607,3 @@ Developers want AI that reliably reduces administrative burden, synthesizes disp
 - **Deploying AI before hallucination and grounding issues are addressed**
   - Risk: Using AI-generated plans or designs that include fabricated facts or unsupported assumptions.
   - Rationale: Hallucinations undermine trust and can cause costly mistakes (Participants 98, 53, 357).
-
----
-
-## Executive Summary
-
-- Developers want AI to automate repetitive planning tasks (task creation, board management, documentation) and synthesize dispersed knowledge so humans can focus on design and strategy.
-- Developers do not want AI to make final strategic, empathetic, or customer-facing decisions; human accountability and intuition must be preserved.
-- Critical design implications: prioritize integration with planning tools, provenance/traceability, explainability (rationale and trade-offs), and safe human-in-the-loop workflows.
-- Guardrails required: prevent autonomous strategic actions, ensure reversibility and audit trails, and protect sensitive data and people-context decisions.
-- Key tension: strong desire for automation of routine work versus deep skepticism about AI accuracy, hallucinations, and loss of human agency.
-- Recommendation: build incremental, tightly-scoped AI features (synthesis, drafting, suggestion, automation of explicit operations) with transparent controls and clear escalation paths to humans.

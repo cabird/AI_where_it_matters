@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 ---
 
+## Executive Summary
+
+- Developers want AI to automate context-aware test generation, improve coverage, and perform adversarial/exploratory testing to catch regressions and security issues earlier.
+- At the same time, they worry AI can hallucinate, be inaccurate, and produce unverifiable outputs that increase risk rather than reduce it.
+- Design implication: Build AI tools that produce verifiable artifacts (logs, screenshots, traces), confidence scores, and human-review workflows so accountability and traceability are preserved.
+- Design implication: Integrate AI into CI/CD pipelines for proactive scanning and anomaly detection while ensuring it defers final release and triage decisions to humans.
+- Notable tension: Developers simultaneously ask for high degrees of automation (including autonomous exploration) and insist on tight human oversight and explainability.
+- Recommendation: Prioritize context-aware test generation, coverage-gap prioritization, adversarial testing features, and strong fail-fast/uncertainty signaling; explicitly forbid autonomous final decision-making and require human signoff for check-ins or release decisions.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -182,14 +194,3 @@ Overall, developers want AI tools that reliably automate test generation, covera
 
 - **Unverified UI automation or brittle test generation**
   - Risk: AI that produces UI automation or tests that are difficult to validate increases maintenance burden ("UI automation might be difficult to verify" — Participant 71).
-
----
-
-## Executive Summary
-
-- Developers want AI to automate context-aware test generation, improve coverage, and perform adversarial/exploratory testing to catch regressions and security issues earlier.
-- At the same time, they worry AI can hallucinate, be inaccurate, and produce unverifiable outputs that increase risk rather than reduce it.
-- Design implication: Build AI tools that produce verifiable artifacts (logs, screenshots, traces), confidence scores, and human-review workflows so accountability and traceability are preserved.
-- Design implication: Integrate AI into CI/CD pipelines for proactive scanning and anomaly detection while ensuring it defers final release and triage decisions to humans.
-- Notable tension: Developers simultaneously ask for high degrees of automation (including autonomous exploration) and insist on tight human oversight and explainability.
-- Recommendation: Prioritize context-aware test generation, coverage-gap prioritization, adversarial testing features, and strong fail-fast/uncertainty signaling; explicitly forbid autonomous final decision-making and require human signoff for check-ins or release decisions.

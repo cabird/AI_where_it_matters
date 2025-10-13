@@ -5,6 +5,18 @@ This document is an AI-generated synthesis of manually coded survey responses fr
 
 ---
 
+## Executive Summary
+
+- Developers want AI to proactively detect security risks, generate tests, and automate routine compliance tasks—provided outputs are accurate, contextualized, and reviewable.
+- They strongly oppose AI making autonomous production changes or taking final responsibility for high‑stakes, ethical, or nuanced decisions.
+- Critical design implications: prioritize explainability, provenance, confidence indicators, and human-in-the-loop review gates for any remediation or production-impacting actions.
+- Build features that integrate telemetry and cross-project trend analysis, automated test generation, and context-aware patch suggestions while preserving reviewability.
+- Major tension: appetite for automation (speed, coverage) vs. need for human accountability and privacy protections.
+- Recommendation: deliver AI as an assistive, auditable layer—automate drafting and detection, but require explicit human authorization for verification and production changes.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -174,14 +186,3 @@ Developers want AI that amplifies defensive coverage, reduces repetitive work, a
   - Risk: AI producing confident but unverifiable security/compliance assertions can create false assurance.
   - Rationale: Developers rejected using AI as a black-box verifier without transparent evidence (Participant 1, 228).
   - Example: "I do not think AI can be used for verification of quality or to evaluate risk because humans cannot make sense of what the AI is doing…" (Participant 228)
-
----
-
-## Executive Summary
-
-- Developers want AI to proactively detect security risks, generate tests, and automate routine compliance tasks—provided outputs are accurate, contextualized, and reviewable.
-- They strongly oppose AI making autonomous production changes or taking final responsibility for high‑stakes, ethical, or nuanced decisions.
-- Critical design implications: prioritize explainability, provenance, confidence indicators, and human-in-the-loop review gates for any remediation or production-impacting actions.
-- Build features that integrate telemetry and cross-project trend analysis, automated test generation, and context-aware patch suggestions while preserving reviewability.
-- Major tension: appetite for automation (speed, coverage) vs. need for human accountability and privacy protections.
-- Recommendation: deliver AI as an assistive, auditable layer—automate drafting and detection, but require explicit human authorization for verification and production changes.

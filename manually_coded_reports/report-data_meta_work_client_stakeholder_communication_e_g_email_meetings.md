@@ -5,6 +5,18 @@ This report is an AI-generated synthesis of manually coded survey responses from
 
 ---
 
+## Executive Summary
+
+- Developers want AI to automate repetitive communication tasks (scheduling, recaps, boilerplate drafting) so they can focus on higher-value work.
+- They also seek AI assistance for clarity and accessibility: tailoring messages to audiences, simplifying technical content, and adapting language/formality.
+- Critical design imperatives are human-in-the-loop controls, provenance/transparency for generated content, and strict privacy safeguards for client-facing communications.
+- Tools should prioritize contextual summarization and coordination features (action-item surfacing, prioritized nudges) that reduce fragmentation across projects.
+- There is a clear tension between efficiency gains and preserving authenticity/trust; many developers accept AI drafts but insist on personal oversight and final control.
+- Recommendation: Build configurable assistants that default to suggestion-and-review modes, surface sources and rationale, and enforce strict data/access controls for stakeholder communication.
+
+---
+
+
 ## 1) Core Themes
 
 ### A. Where AI is Wanted
@@ -228,14 +240,3 @@ Overall synthesis: Developers want AI that accelerates and clarifies stakeholder
   - Risk: Miscommunication or offense in multilingual/cultural contexts.
   - Rationale: Participants requested culturally-aware phrasing (“focused comments on correct use of polite forms.” — Participant 175).
   - Design guardrail: Provide locale and register settings; require human confirmation for culturally sensitive rewrites.
-
----
-
-## Executive Summary
-
-- Developers want AI to automate repetitive communication tasks (scheduling, recaps, boilerplate drafting) so they can focus on higher-value work.
-- They also seek AI assistance for clarity and accessibility: tailoring messages to audiences, simplifying technical content, and adapting language/formality.
-- Critical design imperatives are human-in-the-loop controls, provenance/transparency for generated content, and strict privacy safeguards for client-facing communications.
-- Tools should prioritize contextual summarization and coordination features (action-item surfacing, prioritized nudges) that reduce fragmentation across projects.
-- There is a clear tension between efficiency gains and preserving authenticity/trust; many developers accept AI drafts but insist on personal oversight and final control.
-- Recommendation: Build configurable assistants that default to suggestion-and-review modes, surface sources and rationale, and enforce strict data/access controls for stakeholder communication.
