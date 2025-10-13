@@ -268,6 +268,6 @@ AI for Requirements Gathering & Analysis in Design & Planning should capture and
 * Developers don't want AI to originate requirements or make unilateral decisions; human-AI hybrid workflows are preferred.
 * Tools must provide context-aware design exploration (NFRs, dependencies, reuse) and generate artifacts (stories/tasks/docs) from vetted requirements.
 * Validation and gap detection are critical: AI should check completeness, correctness, and missing security/use cases.
-* Trust hinges on transparency show evidence, highlight uncertainty, align to org conventions, and respect sensitive data constraints.
-* Design for assistive autonomy accelerate decisions without replacing human judgment; make it easy to confirm, override, and trace AI outputs.
+* Trust hinges on transparency: show evidence, highlight uncertainty, align to org conventions, and respect sensitive data constraints.
+* Design for assistive autonomy: accelerate decisions without replacing human judgment; make it easy to confirm, override, and trace AI outputs.
 
