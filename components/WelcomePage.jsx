@@ -25,7 +25,7 @@ window.WelcomePage = function WelcomePage() {
             <h2>How to Use This Dashboard</h2>
             <p>
                 This dashboard features an interactive visualization showing the relationship between
-                developers' openness to AI support and their current AI usage across all 21 tasks.
+                developers' openness to AI support and their current AI usage across all 20 tasks.
             </p>
             <p><strong>Explore the visualization:</strong> Hover over data points to see task details, or click any point to read the full qualitative report for that task
             </p>
