@@ -106,7 +106,7 @@ window.chartData = [
   },
   {
     task: "Project Planning",
-    fullName: "Task/Project Planning & Management",
+    fullName: "Project Planning & Management",
     category: "Design-Planning",
     z_support: -0.4707792207792201,
     z_usage: -0.5587301587301576,
