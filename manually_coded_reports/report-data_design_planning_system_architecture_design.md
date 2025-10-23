@@ -1,4 +1,4 @@
-# Report of Qualitative Analysis for Architecture (Category: Design Planning)
+# Report of Qualitative Analysis for System Architecture & Design (Category: Design Planning)
 
 This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Architecture within Design Planning. I preserved the research team's thematic structure and codes, and synthesized participants' quotes and researchers' descriptions into coherent narratives. The analysis highlights where developers want AI help, where they resist it, cross-cutting patterns and tensions, outliers, and actionable implications for AI tool design.
 
