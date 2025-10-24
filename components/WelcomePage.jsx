@@ -1,7 +1,7 @@
 window.WelcomePage = function WelcomePage() {
     return (
         <div className="welcome-page">
-            <h1>Developer AI Preferences Data Explorer</h1>
+            <h1>AI Where It Matters Data Explorer</h1>
 
             <p>
                 This data explorer presents qualitative analysis of developer preferences for AI support
@@ -10,9 +10,11 @@ window.WelcomePage = function WelcomePage() {
             </p>
 
             <h2>About the Study</h2>
+
+            <h3></h3>
             <p>
-                This research examines where, why, and how developers want AI support across 20
-                different software engineering tasks, organized into 5 main categories:
+            This research examines where, why, and how software developers want AI support across 20 different software engineering tasks, 
+            showing that developers' task appraisals predict AI adoption and shape context-sensitive Responsible AI priorities, organized into 5 main categories:
             </p>
             <ul>
                 <li><strong>Design &amp; Planning</strong> - Requirements, architecture, and project planning tasks</li>
@@ -20,6 +22,20 @@ window.WelcomePage = function WelcomePage() {
                 <li><strong>Quality &amp; Risk</strong> - Testing, code review, and security</li>
                 <li><strong>Infrastructure &amp; Operations</strong> - DevOps, deployment, and monitoring</li>
                 <li><strong>Meta Work</strong> - Documentation, learning, communication, and mentoring</li>
+            </ul>
+
+            <h2>Key Insights</h2>
+            <ul>
+            <li>Task appraisals predict AI adoption: higher perceived value, accountability, and task demands increase openness to and use of AI, 
+                while identity alignment reduces openness but can increase selective, complementary use. </li>
+	        <li>Tasks cluster into distinct groups (Core work; People & AI-building; Ops & Coordination) and fall into four zones 
+            (Build, Improve, Sustain, De-prioritize), revealing where need outpaces current use and where AI should focus on 
+            augmentation versus abstention.</li>
+	        <li>Responsible-AI priorities are context-dependent: systems-facing work demands reliability, safety, privacy/security, 
+            transparency, goal maintenance, and steerability, while human-facing tasks elevate fairness and inclusiveness and often 
+            remain human-led.</li>
+	        <li>Individual differences matter: juniors and AI-experienced, risk-tolerant, and technophilic developers are more receptive 
+            to AI, and experience shifts priorities toward steerability, reliability, and transparency.</li>
             </ul>
 
             <h2>How to Use This Data Explorer</h2>
@@ -56,7 +72,7 @@ window.WelcomePage = function WelcomePage() {
 
             <h2>Research Paper</h2>
             <p>
-                For the full study methodology and quantitative findings, please refer to the
+                For the full study methodology, findings, and implications, please refer to the
                 research paper: <a href="paper.pdf" target="_blank" rel="noopener noreferrer">
                     " AI Where It Matters: Where, Why, and How Developers Want AI Support in Daily Work"
                 </a>
