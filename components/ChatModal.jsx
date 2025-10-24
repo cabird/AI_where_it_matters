@@ -436,10 +436,10 @@ window.ChatModal = function ChatModal({ isOpen, onClose }) {
                 padding: '12px 16px',
                 borderRadius: '8px'
               }}>
-                <div style={{ display: 'flex', gap: '4px' }}>
-                  <span style={{ animation: 'pulse 1.4s ease-in-out infinite' }}>●</span>
-                  <span style={{ animation: 'pulse 1.4s ease-in-out 0.2s infinite' }}>●</span>
-                  <span style={{ animation: 'pulse 1.4s ease-in-out 0.4s infinite' }}>●</span>
+                <div style={{ display: 'flex', gap: '4px', color: '#48bb78' }}>
+                  <span style={{ animation: 'typing 1.4s infinite' }}>●</span>
+                  <span style={{ animation: 'typing 1.4s infinite', animationDelay: '0.2s' }}>●</span>
+                  <span style={{ animation: 'typing 1.4s infinite', animationDelay: '0.4s' }}>●</span>
                 </div>
               </div>
             </div>
@@ -738,9 +738,9 @@ window.ChatModal = function ChatModal({ isOpen, onClose }) {
                 boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)'
               }}>
                 <div style={{ display: 'flex', gap: '4px', color: '#48bb78' }}>
-                  <span>●</span>
-                  <span>●</span>
-                  <span>●</span>
+                  <span style={{ animation: 'typing 1.4s infinite' }}>●</span>
+                  <span style={{ animation: 'typing 1.4s infinite', animationDelay: '0.2s' }}>●</span>
+                  <span style={{ animation: 'typing 1.4s infinite', animationDelay: '0.4s' }}>●</span>
                 </div>
               </div>
             </div>
