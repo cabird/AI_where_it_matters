@@ -16,7 +16,7 @@ window.ChatModal = function ChatModal({ isOpen, onClose }) {
   const closeButtonRef = useRef(null);
 
   // Backend configuration
-  const BACKEND_URL = 'https://www.cabird.com';
+  const BACKEND_URL = 'https://cabird.com';
   const PAPER_ID = 'AI-Where-It_Matters.md';
 
   // Hardcoded canned questions
