@@ -1,7 +1,7 @@
 # Qualitative Analysis for Project Planning & Management
-# Category: Design Planning
+# Category: Design & Planning
 
-This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Project Planning & Management (Design Planning). I preserved the research team's thematic structure (codes, descriptions, and participant quotes) and synthesized the data into coherent narratives. My approach grouped related codes into readable themes, highlighted tensions and boundaries raised by participants, and derived implications and design guidance for AI tools in this domain.
+This report is an AI-generated synthesis of manually coded survey responses from software developers about AI usage in Project Planning & Management (Design &Planning). I preserved the research team's thematic structure (codes, descriptions, and participant quotes) and synthesized the data into coherent narratives. My approach grouped related codes into readable themes, highlighted tensions and boundaries raised by participants, and derived implications and design guidance for AI tools in this domain.
 
 ---
 
