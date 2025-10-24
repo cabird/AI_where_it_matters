@@ -15,8 +15,8 @@ window.chartData = [
     aiReportPath: "reports/report-development-coding_programming.md"
   },
   {
-    task: "Bug fixing",
-    fullName: "Bug Fixing & Debugging",
+    task: "Bug Fixing",
+    fullName: "Bug Fixing/Debugging",
     category: "Development",
     z_support: 0.9204545454545459,
     z_usage: 1.2253968253968253,
@@ -45,8 +45,8 @@ window.chartData = [
     aiReportPath: "reports/report-development-performance_optimization.md"
   },
   {
-    task: "AI integration",
-    fullName: "AI Development/Integration into Products",
+    task: "AI Integration",
+    fullName: "AI Development/Product Integration",
     category: "Development",
     z_support: -0.08603896103896069,
     z_usage: 0.23333333333333428,
@@ -57,7 +57,7 @@ window.chartData = [
   {
     task: "Testing & QA",
     fullName: "Testing & Quality Assurance",
-    category: "Quality-Risk",
+    category: "Quality & Risk Management",
     z_support: 1.6071428571428563,
     z_usage: 0.6285714285714292,
     labelOffset: { dx: 0, dy: 16 },
@@ -66,8 +66,8 @@ window.chartData = [
   },
   {
     task: "Code Review",
-    fullName: "Code Review & Pull Requests",
-    category: "Quality-Risk",
+    fullName: "Code Review/Pull Requests",
+    category: "Quality & Risk Management",
     z_support: 0.21428571428571486,
     z_usage: 0.49841269841269864,
     labelOffset: { dx: 0, dy: -16 },
@@ -77,7 +77,7 @@ window.chartData = [
   {
     task: "Security",
     fullName: "Security & Compliance",
-    category: "Quality-Risk",
+    category: "Quality & Risk Management",
     z_support: 0.7548701298701301,
     z_usage: -0.9142857142857146,
     labelOffset: { dx: 0, dy: 16 },
@@ -86,8 +86,8 @@ window.chartData = [
   },
   {
     task: "Requirements",
-    fullName: "Requirements Gathering & Analysis",
-    category: "Design-Planning",
+    fullName: "Requirements Engineering",
+    category: "Design & Planning",
     z_support: -0.7597402597402598,
     z_usage: -0.5333333333333319,
     labelOffset: { dx: 0, dy: -16 },
@@ -96,8 +96,8 @@ window.chartData = [
   },
   {
     task: "System Design",
-    fullName: "System Architecture & Design",
-    category: "Design-Planning",
+    fullName: "System Design",
+    category: "Design & Planning",
     z_support: -1.150974025974026,
     z_usage: -0.06349206349206238,
     labelOffset: { dx: 0, dy: 16 },
@@ -107,7 +107,7 @@ window.chartData = [
   {
     task: "Project Planning",
     fullName: "Project Planning & Management",
-    category: "Design-Planning",
+    category: "Design & Planning",
     z_support: -0.4707792207792201,
     z_usage: -0.5587301587301576,
     labelOffset: { dx: 0, dy: 16 },
@@ -116,8 +116,8 @@ window.chartData = [
   },
   {
     task: "DevOps",
-    fullName: "DevOps/CI/CD & Deployment",
-    category: "Infra-Ops",
+    fullName: "DevOps(CI/CD)",
+    category: "Infrastructure & Operations",
     z_support: 0.3555194805194821,
     z_usage: -0.6126984126984127,
     labelOffset: { dx: 0, dy: 16 },
@@ -126,8 +126,8 @@ window.chartData = [
   },
   {
     task: "Infra. Monitoring",
-    fullName: "Infrastructure Monitoring & Alerts",
-    category: "Infra-Ops",
+    fullName: "Infrastructure Monitoring",
+    category: "Infrastructure & Operations",
     z_support: 0.9058441558441563,
     z_usage: -0.5301587301587296,
     labelOffset: { dx: 0, dy: 16 },
@@ -137,7 +137,7 @@ window.chartData = [
   {
     task: "Env. Setup",
     fullName: "Environment Setup & Maintenance",
-    category: "Infra-Ops",
+    category: "Infrastructure & Operations",
     z_support: 0.030844155844155452,
     z_usage: -0.6269841269841265,
     labelOffset: { dx: 0, dy: -16 },
@@ -145,9 +145,9 @@ window.chartData = [
     aiReportPath: "reports/report-infrastructure_operations-environment_setup_maintenance.md"
   },
   {
-    task: "Customer support",
+    task: "Customer Support",
     fullName: "Customer Support",
-    category: "Infra-Ops",
+    category: "Infrastructure & Operations",
     z_support: -0.45941558441558494,
     z_usage: -1.0746031746031734,
     labelOffset: { dx: 0, dy: 16 },
@@ -157,7 +157,7 @@ window.chartData = [
   {
     task: "Documentation",
     fullName: "Documentation",
-    category: "Meta-work",
+    category: "Meta-Work",
     z_support: 1.905844155844155,
     z_usage: -0.47936507936507944,
     labelOffset: { dx: -20, dy: 16 },
@@ -166,8 +166,8 @@ window.chartData = [
   },
   {
     task: "Learning",
-    fullName: "Learning New Technologies",
-    category: "Meta-work",
+    fullName: "Learning",
+    category: "Meta-Work",
     z_support: 0.6347402597402603,
     z_usage: 0.7206349206349212,
     labelOffset: { dx: 0, dy: -16 },
@@ -177,7 +177,7 @@ window.chartData = [
   {
     task: "Research",
     fullName: "Research & Brainstorming",
-    category: "Meta-work",
+    category: "Meta-Work",
     z_support: 0.06655844155844193,
     z_usage: 0.45238095238095277,
     labelOffset: { dx: 0, dy: 16 },
@@ -185,9 +185,9 @@ window.chartData = [
     aiReportPath: "reports/report-meta_work-research_brainstorming.md"
   },
   {
-    task: "Stakeholder comm.",
+    task: "Stakeholder Comm.",
     fullName: "Client/Stakeholder Communication",
-    category: "Meta-work",
+    category: "Meta-Work",
     z_support: -1.4594155844155845,
     z_usage: -0.6158730158730155,
     labelOffset: { dx: 0, dy: 16 },
@@ -197,7 +197,7 @@ window.chartData = [
   {
     task: "Mentoring",
     fullName: "Mentoring & Onboarding",
-    category: "Meta-work",
+    category: "Meta-Work",
     z_support: -1.8814935064935066,
     z_usage: -1.439682539682539,
     labelOffset: { dx: 20, dy: 16 },
