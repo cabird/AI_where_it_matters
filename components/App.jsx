@@ -7,6 +7,7 @@ function App() {
     // Modal state
     const [reportModalOpen, setReportModalOpen] = useState(false);
     const [aboutModalOpen, setAboutModalOpen] = useState(false);
+    const [chatModalOpen, setChatModalOpen] = useState(false);
     const [selectedReport, setSelectedReport] = useState(null);
     const [reportContent, setReportContent] = useState('');
     const [reportLoading, setReportLoading] = useState(false);
@@ -81,6 +82,19 @@ function App() {
         }
     };
 
+    // Handle Chat button click
+    const handleChatClick = () => {
+        setChatModalOpen(true);
+
+        // Track chat modal view in Google Analytics
+        if (window.gtag) {
+            window.gtag('event', 'chat_view', {
+                'event_category': 'Navigation',
+                'event_label': 'Chat with Paper'
+            });
+        }
+    };
+
     // Close modals and return to visualization
     const handleCloseReportModal = () => {
         setReportModalOpen(false);
@@ -90,6 +104,10 @@ function App() {
 
     const handleCloseAboutModal = () => {
         setAboutModalOpen(false);
+    };
+
+    const handleCloseChatModal = () => {
+        setChatModalOpen(false);
     };
 
     if (loading) {
@@ -115,6 +133,7 @@ function App() {
                     <window.VisualizationPage
                         onDataPointClick={handleDataPointClick}
                         onAboutClick={handleAboutClick}
+                        onChatClick={handleChatClick}
                         isModalOpen={reportModalOpen}
                     />
                 </div>
@@ -145,6 +164,12 @@ function App() {
             >
                 <window.WelcomePage />
             </window.Modal>
+
+            {/* Chat Modal */}
+            <window.ChatModal
+                isOpen={chatModalOpen}
+                onClose={handleCloseChatModal}
+            />
         </div>
     );
 }

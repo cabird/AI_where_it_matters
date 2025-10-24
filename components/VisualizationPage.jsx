@@ -1,5 +1,5 @@
 // Visualization landing page with scatter plot and About button
-window.VisualizationPage = function VisualizationPage({ onDataPointClick, onAboutClick, isModalOpen }) {
+window.VisualizationPage = function VisualizationPage({ onDataPointClick, onAboutClick, onChatClick, isModalOpen }) {
   const ScatterPlot = window.ScatterPlot;
 
   return (
@@ -57,6 +57,12 @@ window.VisualizationPage = function VisualizationPage({ onDataPointClick, onAbou
             </svg>
             Read the Full Paper
           </a>
+          <button className="about-button" onClick={onChatClick}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Chat with the Paper
+          </button>
         </div>
 
         <div className="chart-instructions">
