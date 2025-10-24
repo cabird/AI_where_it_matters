@@ -62,26 +62,26 @@ window.ScatterPlot = function ScatterPlot({ onPointClick, isModalOpen }) {
   // Category colors - professional, aesthetic-friendly
   const categoryColors = {
     'Development': '#4A90E2',
-    'Quality-Risk': '#50C878',
-    'Design-Planning': '#F5A623',
-    'Infra-Ops': '#9B59B6',
-    'Meta-work': '#E74C3C'
+    'Quality & Risk Management': '#50C878',
+    'Design & Planning': '#F5A623',
+    'Infrastructure & Operations': '#9B59B6',
+    'Meta-Work': '#E74C3C'
   };
 
   // Category shapes (using Recharts shape types)
   const categoryShapes = {
     'Development': 'circle',
-    'Quality-Risk': 'square',
-    'Design-Planning': 'triangle',
-    'Infra-Ops': 'diamond',
-    'Meta-work': 'wye'
+    'Quality & Risk Management': 'square',
+    'Design & Planning': 'triangle',
+    'Infrastructure & Operations': 'diamond',
+    'Meta-Work': 'wye'
   };
 
   // Get data from window.chartData
   const data = window.chartData || [];
 
   // Group data by category for multiple Scatter components
-  const categories = ['Development', 'Quality-Risk', 'Design-Planning', 'Infra-Ops', 'Meta-work'];
+  const categories = ['Development', 'Quality & Risk Management', 'Design & Planning', 'Infrastructure & Operations', 'Meta-Work'];
 
   const dataByCategory = categories.reduce((acc, category) => {
     acc[category] = data.filter(d => d.category === category);
