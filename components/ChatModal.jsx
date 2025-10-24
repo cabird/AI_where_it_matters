@@ -17,7 +17,7 @@ window.ChatModal = function ChatModal({ isOpen, onClose }) {
 
   // Backend configuration
   const BACKEND_URL = 'https://cabird.com';
-  const PAPER_ID = 'AI-Where-It_Matters.md';
+  const PAPER_ID = 'Choudhuri2026AIWhere';
 
   // Hardcoded canned questions
   const cannedQuestions = [
