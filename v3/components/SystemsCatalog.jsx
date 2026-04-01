@@ -12,6 +12,10 @@ Explorer.SystemsCatalog = function SystemsCatalog() {
   let filtered = filter ? systems.filter(s => s.category === filter) : [...systems];
   if (sortBy === 'prevalence') filtered.sort((a, b) => b.prevalence - a.prevalence);
   else if (sortBy === 'alpha') filtered.sort((a, b) => a.shortName.localeCompare(b.shortName));
+  else if (sortBy === 'category') filtered.sort((a, b) => {
+    const catOrder = categories.indexOf(a.category) - categories.indexOf(b.category);
+    return catOrder !== 0 ? catOrder : b.prevalence - a.prevalence;
+  });
 
   return (
     <div>
@@ -22,6 +26,7 @@ Explorer.SystemsCatalog = function SystemsCatalog() {
         </div>
         <select className="catalog-sort" value={sortBy} onChange={e => setSortBy(e.target.value)}>
           <option value="prevalence">Sort by prevalence</option>
+          <option value="category">Sort by category</option>
           <option value="alpha">Sort alphabetically</option>
         </select>
       </div>
