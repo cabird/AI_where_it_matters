@@ -42,10 +42,10 @@ Explorer.ChatPanel = function ChatPanel() {
   const sessionId = useRef('s_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9));
 
   const suggestions = [
-    "What are the top systems developers want?",
-    "Biggest gap between desire and actual AI usage?",
-    "What constraints recur across all 22 systems?",
-    "Summarize both papers in 3 sentences",
+    "Summarize Paper 1 (AI Where It Matters) in 3 sentences",
+    "What are the top 3 systems from Paper 2 (Beyond Copilot)?",
+    "What constraints recur across all 22 systems in Paper 2?",
+    "Compare the findings of Paper 1 and Paper 2",
   ];
 
   useEffect(() => { endRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages, loading]);
@@ -129,7 +129,7 @@ Explorer.ChatPanel = function ChatPanel() {
           <div className="chat-messages">
             {messages.length === 0 && !loading && (
               <div className="chat-empty">
-                <p>Ask anything about both studies</p>
+                <p>Ask about Paper 1 (AI Where It Matters) or Paper 2 (Beyond Copilot)</p>
                 <div className="chat-suggestions">
                   {suggestions.map((q, i) => (
                     <button key={i} className="chat-suggestion" onClick={() => send(q)}>{q}</button>
@@ -162,7 +162,7 @@ Explorer.ChatPanel = function ChatPanel() {
       <div className="chat-dock-bar">
         <div className="chat-dock-label">
           <Icon name="MessageCircle" size={13} color="var(--sage-600)" style={{ marginRight: 5 }} />
-          This AI has read both papers — ask it anything
+          Ask about Paper 1 (AI Where It Matters) or Paper 2 (Beyond Copilot) — this AI has read both
         </div>
         <div className="chat-dock-bar-inner">
           <div className="chat-dock-input-wrap">

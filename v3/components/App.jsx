@@ -39,7 +39,7 @@ Explorer.App = function App() {
         <div className="exhibit-tab-bar">
           <button className={`exhibit-tab${activeTab === 'map' ? ' exhibit-tab-active' : ''}`} onClick={() => setActiveTab('map')}>
             <Icon name="ScatterChart" size={15} style={{ marginRight: 6 }} />
-            Openness–Usage Map
+            AI Opportunity Space
           </button>
           <button className={`exhibit-tab${activeTab === 'systems' ? ' exhibit-tab-active' : ''}`} onClick={() => setActiveTab('systems')}>
             <Icon name="LayoutGrid" size={15} style={{ marginRight: 6 }} />

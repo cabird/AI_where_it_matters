@@ -9,7 +9,7 @@ Explorer.NavBar = function NavBar({ activeTab, onTabChange }) {
         </a>
         <div className="navbar-tabs">
           <button className={`navbar-tab${activeTab === 'map' ? ' navbar-tab-active' : ''}`} onClick={() => onTabChange('map')}>
-            The Map
+            Opportunity Space
           </button>
           <button className={`navbar-tab${activeTab === 'systems' ? ' navbar-tab-active' : ''}`} onClick={() => onTabChange('systems')}>
             22 Systems

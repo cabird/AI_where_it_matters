@@ -48,8 +48,8 @@ Explorer.ScatterPlot = function ScatterPlot({ onPointClick, highlightedCategory,
   return (
     <div className="scatter-panel">
       <div className="scatter-intro">
-        <h3>Openness vs. Usage</h3>
-        <p>Click a data point for detailed analysis. Hover categories to filter.</p>
+        <h3>AI Opportunity Space</h3>
+        <p>Where developers want AI support vs. where they already use it. Click any task for a detailed qualitative analysis. Hover categories to filter.</p>
       </div>
       <div className="legend-bar">
         {categories.map(c => (
