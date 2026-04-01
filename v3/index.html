@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer AI Research — Card Explorer</title>
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- Fonts: Newsreader + Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- React -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Markdown-it -->
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@13/dist/markdown-it.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it-anchor@8/dist/markdownItAnchor.umd.js"></script>
+
+    <!-- Recharts -->
+    <script src="https://cdn.jsdelivr.net/npm/prop-types@15.8.1/prop-types.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/recharts@2.5.0/umd/Recharts.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- DOMPurify & Marked -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@latest/marked.min.js"></script>
+
+    <!-- Data -->
+    <script src="chartData.js"></script>
+    <script src="systemsData.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script>window.Explorer = {};</script>
+
+    <script type="text/babel" src="components/Icon.jsx"></script>
+    <script type="text/babel" src="components/Modal.jsx"></script>
+    <script type="text/babel" src="components/NavBar.jsx"></script>
+    <script type="text/babel" src="components/Hero.jsx"></script>
+    <script type="text/babel" src="components/ScatterPlot.jsx"></script>
+    <script type="text/babel" src="components/TaskList.jsx"></script>
+    <script type="text/babel" src="components/SystemCard.jsx"></script>
+    <script type="text/babel" src="components/SystemsCatalog.jsx"></script>
+    <script type="text/babel" src="components/PaperReader.jsx"></script>
+    <script type="text/babel" src="components/ChatPanel.jsx"></script>
+    <script type="text/babel" src="components/Footer.jsx"></script>
+    <script type="text/babel" src="components/App.jsx"></script>
+
+    <script type="text/babel">
+        ReactDOM.createRoot(document.getElementById('root')).render(<Explorer.App />);
+    </script>
+</body>
+</html>
