@@ -37,7 +37,7 @@ Explorer.ChatPanel = function ChatPanel() {
   }, [expanded, input]);
 
   const BACKEND_URL = 'https://cabird.com';
-  const PAPER_ID = 'Choudhuri2026AIWhere';
+  const PAPER_ID = 'choudhuri2025copilot-beyond';
   const MAX = 10;
   const sessionId = useRef('s_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9));
 
