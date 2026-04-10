@@ -10,7 +10,7 @@ Explorer.Footer = function Footer() {
         </div>
         <div>
           <div className="footer-paper-label">Paper II</div>
-          <div className="footer-paper-title">What's Beyond Copilot? 22 AI Systems Developers Want Built</div>
+          <div className="footer-paper-title">To Copilot and Beyond: 22 AI Systems Developers Want Built</div>
           <div className="footer-paper-authors">Choudhuri, Bird, Badea, Sarma (2026)</div>
           <a href="paper2.pdf" className="footer-paper-link">Download PDF →</a>
         </div>

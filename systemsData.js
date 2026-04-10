@@ -1,12 +1,12 @@
 // 22 AI Systems Developers Want Built
-// Source: "What's Beyond Copilot? 22 AI Systems Developers Want Built"
+// Source: "To Copilot and Beyond: 22 AI Systems Developers Want Built"
 // Choudhuri, Bird, Badea, Sarma (2026)
 
 window.systemsData = [
   // === Development (N=353) ===
   {
     id: "scoped-pr-builder",
-    name: "Scoped-PR Builder for Tech Debt",
+    name: "Scoped-PR Builder for Tech-Debt Removal",
     shortName: "Scoped-PR Builder",
     category: "Development",
     prevalence: 50.1,
@@ -112,8 +112,8 @@ window.systemsData = [
   },
   {
     id: "design-doc-workspace",
-    name: "Full-Loop Design Doc & Diagram Workspace",
-    shortName: "Design Doc Workspace",
+    name: "Full-Loop Design Doc & Diagram Workbench",
+    shortName: "Design Doc Workbench",
     category: "Design-Planning",
     prevalence: 15.2,
     respondents: 223,
@@ -140,7 +140,7 @@ window.systemsData = [
   },
   {
     id: "pr-review-assistant",
-    name: "Context-Aware PR Review Assistant",
+    name: "Context-Aware Pull Request Review Assistant",
     shortName: "PR Review Assistant",
     category: "Quality-Risk",
     prevalence: 23.2,
@@ -194,7 +194,7 @@ window.systemsData = [
   // === Infrastructure & Operations (N=101) ===
   {
     id: "telemetry-assistant",
-    name: "Telemetry Correlation Assistant for Alert Tuning & Incident Triage",
+    name: "Telemetry Correlation Assistant",
     shortName: "Telemetry Assistant",
     category: "Infra-Ops",
     prevalence: 40.6,
@@ -261,7 +261,7 @@ window.systemsData = [
   },
   {
     id: "ramp-up-coach",
-    name: "Traceable Personalized Developer Ramp-Up Coach",
+    name: "Contextualized Developer Ramp-Up Coach",
     shortName: "Ramp-Up Coach",
     category: "Meta-work",
     prevalence: 30.6,
@@ -274,7 +274,7 @@ window.systemsData = [
   },
   {
     id: "stakeholder-drafts",
-    name: "Stakeholder Communication Drafting Workbench",
+    name: "Stakeholder Communication Draft Workbench",
     shortName: "Stakeholder Drafts",
     category: "Meta-work",
     prevalence: 12.7,
@@ -287,7 +287,7 @@ window.systemsData = [
   },
   {
     id: "exploration-board",
-    name: "Interactive Exploration Board for Tech Discovery",
+    name: "Interactive Exploration Board for Early Tech Discovery",
     shortName: "Exploration Board",
     category: "Meta-work",
     prevalence: 11.7,
