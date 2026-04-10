@@ -35,14 +35,14 @@ Explorer.PaperReader = function PaperReader() {
       pdf: 'paper2.pdf',
       authors: 'Choudhuri, Bird, Badea, Sarma (2026)',
       subtitle: '22 AI Systems Developers Want Built',
-      bibtex: `@inproceedings{choudhuri2026beyondcopilot,
+      bibtex: `@article{choudhuri2026beyondcopilot,
   title={To Copilot and Beyond: 22 AI Systems Developers Want Built},
   author={Choudhuri, Rudrajit and Bird, Christian and Badea, Carmen and Sarma, Anita},
   year={2026},
-  booktitle={Proceedings of the 47th International Conference on Software Engineering (ICSE)},
-  publisher={ACM},
-  address={New York, NY, USA},
-  doi={10.1145/nnnnnnn.nnnnnnn}
+  eprint={2604.07830},
+  archivePrefix={arXiv},
+  primaryClass={cs.SE},
+  url={https://arxiv.org/abs/2604.07830}
 }`,
     },
   };
