@@ -20,7 +20,7 @@ window.systemsData = [
   {
     id: "quality-gate",
     name: "Embedded Quality Gate for Code & Tests",
-    shortName: "Quality Gate",
+    shortName: "Proactive QA Gate",
     category: "Development",
     prevalence: 27.8,
     respondents: 353,
@@ -61,7 +61,7 @@ window.systemsData = [
   {
     id: "design-to-sprint",
     name: "Design-To-Sprint Workbench",
-    shortName: "Design-To-Sprint",
+    shortName: "Design-To-Sprint Workbench",
     category: "Design-Planning",
     prevalence: 30.5,
     respondents: 223,
@@ -100,7 +100,7 @@ window.systemsData = [
   {
     id: "decision-provenance",
     name: "Decision Context & Provenance Graph",
-    shortName: "Decision Provenance",
+    shortName: "Decision Provenance Graph",
     category: "Design-Planning",
     prevalence: 19.7,
     respondents: 223,
@@ -128,7 +128,7 @@ window.systemsData = [
   {
     id: "change-aware-testing",
     name: "Change-Aware Test Generation & Quality Gates",
-    shortName: "Test Generation",
+    shortName: "Change-Aware Test Generator",
     category: "Quality-Risk",
     prevalence: 44.5,
     respondents: 155,
@@ -167,7 +167,7 @@ window.systemsData = [
   {
     id: "compliance-compiler",
     name: "Compliance Evidence Compiler & Interpreter",
-    shortName: "Compliance Compiler",
+    shortName: "Compliance Processor",
     category: "Quality-Risk",
     prevalence: 14.2,
     respondents: 155,
@@ -288,7 +288,7 @@ window.systemsData = [
   {
     id: "exploration-board",
     name: "Interactive Exploration Board for Tech Discovery",
-    shortName: "Exploration Board",
+    shortName: "Tech Exploration Board",
     category: "Meta-work",
     prevalence: 11.7,
     respondents: 157,
