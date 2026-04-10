@@ -113,7 +113,7 @@ window.systemsData = [
   {
     id: "design-doc-workspace",
     name: "Full-Loop Design Doc & Diagram Workspace",
-    shortName: "Design Doc Workspace",
+    shortName: "Design Doc Workbench",
     category: "Design-Planning",
     prevalence: 15.2,
     respondents: 223,
