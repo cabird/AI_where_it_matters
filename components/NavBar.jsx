@@ -19,7 +19,7 @@ Explorer.NavBar = function NavBar({ activeTab, onTabChange }) {
           </button>
         </div>
         <div className="navbar-actions">
-          <a href="paper.pdf" className="navbar-pdf-link" target="_blank" rel="noopener noreferrer">
+          <a href="paper1.pdf" className="navbar-pdf-link" target="_blank" rel="noopener noreferrer">
             <Icon name="FileDown" size={13} style={{ marginRight: 3 }} /> PDF I
           </a>
           <a href="paper2.pdf" className="navbar-pdf-link" target="_blank" rel="noopener noreferrer">

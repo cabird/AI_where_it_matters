@@ -73,7 +73,7 @@ window.WelcomePage = function WelcomePage() {
             <h2>Research Paper</h2>
             <p>
                 For the full study methodology, findings, and implications, please refer to the
-                research paper: <a href="paper.pdf" target="_blank" rel="noopener noreferrer">
+                research paper: <a href="paper1.pdf" target="_blank" rel="noopener noreferrer">
                     " AI Where It Matters: Where, Why, and How Developers Want AI Support in Daily Work"
                 </a>
             </p>
