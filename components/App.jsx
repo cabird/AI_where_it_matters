@@ -1,5 +1,5 @@
-const { useState } = React;
-const { Icon, NavBar, Hero, ScatterPlot, TaskList, SystemsCatalog, PaperReader, ChatPanel, Footer, Modal, ReportModal } = Explorer;
+const { useState, useRef } = React;
+const { Icon, NavBar, Hero, ScatterPlot, TaskList, SystemsCatalog, PaperReader, ChatPanel, ChatBanner, Footer, Modal, ReportModal } = Explorer;
 
 Explorer.App = function App() {
   const [activeTab, setActiveTab] = useState('systems');
@@ -9,6 +9,7 @@ Explorer.App = function App() {
   const [selectedReport, setSelectedReport] = useState(null);
   const [reportContent, setReportContent] = useState('');
   const [reportLoading, setReportLoading] = useState(false);
+  const chatRef = useRef(null);
 
   const meta = window.categoryMeta;
 
@@ -33,6 +34,10 @@ Explorer.App = function App() {
   return (
     <div>
       <NavBar activeTab={activeTab} onTabChange={setActiveTab} />
+      <ChatBanner onChatOpen={() => {
+        const fab = document.querySelector('.chat-fab');
+        if (fab) fab.click();
+      }} />
       <Hero />
 
       <div className="exhibit-area">

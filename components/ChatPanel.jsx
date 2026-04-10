@@ -2,39 +2,13 @@ const { useState, useRef, useEffect } = React;
 const { Icon } = Explorer;
 
 Explorer.ChatPanel = function ChatPanel() {
-  const [expanded, setExpanded] = useState(false);
+  const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [msgCount, setMsgCount] = useState(0);
-  const [placeholderIdx, setPlaceholderIdx] = useState(0);
   const endRef = useRef(null);
   const inputRef = useRef(null);
-
-  const placeholders = [
-    "Explain this research to a fifth grader.",
-    "Which tasks have the biggest AI demand gap?",
-    "What do developers want AI to never do?",
-    "What are the top 3 systems developers want built?",
-    "How do developers feel about AI doing code review?",
-    "What makes these 22 systems hard to build?",
-    "Summarize both papers in 3 sentences",
-  ];
-
-  const [placeholderFading, setPlaceholderFading] = useState(false);
-
-  // Rotate placeholder text with fade
-  useEffect(() => {
-    if (expanded || input) return;
-    const interval = setInterval(() => {
-      setPlaceholderFading(true);
-      setTimeout(() => {
-        setPlaceholderIdx(prev => (prev + 1) % placeholders.length);
-        setPlaceholderFading(false);
-      }, 400);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [expanded, input]);
 
   const BACKEND_URL = 'https://cabird.com';
   const PAPER_ID = 'choudhuri2025copilot-beyond';
@@ -42,24 +16,23 @@ Explorer.ChatPanel = function ChatPanel() {
   const sessionId = useRef('s_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9));
 
   const suggestions = [
-    "Summarize Paper 1 (AI Where It Matters) in 3 sentences",
-    "What are the top 3 systems from Paper 2 (To Copilot and Beyond)?",
-    "What constraints recur across all 22 systems in Paper 2?",
+    "Summarize both papers in 3 sentences",
+    "What are the top 3 systems developers want built?",
+    "What constraints recur across all 22 systems?",
     "Compare the findings of Paper 1 and Paper 2",
   ];
 
   useEffect(() => { endRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages, loading]);
 
-  // Focus input when expanding
   useEffect(() => {
-    if (expanded && inputRef.current) {
-      setTimeout(() => inputRef.current.focus(), 100);
+    if (open && inputRef.current) {
+      setTimeout(() => inputRef.current.focus(), 200);
     }
-  }, [expanded]);
+  }, [open]);
 
   const send = async (text) => {
     if (!text.trim() || loading || msgCount >= MAX) return;
-    if (!expanded) setExpanded(true);
+    if (!open) setOpen(true);
     setMessages(p => [...p, { role: 'user', content: text }]);
     setInput('');
     setLoading(true);
@@ -101,95 +74,129 @@ Explorer.ChatPanel = function ChatPanel() {
     return window.DOMPurify.sanitize(window.marked.parse(t));
   };
 
-  const handleDockInputKeyDown = (e) => {
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      if (input.trim()) {
-        send(input);
-      }
+      if (input.trim()) send(input);
     }
   };
 
-  const handleDockFocus = () => {
-    if (!expanded) setExpanded(true);
-  };
-
   return (
-    <div className={`chat-dock${expanded ? ' chat-dock-expanded' : ''}`}>
-      {/* Expanded: full chat panel above the dock */}
-      {expanded && (
-        <div className="chat-dock-panel">
-          <div className="chat-dock-panel-header">
-            <span className="chat-dock-panel-title">Chat with Both Papers</span>
-            <button className="chat-dock-panel-close" onClick={() => setExpanded(false)}>
-              ↓ Minimize
+    <>
+      {/* FAB */}
+      <button
+        className={`chat-fab${open ? ' chat-fab-hidden' : ''}`}
+        onClick={() => setOpen(true)}
+        title="Chat with the papers"
+      >
+        <Icon name="MessageCircle" size={24} color="#fff" />
+        <span className="chat-fab-label">Ask AI</span>
+        <span className="chat-fab-pulse" />
+      </button>
+
+      {/* Overlay */}
+      {open && <div className="chat-overlay" onClick={() => setOpen(false)} />}
+
+      {/* Slide-up panel */}
+      <div className={`chat-panel${open ? ' chat-panel-open' : ''}`}>
+        <div className="chat-panel-header">
+          <div className="chat-panel-header-left">
+            <Icon name="MessageCircle" size={18} color="var(--sage-700)" />
+            <span className="chat-panel-title">Chat with Both Papers</span>
+          </div>
+          <div className="chat-panel-header-right">
+            {messages.length > 0 && (
+              <button className="chat-panel-reset" onClick={() => {
+                setMessages([]);
+                setMsgCount(0);
+                setInput('');
+                sessionId.current = 's_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+              }} title="New conversation">
+                <Icon name="RotateCcw" size={14} color="var(--sage-600)" />
+                <span>New chat</span>
+              </button>
+            )}
+            <button className="chat-panel-close" onClick={() => setOpen(false)}>
+              <Icon name="X" size={18} color="var(--sage-500)" />
             </button>
           </div>
-
-          <div className="chat-messages">
-            {messages.length === 0 && !loading && (
-              <div className="chat-empty">
-                <p>Ask about Paper 1 (AI Where It Matters) or Paper 2 (To Copilot and Beyond)</p>
-                <div className="chat-suggestions">
-                  {suggestions.map((q, i) => (
-                    <button key={i} className="chat-suggestion" onClick={() => send(q)}>{q}</button>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {messages.map((m, i) => (
-              <div key={i} className={`chat-msg chat-msg-${m.role === 'user' ? 'user' : 'ai'}`}>
-                <div className="chat-msg-bubble">
-                  {m.role === 'assistant' ? <div dangerouslySetInnerHTML={{ __html: renderMd(m.content || '') }} /> : m.content}
-                </div>
-              </div>
-            ))}
-
-            {loading && messages[messages.length - 1]?.content === '' && (
-              <div className="chat-msg chat-msg-ai">
-                <div className="chat-msg-bubble">
-                  <div className="typing-dots"><div className="typing-dot" /><div className="typing-dot" /><div className="typing-dot" /></div>
-                </div>
-              </div>
-            )}
-            <div ref={endRef} />
-          </div>
         </div>
-      )}
 
-      {/* Bottom dock bar — always visible */}
-      <div className="chat-dock-bar">
-        <div className="chat-dock-label">
-          <Icon name="MessageCircle" size={13} color="var(--sage-600)" style={{ marginRight: 5 }} />
-          Ask about Paper 1 (AI Where It Matters) or Paper 2 (To Copilot and Beyond) — this AI has read both
+        <div className="chat-messages">
+          {messages.length === 0 && !loading && (
+            <div className="chat-empty">
+              <div className="chat-empty-icon">
+                <Icon name="BookOpen" size={32} color="var(--sage-400)" />
+              </div>
+              <p className="chat-empty-title">Ask anything about the research</p>
+              <p className="chat-empty-sub">This AI has read both papers and can answer questions, summarize findings, and compare results.</p>
+              <div className="chat-suggestions">
+                {suggestions.map((q, i) => (
+                  <button key={i} className="chat-suggestion" onClick={() => send(q)}>{q}</button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {messages.map((m, i) => (
+            <div key={i} className={`chat-msg chat-msg-${m.role === 'user' ? 'user' : 'ai'}`}>
+              <div className="chat-msg-bubble">
+                {m.role === 'assistant' ? <div dangerouslySetInnerHTML={{ __html: renderMd(m.content || '') }} /> : m.content}
+              </div>
+            </div>
+          ))}
+
+          {loading && messages[messages.length - 1]?.content === '' && (
+            <div className="chat-msg chat-msg-ai">
+              <div className="chat-msg-bubble">
+                <div className="typing-dots"><div className="typing-dot" /><div className="typing-dot" /><div className="typing-dot" /></div>
+              </div>
+            </div>
+          )}
+          <div ref={endRef} />
         </div>
-        <div className="chat-dock-bar-inner">
-          <div className="chat-dock-input-wrap">
-            <input
-              ref={inputRef}
-              className="chat-dock-input"
-              placeholder=""
-              value={input}
-              onChange={e => setInput(e.target.value)}
-              onKeyDown={handleDockInputKeyDown}
-              onFocus={handleDockFocus}
-              disabled={loading || msgCount >= MAX}
-            />
-            {!input && (
-              <span className={`chat-dock-placeholder${placeholderFading ? ' chat-dock-placeholder-fade' : ''}`}>
-                {placeholders[placeholderIdx]}
-              </span>
-            )}
-          </div>
-          <button
-            className="chat-dock-send"
-            onClick={() => { if (input.trim()) send(input); else if (!expanded) setExpanded(true); }}
+
+        <div className="chat-input-bar">
+          <input
+            ref={inputRef}
+            className="chat-input"
+            placeholder="Ask about the research..."
+            value={input}
+            onChange={e => setInput(e.target.value)}
+            onKeyDown={handleKeyDown}
             disabled={loading || msgCount >= MAX}
+          />
+          <button
+            className="chat-send-btn"
+            onClick={() => { if (input.trim()) send(input); }}
+            disabled={loading || !input.trim()}
           >
-            {input.trim() ? 'Send' : expanded ? 'Send' : 'Chat'}
+            <Icon name="Send" size={16} color="#fff" />
           </button>
         </div>
+      </div>
+    </>
+  );
+};
+
+// Dismissable banner component
+Explorer.ChatBanner = function ChatBanner({ onChatOpen }) {
+  const [dismissed, setDismissed] = useState(false);
+  const { Icon } = Explorer;
+
+  if (dismissed) return null;
+
+  return (
+    <div className="chat-banner">
+      <div className="chat-banner-inner">
+        <Icon name="MessageCircle" size={16} color="var(--sage-700)" />
+        <span className="chat-banner-text">
+          <strong>This paper is interactive</strong> — ask the AI anything about the research
+        </span>
+        <button className="chat-banner-try" onClick={onChatOpen}>Try it →</button>
+        <button className="chat-banner-dismiss" onClick={() => setDismissed(true)}>
+          <Icon name="X" size={14} color="var(--sage-500)" />
+        </button>
       </div>
     </div>
   );
