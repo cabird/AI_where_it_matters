@@ -16,7 +16,7 @@ Explorer.PaperReader = function PaperReader() {
       label: 'Paper I: AI Where It Matters',
       shortLabel: 'Paper I',
       file: 'papers/paper1.md',
-      pdf: 'paper.pdf',
+      pdf: 'paper1.pdf',
       authors: 'Choudhuri, Badea, Bird, Butler, DeLine, Houck (2026)',
       subtitle: 'Where, Why, and How Developers Want AI Support in Daily Work',
       bibtex: `@inproceedings{choudhuri2026aiwhere,
