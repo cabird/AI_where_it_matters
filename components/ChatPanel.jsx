@@ -11,7 +11,7 @@ Explorer.ChatPanel = function ChatPanel() {
   const inputRef = useRef(null);
 
   const BACKEND_URL = 'https://cabird.com';
-  const PAPER_ID = 'choudhuri2025copilot-beyond';
+  const CHAT_ENDPOINT = `${BACKEND_URL}/api/chat/ai-where-it-matters`;
   const MAX = 10;
   const sessionId = useRef('s_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9));
 
@@ -38,7 +38,7 @@ Explorer.ChatPanel = function ChatPanel() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${BACKEND_URL}/api/papers/${PAPER_ID}/chat`, {
+      const res = await fetch(CHAT_ENDPOINT, {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text, session_id: sessionId.current })
       });
@@ -191,7 +191,7 @@ Explorer.ChatBanner = function ChatBanner({ onChatOpen }) {
       <div className="chat-banner-inner">
         <Icon name="MessageCircle" size={16} color="var(--sage-700)" />
         <span className="chat-banner-text">
-          <strong>This paper is interactive</strong> — ask the AI anything about the research
+          <strong>This website is interactive</strong> — ask the AI anything about the papers or the research
         </span>
         <button className="chat-banner-try" onClick={onChatOpen}>Try it →</button>
         <button className="chat-banner-dismiss" onClick={() => setDismissed(true)}>
