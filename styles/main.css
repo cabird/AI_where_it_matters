@@ -1584,6 +1584,28 @@ body {
 
 .footer-paper-link:hover { text-decoration: underline; }
 
+.footer-report-link {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 20px 32px;
+  text-align: center;
+  border-top: 1px solid var(--text-200);
+}
+
+.footer-report-link a {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--sage-600);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-report-link a:hover {
+  color: var(--sage-700);
+  text-decoration: underline;
+}
+
 .footer-bottom {
   max-width: var(--content-max);
   margin: 0 auto;

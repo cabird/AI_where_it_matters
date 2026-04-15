@@ -15,6 +15,11 @@ Explorer.Footer = function Footer() {
           <a href="paper2.pdf" className="footer-paper-link">Download PDF →</a>
         </div>
       </footer>
+      <div className="footer-report-link">
+        <a href="report.html" target="_blank" rel="noopener noreferrer">
+          📊 Explore the full interactive report — developer quotes, themes, and analysis across all 20 tasks →
+        </a>
+      </div>
       <div className="footer-bottom">
         Microsoft Research · Oregon State University · Survey of 860 professional developers · July 2025
       </div>
