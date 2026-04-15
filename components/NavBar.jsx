@@ -22,6 +22,9 @@ Explorer.NavBar = function NavBar({ activeTab, onTabChange }) {
           <a href="report.html" className="navbar-pdf-link" target="_blank" rel="noopener noreferrer">
             <Icon name="MessageSquareQuote" size={13} style={{ marginRight: 3 }} /> Quotes
           </a>
+          <a href="presentation.pdf" className="navbar-pdf-link" target="_blank" rel="noopener noreferrer">
+            <Icon name="Presentation" size={13} style={{ marginRight: 3 }} /> Slides
+          </a>
           <a href="paper1.pdf" className="navbar-pdf-link" target="_blank" rel="noopener noreferrer">
             <Icon name="FileDown" size={13} style={{ marginRight: 3 }} /> PDF I
           </a>
