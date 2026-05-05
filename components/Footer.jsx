@@ -17,7 +17,7 @@ Explorer.Footer = function Footer() {
       </footer>
       <div className="footer-report-link">
         <a href="report.html" target="_blank" rel="noopener noreferrer">
-          📊 Explore the full interactive report — developer quotes, themes, and analysis across all 20 tasks →
+          Methodology &amp; thematic analysis report — codebook, IRR, pipeline, and supporting quotes →
         </a>
       </div>
       <div className="footer-bottom">

@@ -1,5 +1,5 @@
 const { useState } = React;
-const { SystemCard, Modal } = Explorer;
+const { SystemCard, SystemDetail, Modal } = Explorer;
 
 Explorer.SystemsCatalog = function SystemsCatalog() {
   const [filter, setFilter] = useState(null);
@@ -48,36 +48,8 @@ Explorer.SystemsCatalog = function SystemsCatalog() {
         {filtered.map(s => <SystemCard key={s.id} system={s} onClick={setSelected} />)}
       </div>
 
-      <Modal isOpen={!!selected} onClose={() => setSelected(null)} title={selected?.name} badge={selected ? meta[selected.category]?.label : ''}>
-        {selected && (
-          <div>
-            <div className="detail-bar">
-              <div className="detail-bar-fill" style={{ width: `${selected.prevalence}%`, background: meta[selected.category]?.color }} />
-            </div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--text-400)', marginBottom: 28 }}>
-              {selected.prevalence}% of {selected.respondents} respondents in {meta[selected.category]?.label}
-            </div>
-            <div className="detail-section">
-              <span className="detail-label">The Problem</span>
-              <p className="detail-text">{selected.problem}</p>
-            </div>
-            <div className="detail-section">
-              <span className="detail-label">What It Would Do</span>
-              <p className="detail-text">{selected.capabilities}</p>
-            </div>
-            <div className="detail-section">
-              <span className="detail-label">Constraints & Guardrails</span>
-              <p className="detail-text">{selected.constraints}</p>
-            </div>
-            <div className="detail-section">
-              <span className="detail-label">Developer Voice</span>
-              <div className="detail-quote">
-                "{selected.quote}"
-                <span className="detail-quote-author">— {selected.quoteAuthor}</span>
-              </div>
-            </div>
-          </div>
-        )}
+      <Modal isOpen={!!selected} onClose={() => setSelected(null)} title={selected?.name} badge={selected ? meta[selected.category]?.label : ''} wide>
+        {selected && <SystemDetail system={selected} />}
       </Modal>
     </div>
   );
