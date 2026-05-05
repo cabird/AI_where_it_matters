@@ -23,6 +23,25 @@ Explorer.SystemsCatalog = function SystemsCatalog() {
         <div>
           <h3>22 Systems Developers Want Built</h3>
           <p>Click any card for full details, constraints, and developer quotes.</p>
+          <p className="catalog-cite">
+            Each system, the methodology behind how it was identified, and the full thematic analysis are described in detail in the paper:{' '}
+            <a href="https://arxiv.org/abs/2604.07830" target="_blank" rel="noopener noreferrer">
+              <em>To Copilot and Beyond: 22 AI Systems Developers Want Built</em>
+            </a>
+            . If you build on this work, please cite it.
+          </p>
+          <details className="catalog-bibtex">
+            <summary>BibTeX</summary>
+            <pre>{`@article{choudhuri2026beyondcopilot,
+  title={To Copilot and Beyond: 22 AI Systems Developers Want Built},
+  author={Choudhuri, Rudrajit and Bird, Christian and Badea, Carmen and Sarma, Anita},
+  year={2026},
+  eprint={2604.07830},
+  archivePrefix={arXiv},
+  primaryClass={cs.SE},
+  url={https://arxiv.org/abs/2604.07830}
+}`}</pre>
+          </details>
         </div>
         <select className="catalog-sort" value={sortBy} onChange={e => setSortBy(e.target.value)}>
           <option value="prevalence">Sort by prevalence</option>

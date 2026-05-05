@@ -2,7 +2,7 @@ const { useState, useRef } = React;
 const { Icon, NavBar, Hero, ScatterPlot, TaskList, SystemsCatalog, PaperReader, ChatPanel, ChatBanner, Footer, Modal, ReportModal } = Explorer;
 
 Explorer.App = function App() {
-  const [activeTab, setActiveTab] = useState('map');
+  const [activeTab, setActiveTab] = useState('systems');
   const [highlightedCategory, setHighlightedCategory] = useState(null);
   const [hoveredTask, setHoveredTask] = useState(null);
   const [reportOpen, setReportOpen] = useState(false);
@@ -42,13 +42,13 @@ Explorer.App = function App() {
 
       <div className="exhibit-area">
         <div className="exhibit-tab-bar">
-          <button className={`exhibit-tab${activeTab === 'map' ? ' exhibit-tab-active' : ''}`} onClick={() => setActiveTab('map')}>
-            <Icon name="ScatterChart" size={15} style={{ marginRight: 6 }} />
-            AI Opportunity Space
-          </button>
           <button className={`exhibit-tab${activeTab === 'systems' ? ' exhibit-tab-active' : ''}`} onClick={() => setActiveTab('systems')}>
             <Icon name="LayoutGrid" size={15} style={{ marginRight: 6 }} />
             22 Systems Catalog
+          </button>
+          <button className={`exhibit-tab${activeTab === 'map' ? ' exhibit-tab-active' : ''}`} onClick={() => setActiveTab('map')}>
+            <Icon name="ScatterChart" size={15} style={{ marginRight: 6 }} />
+            AI Opportunity Space
           </button>
           <button className={`exhibit-tab${activeTab === 'papers' ? ' exhibit-tab-active' : ''}`} onClick={() => setActiveTab('papers')}>
             <Icon name="BookOpen" size={15} style={{ marginRight: 6 }} />
