@@ -204,6 +204,12 @@
       card.addEventListener("mouseleave", () => { clearTimeout(card._enter); stopCycle(card); setTimeout(() => { if (!card.matches(":hover")) showScen(card, 0); }, 700); });
     });
   }
+  // Cursor spotlight: a soft light follows the pointer across a card.
+  $("#view").addEventListener("pointermove", (e) => {
+    const card = e.target.closest?.(".card"); if (!card || e.pointerType !== "mouse") return;
+    const r = card.getBoundingClientRect(), x = e.clientX - r.left;
+    card.style.setProperty("--mx", x + "px"); card.style.setProperty("--mxb", r.width - x + "px"); card.style.setProperty("--my", e.clientY - r.top + "px");
+  });
   function flip(card) {
     const on = !card.classList.contains("flipped");
     $$("#deck .card.flipped").forEach((c) => { if (c !== card) { c.classList.remove("flipped"); stopCycle(c); } });
