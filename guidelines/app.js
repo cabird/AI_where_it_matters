@@ -388,7 +388,7 @@
     const tabs = [["file", out.skill ? "Skill" : "File"], ["prompt", "Refine with your agent"], ["next", "Next steps"]];
     let body;
     if (state.tab === "next") body = nextHTML(out);
-    else if (state.tab === "prompt") body = `<p class="path">Paste this into your coding agent from the root of your repository. It adapts the ${out.skill ? "skill" : "file"} to your codebase without loosening any rule.</p>
+    else if (state.tab === "prompt") body = `<p class="path">Paste this into your coding agent from the root of your repository. It adapts the ${out.skill ? "skill" : "file"} to your project without loosening any rule.</p>
       <pre class="code" id="out">${esc(agentPrompt(out))}</pre>
       <div class="out-actions"><button class="btn primary" data-copy>${I.copy} Copy prompt</button></div>`;
     else body = `${out.files.length > 1 ? `<div class="files">${out.files.map((x, i) => `<button data-file="${i}" aria-pressed="${x === f}">${esc(x.name)}</button>`).join("")}</div>` : ""}
@@ -405,7 +405,7 @@
   function nextHTML(out) {
     const where = out.dir ? `the <code>${esc(out.dir)}/</code> folder` : `<code>${esc(out.files[0].name)}</code>`;
     return `<ol class="next-steps">
-      <li><b>Add it to your repository.</b> Unzip or save it as ${where}${out.skill ? ", keeping the references folder next to SKILL.md" : ""}. Or use the “Refine with your agent” tab to have your coding agent tailor it to your codebase first.</li>
+      <li><b>Add it to your repository.</b> Unzip or save it as ${where}${out.skill ? ", keeping the references folder next to SKILL.md" : ""}. Or use the “Refine with your agent” tab to have your coding agent tailor it to your project first.</li>
       <li><b>Fill in the specifics.</b> Add your real build, lint, and test commands and the paths reviewers care about.</li>
       <li><b>Try it on a small task.</b> Ask for a change you would normally review, and check that the agent plans first, keeps the change small, and stops at your sign-off points.</li>
       <li><b>Agree on it as a team.</b> Decide together where your team draws each line, and edit the file to match.</li>
