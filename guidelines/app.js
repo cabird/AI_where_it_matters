@@ -288,7 +288,7 @@
      ===================================================================== */
   const STEPS = ["Choose", "Setup", "Skill"];
   const Q = [
-    { id: "tool", title: "Which coding agent will use it?", hint: "Sets the file format. You can switch at the end.", type: "radio", opts: [
+    { id: "tool", title: "Which AI agent will use it?", hint: "Sets the file format. You can switch at the end.", type: "radio", opts: [
       ["claude", "Claude Code", "Agent skill in .claude/skills/"], ["copilot", "GitHub Copilot", "Agent skill in .github/skills/"], ["codex", "Codex", "Agent skill in .agents/skills/"],
       ["cursor", "Cursor", "Rule in .cursor/rules/"], ["agents", "Another agent", "AGENTS.md"]] },
     { id: "autonomy", title: "How much may the agent do on its own?", hint: "Every level keeps people in charge of consequential decisions.", type: "radio", opts: [
