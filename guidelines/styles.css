@@ -270,6 +270,7 @@ svg { flex: none; }
 .practice.open .p-body { grid-template-rows: 1fr; }
 .practice .p-inner { overflow: hidden; padding: 0 16px; }
 .practice.open .p-inner { padding-bottom: 14px; }
+.p-src { display: block; margin-top: 3px; font-size: 12.5px; font-weight: 500; color: var(--muted); }
 .p-def { margin: 0 0 10px; color: var(--ink-2); font-size: 14.5px; }
 .quote { margin: 8px 0 0; padding: 10px 14px; border-radius: 12px; background: var(--ct); font-size: 14.5px; line-height: 1.5; color: var(--ink); }
 .quote cite { display: block; font-style: normal; font-size: 12px; font-weight: 600; color: var(--ck); margin-top: 4px; }

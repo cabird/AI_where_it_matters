@@ -212,7 +212,7 @@
 
   /* ---------- detail sheet ---------- */
   function practiceHTML(p, i) {
-    return `<div class="practice"><button aria-expanded="false"><span>${esc(p.name)}</span>${I.chev}</button>
+    return `<div class="practice"><button aria-expanded="false"><span>${esc(p.name)}${p.reflection ? '<small class="p-src">From participants\' reflections on this guideline</small>' : ""}</span>${I.chev}</button>
       <div class="p-body"><div class="p-inner">${p.definition ? `<p class="p-def">${esc(p.definition)}</p>` : ""}
         ${p.quotes.map((q) => `<blockquote class="quote">“${esc(q.text)}”<cite>${esc(q.who)}</cite></blockquote>`).join("")}</div></div></div>`;
   }
