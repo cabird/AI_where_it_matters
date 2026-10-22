@@ -431,6 +431,23 @@ code { font: .9em ui-monospace, SFMono-Regular, Menlo, monospace; background: va
 .bump { animation: bump .45s var(--spring); }
 @keyframes bump { 40% { transform: scale(1.1); } }
 
+/* "creating your skill" stage */
+.gen { position: relative; overflow: hidden; }
+.gen-progress { position: absolute; left: 0; right: 0; top: 0; height: 3px; background: var(--line); }
+.gen-progress i { display: block; height: 100%; width: 0; background: var(--accent); border-radius: 0 3px 3px 0; transition: width linear; }
+.gen-status { min-height: 1.5em; }
+.gen-status.swap { animation: stagein .45s var(--ease) both; }
+.sk-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 6px 0 16px; }
+.sk { display: block; height: 34px; border-radius: 10px; max-width: 100%;
+  background: linear-gradient(90deg, var(--surface-2) 25%, color-mix(in srgb, var(--ink) 7%, var(--surface-2)) 50%, var(--surface-2) 75%); background-size: 300% 100%; animation: shimmer 1.6s ease-in-out infinite; }
+.sk-path { width: 46%; height: 14px; border-radius: 7px; margin-bottom: 14px; }
+.sk-code { padding: 20px; border-radius: 16px; background: #1d1d1f; display: flex; flex-direction: column; gap: 10px; min-height: 360px; }
+.sk.dark { height: 11px; border-radius: 6px; background: linear-gradient(90deg, #2c2c30 25%, #3d3d43 50%, #2c2c30 75%); background-size: 300% 100%; }
+.sk-gap { height: 6px; }
+@keyframes shimmer { from { background-position: 100% 0; } to { background-position: 0 0; } }
+.stage.reveal { animation: reveal .6s var(--ease) both; }
+@keyframes reveal { from { opacity: 0; transform: translateY(8px) scale(.99); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }
+
 /* ---------- toast ---------- */
 .toast {
   position: fixed; left: 50%; top: 66px; z-index: 80; transform: translate(-50%, -16px); opacity: 0; pointer-events: none;

@@ -23,7 +23,7 @@
     picked: new Set(store.get("picked", [])),
     answers: store.get("answers", {}),
     step: 0, tab: "file", fmt: null, file: 0, open: new Set(),
-    view: null, lastBase: "#/", refined: null,
+    view: null, lastBase: "#/", refined: null, genSig: null, genTimer: 0, genSteps: [],
   };
   const savePicked = () => store.set("picked", ORDER.filter((id) => state.picked.has(id)));
 
@@ -429,12 +429,35 @@
     state.view = "skill";
     const y = window.scrollY;
     if (!state.picked.size && state.step > 0) state.step = 0;
-    const body = [chooseHTML, setupHTML, contextHTML, resultHTML][state.step]();
+    // The skill is assembled instantly; a short "creating" stage lets people see that their choices are being put together.
+    const generating = state.step === 3 && state.genSig !== sig();
+    const body = generating ? generatingHTML() : [chooseHTML, setupHTML, contextHTML, resultHTML][state.step]();
     $("#view").innerHTML = `<div class="wizard">
       <div class="wiz-head"><h1>Create agent skills</h1><p>Turn the guidelines into a skill your coding agent follows.</p></div>
       <nav class="steps" aria-label="Steps">${STEPS.map((l, i) => `<button class="step ${i < state.step ? "done" : ""}" data-step="${i}" ${i === state.step ? 'aria-current="step"' : ""} ${i > 0 && !state.picked.size ? "disabled" : ""}><b>${i < state.step ? "✓" : i + 1}</b><span>${l}</span></button>`).join("")}</nav>
       ${body}</div>${barHTML()}`;
     if (keepScroll) window.scrollTo({ top: y, behavior: "instant" });
+    if (generating) runGeneration();
+  }
+  function generatingHTML() {
+    const n = state.picked.size, w = [62, 38, 0, 84, 71, 90, 0, 46, 78, 66, 88, 0, 52, 80, 74, 58];
+    return `<div class="stage"><h2 class="stage-title">Creating your skill</h2>
+      <p class="stage-sub gen-status" id="genStatus" aria-live="polite">Gathering your ${plural(n, "guideline")}…</p>
+      <div class="panel gen" aria-hidden="true"><div class="gen-progress"><i id="genBar"></i></div>
+        <div class="sk-row"><span class="sk" style="width:180px"></span><span class="sk" style="width:260px"></span></div>
+        <div class="sk sk-path"></div>
+        <div class="sk-code">${w.map((x) => x ? `<span class="sk dark" style="width:${x}%"></span>` : '<span class="sk-gap"></span>').join("")}</div></div></div>`;
+  }
+  function runGeneration() {
+    clearTimeout(state.genTimer); (state.genSteps || []).forEach(clearTimeout);
+    const n = state.picked.size, d = reduced() ? 900 : Math.min(4500, 1800 + 80 * n), mine = sig();
+    const lines = [`Gathering your ${plural(n, "guideline")}…`, "Adding worked examples and the practices developers described…", "Applying your sign-off points and house rules…", `Writing ${["claude", "copilot", "codex"].includes(curFmt()) ? "SKILL.md" : "your instructions"}…`];
+    requestAnimationFrame(() => { const b = $("#genBar"); if (b) { b.style.transitionDuration = d + "ms"; b.style.width = "100%"; } });
+    state.genSteps = lines.slice(1).map((t, i) => setTimeout(() => { const el = $("#genStatus"); if (el) { el.classList.remove("swap"); void el.offsetWidth; el.textContent = t; el.classList.add("swap"); } }, (d * (i + 1)) / lines.length));
+    state.genTimer = setTimeout(() => {
+      if (state.view !== "skill" || state.step !== 3 || sig() !== mine) return;
+      state.genSig = mine; renderSkill(true); $(".stage")?.classList.add("reveal"); haptic(14);
+    }, d);
   }
   // Lightweight refresh of the Choose step after a toggle, so open categories and scroll stay put.
   function refreshChoose() {
