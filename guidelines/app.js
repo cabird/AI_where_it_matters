@@ -130,6 +130,7 @@
     const fan = ["DV", "DP", "QR", "IO", "MW", "CC"].map((c, i) => `<div class="mini paint" data-cat="${c}" style="--i:${i};--r:${(i - 2.5) * 7}deg"><b>${c}</b><span></span><span></span><span></span></div>`).join("");
     return `<section class="hero">
       <h1><span class="lead">“What Should I Do?”</span><span class="main"><span class="l1">Guidelines for Responsibly Integrating</span> <span class="l2">AI in Software Engineering</span></span></h1>
+      <p class="tagline">Developed from the experiences of 1,000+ developers across companies and domains.</p>
       <p class="authors">${AUTHORS.map(([n, a], i) => `<span>${esc(n)}<sup>${a}</sup>${i < AUTHORS.length - 1 ? "," : ""}</span>`).join(" ")}</p>
       <p class="affils"><span><sup>1</sup>Oregon State University</span><span><sup>2</sup>Microsoft</span><span><sup>3</sup>DX</span></p>
       <div class="hero-actions">

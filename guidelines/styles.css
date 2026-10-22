@@ -135,7 +135,8 @@ svg { flex: none; }
   display: block; font-size: .5em; letter-spacing: -0.02em; margin-bottom: .34em; font-weight: 600;
   background: linear-gradient(90deg, var(--DV-a), var(--IO-a) 32%, var(--MW-a) 64%, var(--QR-a)); -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.authors { margin: 30px auto 0; max-width: 780px; font-size: clamp(16px, 1.55vw, 19px); color: var(--ink); line-height: 1.65; }
+.tagline { margin: 22px auto 0; max-width: 640px; font-size: clamp(16px, 1.5vw, 19px); font-style: italic; color: var(--muted); }
+.authors { margin: 22px auto 0; max-width: 780px; font-size: clamp(16px, 1.55vw, 19px); color: var(--ink); line-height: 1.65; }
 .authors span { white-space: nowrap; }
 .authors sup, .affils sup { font-size: .62em; color: var(--muted); margin-left: 1px; }
 .affils { margin: 4px 0 0; font-size: 14px; color: var(--muted); }
