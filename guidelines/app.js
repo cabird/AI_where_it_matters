@@ -542,14 +542,16 @@
 
     const files = [];
     if (isSkill) {
-      files.push({ name: "SKILL.md", text: `---\nname: ${skillName}\ndescription: ${desc}\n---\n\n${body}\n` });
+      files.push({ name: "SKILL.md", text: `---\nname: ${skillName}\ndescription: ${yq(desc)}\n---\n\n${body}\n` });
       files.push({ name: "references/examples.md", text: examplesMD(picked) });
       const dir = { claude: ".claude/skills/", copilot: ".github/skills/", codex: ".agents/skills/" }[fmt] + skillName;
       return { skill: true, fmt, name: skillName, dir, files, main: 0 };
     }
-    if (fmt === "cursor") return { skill: false, fmt, name: skillName, dir: ".cursor/rules", files: [{ name: `${skillName}.mdc`, text: `---\ndescription: ${desc}\nalwaysApply: true\n---\n\n${body}\n` }], main: 0 };
+    if (fmt === "cursor") return { skill: false, fmt, name: skillName, dir: ".cursor/rules", files: [{ name: `${skillName}.mdc`, text: `---\ndescription: ${yq(desc)}\nalwaysApply: true\n---\n\n${body}\n` }], main: 0 };
     return { skill: false, fmt, name: skillName, dir: "", files: [{ name: "AGENTS.md", text: body + "\n" }], main: 0 };
   }
+  // YAML double-quoted scalar (JSON strings are valid YAML), so colons in the description cannot break the front matter.
+  const yq = (v) => JSON.stringify(v);
   const sig = () => JSON.stringify([ORDER.filter((id) => state.picked.has(id)), A()]);
 
   // Loaded only when a task calls for it (progressive disclosure): examples, practices, and origins for every chosen guideline.
