@@ -434,7 +434,7 @@
     const generating = state.step === 2 && state.genSig !== sig();
     const body = generating ? generatingHTML() : [chooseHTML, setupHTML, resultHTML][state.step]();
     $("#view").innerHTML = `<div class="wizard">
-      <div class="wiz-head"><h1>Create agent skills</h1><p>Turn the guidelines into a skill your coding agent follows.</p></div>
+      <div class="wiz-head"><h1>Create agent skills</h1><p>Turn the guidelines into skills that your AI agent follows.</p></div>
       <nav class="steps" aria-label="Steps">${STEPS.map((l, i) => `<button class="step ${i < state.step ? "done" : ""}" data-step="${i}" ${i === state.step ? 'aria-current="step"' : ""} ${i > 0 && !state.picked.size ? "disabled" : ""}><b>${i < state.step ? "✓" : i + 1}</b><span>${l}</span></button>`).join("")}</nav>
       ${body}</div>${barHTML()}`;
     if (keepScroll) window.scrollTo({ top: y, behavior: "instant" });
