@@ -23,7 +23,7 @@
     picked: new Set(store.get("picked", [])),
     answers: store.get("answers", {}),
     step: 0, tab: "file", fmt: null, file: 0, open: new Set(),
-    view: null, lastBase: "#/", refined: null, genSig: null, genTimer: 0, genSteps: [],
+    view: null, lastBase: "#/", genSig: null, genTimer: 0, genSteps: [],
   };
   const savePicked = () => store.set("picked", ORDER.filter((id) => state.picked.has(id)));
 
@@ -272,14 +272,14 @@
 
   function togglePick(id) {
     state.picked.has(id) ? state.picked.delete(id) : state.picked.add(id);
-    state.refined = null; savePicked(); haptic(8);
+    savePicked(); haptic(8);
     toast(state.picked.has(id) ? `${id} added to your skill` : `${id} removed from your skill`);
   }
 
   /* =====================================================================
      Skill generator
      ===================================================================== */
-  const STEPS = ["Choose", "Setup", "Context", "Skill"];
+  const STEPS = ["Choose", "Setup", "Skill"];
   const Q = [
     { id: "tool", title: "Which coding agent will use it?", hint: "Sets the file format. You can switch at the end.", type: "radio", opts: [
       ["claude", "Claude Code", "Agent skill in .claude/skills/"], ["copilot", "GitHub Copilot", "Agent skill in .github/skills/"], ["codex", "Codex", "Agent skill in .agents/skills/"],
@@ -315,18 +315,16 @@
     ["DP2", "Record design decisions in docs/adr/"], ["DV2", "Follow the conventions in CONTRIBUTING.md"], ["CC3", "Use synthetic data in tests and examples"], ["CC1", "List open questions before starting a task"],
     ["*", "Never edit generated files"], ["*", "Prefer existing utilities over new dependencies"],
   ];
-  const STACKS = ["TypeScript", "JavaScript", "Python", "C#/.NET", "Java", "Go", "Rust", "C++", "React", "Node.js", "SQL", "Terraform", "Kubernetes", "Azure", "AWS"];
-  const KINDS = ["Backend service", "Web front end", "Mobile app", "Data / ML pipeline", "Infrastructure / platform", "Library / SDK", "Internal tools"];
-  const defaults = () => Object.assign({ tool: "claude", project: "", kindOf: [], stack: [], rules: [], extra: "" }, suggestions());
+  const defaults = () => Object.assign({ tool: "claude", project: "", rules: [], extra: "" }, suggestions());
   const A = () => Object.assign(defaults(), state.answers);
-  const saveA = (k, v) => { state.answers[k] = v; state.refined = null; store.set("answers", state.answers); };
+  const saveA = (k, v) => { state.answers[k] = v; store.set("answers", state.answers); };
   // Suggested answers are filled in for questions the viewer has not answered yet.
   function commitSuggestions() { const s = suggestions(); for (const k of Object.keys(s)) if (!(k in state.answers)) state.answers[k] = s[k]; store.set("answers", state.answers); }
   // Using a category template: keep the viewer's tool, reset the rest to what fits the new set of guidelines.
   function useTemplate(c) {
     state.picked = new Set(c === "all" ? ORDER : inCat(c)); savePicked();
     state.answers = state.answers.tool ? { tool: state.answers.tool } : {}; commitSuggestions();
-    state.refined = null; state.fmt = null; state.file = 0; state.tab = "file"; state.step = 3; haptic(12);
+    state.fmt = null; state.file = 0; state.tab = "file"; state.step = 2; haptic(12);
     go("#/skill");
   }
 
@@ -362,20 +360,12 @@
   }
   function setupHTML() {
     const a = A(), sug = suggestions();
-    return `<div class="stage"><h2 class="stage-title">How does your team work with the agent?</h2>
-      <p class="stage-sub">We filled in suggestions from your cards. Change anything that doesn't fit, or just continue.</p>
-      <div class="panel">${Q.map((q) => optHTML(q, a, sug)).join("")}</div></div>`;
-  }
-  function contextHTML() {
-    const a = A();
     const chip = (field, v) => `<button class="chip" data-chip="${field}" data-val="${esc(v)}" aria-pressed="${(a[field] || []).includes(v)}">${esc(v)}</button>`;
     const rules = RULE_SUGGEST.filter(([id]) => id === "*" || state.picked.has(id)).map(([, r]) => r);
-    return `<div class="stage"><h2 class="stage-title">Add a little context</h2>
-      <p class="stage-sub">All optional. Tap what applies; nothing you choose leaves your browser.</p>
-      <div class="panel">
-        <div class="q"><h3>What are you building?</h3><p class="hint">&nbsp;</p><div class="chips">${KINDS.map((k) => chip("kindOf", k)).join("")}</div></div>
-        <div class="q"><h3>Stack</h3><p class="hint">&nbsp;</p><div class="chips">${STACKS.map((k) => chip("stack", k)).join("")}</div></div>
-        <div class="q"><h3>House rules</h3><p class="hint">Suggested from your cards. Each one becomes a rule.</p><div class="chips">${rules.map((k) => chip("rules", k)).join("")}</div></div>
+    return `<div class="stage"><h2 class="stage-title">How does your team work with the agent?</h2>
+      <p class="stage-sub">We filled in suggestions from your cards. Change anything that doesn't fit, or just create your skill.</p>
+      <div class="panel">${Q.map((q) => optHTML(q, a, sug)).join("")}
+        <div class="q"><h3>House rules</h3><p class="hint">Optional. Suggested from your cards; each one you pick becomes a rule.</p><div class="chips">${rules.map((k) => chip("rules", k)).join("")}</div></div>
         <details class="more"><summary>Name it or write your own rules</summary>
           <div class="field"><label for="f-project">Team or project</label><input id="f-project" data-field="project" placeholder="e.g., Payments API" value="${esc(a.project)}"></div>
           <div class="field"><label for="f-extra">More rules, one per line</label><textarea id="f-extra" data-field="extra" placeholder="e.g., Never edit files under /gen">${esc(a.extra)}</textarea></div></details>
@@ -395,9 +385,9 @@
       <p class="path">${esc(out.dir ? out.dir + "/" + f.name : f.name)}</p>
       <pre class="code" id="out">${esc(f.text)}</pre>
       <div class="out-actions"><button class="btn primary" data-copy>${I.copy} Copy</button><button class="btn" data-download>${I.dl} ${out.skill ? "Download skill (.zip)" : "Download"}</button>
-        ${window.SKILL_REFINE_URL ? `<button class="btn" data-refine>${I.spark} Refine with Claude</button><span class="note">Up to 5 refinements an hour.</span>` : ""}</div>
+</div>
       <p class="refine-hint">Want it tailored to your project? <button class="linkish" data-rtab="prompt">Refine it with your agent ${I.arrow}</button></p>`;
-    return `<div class="stage"><h2 class="stage-title">${state.refined ? "Your refined " : "Your "}${out.skill ? "skill" : "instructions"}${state.refined ? "" : out.skill ? " is ready" : " are ready"}</h2>
+    return `<div class="stage"><h2 class="stage-title">Your ${out.skill ? "skill is" : "instructions are"} ready</h2>
       <p class="stage-sub">${plural(state.picked.size, "guideline")}, grounded in the example scenarios, the practices developers described, and the task-level guidelines behind each one.</p>
       <div class="panel"><div class="result-top"><div class="seg">${tabs.map(([k, l]) => `<button data-rtab="${k}" aria-pressed="${state.tab === k}">${l}</button>`).join("")}</div>
         ${state.tab !== "next" ? `<div class="seg">${FMT.map(([k, l]) => `<button data-fmt="${k}" aria-pressed="${curFmt() === k}">${l}</button>`).join("")}</div>` : ""}</div>${body}</div></div>`;
@@ -420,8 +410,7 @@
     const back = s > 0 ? `<button class="btn small" data-prev aria-label="Back">${I.back}</button>` : "";
     let right = "";
     if (s === 0) right = `<button class="btn small hide-sm" data-next ${n ? "" : "disabled"}>Customize</button><button class="btn small primary" data-make ${n ? "" : "disabled"}>${I.spark} Create skill</button>`;
-    else if (s === 1) right = `<button class="btn small primary" data-next>Continue</button>`;
-    else if (s === 2) right = `<button class="btn small primary" data-make>${I.spark} Create skill</button>`;
+    else if (s === 1) right = `<button class="btn small primary" data-make>${I.spark} Create skill</button>`;
     else right = `<button class="btn small" data-step="0">Edit cards</button>`;
     return `<div class="wiz-bar">${back}${count}${right}</div>`;
   }
@@ -430,8 +419,8 @@
     const y = window.scrollY;
     if (!state.picked.size && state.step > 0) state.step = 0;
     // The skill is assembled instantly; a short "creating" stage lets people see that their choices are being put together.
-    const generating = state.step === 3 && state.genSig !== sig();
-    const body = generating ? generatingHTML() : [chooseHTML, setupHTML, contextHTML, resultHTML][state.step]();
+    const generating = state.step === 2 && state.genSig !== sig();
+    const body = generating ? generatingHTML() : [chooseHTML, setupHTML, resultHTML][state.step]();
     $("#view").innerHTML = `<div class="wizard">
       <div class="wiz-head"><h1>Create agent skills</h1><p>Turn the guidelines into a skill your coding agent follows.</p></div>
       <nav class="steps" aria-label="Steps">${STEPS.map((l, i) => `<button class="step ${i < state.step ? "done" : ""}" data-step="${i}" ${i === state.step ? 'aria-current="step"' : ""} ${i > 0 && !state.picked.size ? "disabled" : ""}><b>${i < state.step ? "✓" : i + 1}</b><span>${l}</span></button>`).join("")}</nav>
@@ -455,7 +444,7 @@
     requestAnimationFrame(() => { const b = $("#genBar"); if (b) { b.style.transitionDuration = d + "ms"; b.style.width = "100%"; } });
     state.genSteps = lines.slice(1).map((t, i) => setTimeout(() => { const el = $("#genStatus"); if (el) { el.classList.remove("swap"); void el.offsetWidth; el.textContent = t; el.classList.add("swap"); } }, (d * (i + 1)) / lines.length));
     state.genTimer = setTimeout(() => {
-      if (state.view !== "skill" || state.step !== 3 || sig() !== mine) return;
+      if (state.view !== "skill" || state.step !== 2 || sig() !== mine) return;
       state.genSig = mine; renderSkill(true); $(".stage")?.classList.add("reveal"); haptic(14);
     }, d);
   }
@@ -504,10 +493,6 @@
     const L = [];
     L.push(`# ${base.title}${proj}`, "");
     L.push(`Follow these rules when ${joinAnd(whens)}. Each rule cites a guideline from "What Should I Do?" Guidelines for Responsibly Integrating AI in Software Engineering, which developers at Microsoft, GitHub, and Pfizer validated.`);
-    const ctx = [];
-    if ((a.kindOf || []).length) ctx.push(`Project: ${a.kindOf.join(", ")}.`);
-    if ((a.stack || []).length) ctx.push(`Stack: ${a.stack.join(", ")}.`);
-    if (ctx.length) L.push("", ctx.join(" "));
 
     L.push("", "## Workflow", "", "Copy this checklist into your response and check items off as you go:", "", "```");
     L.push(`- [ ] Clarify: list what is ambiguous or missing, and ask before acting on it${id("CC1")}`);
@@ -554,7 +539,6 @@
     }
     L.push("", MARK);
     let body = L.join("\n");
-    if (state.refined && state.refined.fmt === fmt && state.refined.sig === sig()) body = state.refined.body;
 
     const files = [];
     if (isSkill) {
@@ -620,28 +604,6 @@ ${files}`;
   }
   function save(blob, filename) { const u = URL.createObjectURL(blob); const l = document.createElement("a"); l.href = u; l.download = filename; document.body.appendChild(l); l.click(); l.remove(); setTimeout(() => URL.revokeObjectURL(u), 1500); }
 
-  /* ---------- refine (optional; the proxy holds the API key and enforces the limits) ---------- */
-  async function refine(btn) {
-    const recent = store.get("refines", []).filter((t) => Date.now() - t < 3600e3);
-    if (recent.length >= 5) { toast(`You can refine again in about ${Math.ceil((3600e3 - (Date.now() - recent[0])) / 60000)} minutes`); return; }
-    const out = build(curFmt()), mainFile = out.files[out.main];
-    const draft = mainFile.text.replace(/^---[\s\S]*?---\n\n/, "");
-    btn.disabled = true; const old = btn.innerHTML; btn.innerHTML = "Refining…";
-    try {
-      const a = A();
-      const r = await fetch(window.SKILL_REFINE_URL, { method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ draft, context: { project: a.project, kindOf: a.kindOf, stack: a.stack } }) });
-      const j = await r.json().catch(() => ({}));
-      if (r.ok && j.text) {
-        store.set("refines", [...recent, Date.now()]);
-        state.refined = { fmt: curFmt(), sig: sig(), body: j.text.replace(/^---[\s\S]*?---\s*/, "").trim() };
-        state.file = 0; renderSkill(true); toast("Refined with Claude"); haptic(14); return;
-      }
-      if (r.status === 429) store.set("refines", [...recent, Date.now()]);
-      toast(j.error || "The refine service is unavailable");
-    } catch { toast("The refine service is unavailable"); }
-    btn.disabled = false; btn.innerHTML = old;
-  }
 
   /* =====================================================================
      Events
@@ -667,14 +629,14 @@ ${files}`;
     // skill generator
     const pk = at("[data-peek]"); if (pk) { e.stopPropagation(); go("#/g/" + pk.dataset.peek); return; }
     if (at("[data-step]")) { const n = +at("[data-step]").dataset.step; if (n === 0 || state.picked.size) { if (n > 0) commitSuggestions(); state.step = n; renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(6); } return; }
-    if (at("[data-next]")) { commitSuggestions(); state.step = Math.min(3, state.step + 1); renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(8); return; }
-    if (at("[data-make]")) { commitSuggestions(); state.step = 3; state.tab = "file"; state.file = 0; renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(14); return; }
+    if (at("[data-next]")) { commitSuggestions(); state.step = Math.min(2, state.step + 1); renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(8); return; }
+    if (at("[data-make]")) { commitSuggestions(); state.step = 2; state.tab = "file"; state.file = 0; renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(14); return; }
     if (at("[data-prev]")) { state.step = Math.max(0, state.step - 1); renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(6); return; }
     const ac = at("[data-allcat]");
-    if (ac) { const s = catState(ac.dataset.allcat); s.ids.forEach((id) => s.all ? state.picked.delete(id) : state.picked.add(id)); state.refined = null; savePicked(); refreshChoose(); haptic(10); return; }
+    if (ac) { const s = catState(ac.dataset.allcat); s.ids.forEach((id) => s.all ? state.picked.delete(id) : state.picked.add(id)); savePicked(); refreshChoose(); haptic(10); return; }
     const oc = at("[data-opencat]") || (at(".cblock-head") && $("[data-opencat]", at(".cblock-head")));
     if (oc) { const c = oc.dataset.opencat, b = at(".cblock"); state.open.has(c) ? state.open.delete(c) : state.open.add(c); b.classList.toggle("open"); oc.setAttribute("aria-expanded", state.open.has(c)); haptic(5); return; }
-    const gl = at("[data-pick]"); if (gl) { const id = gl.dataset.pick; state.picked.has(id) ? state.picked.delete(id) : state.picked.add(id); state.refined = null; savePicked(); refreshChoose(); haptic(7); return; }
+    const gl = at("[data-pick]"); if (gl) { const id = gl.dataset.pick; state.picked.has(id) ? state.picked.delete(id) : state.picked.add(id); savePicked(); refreshChoose(); haptic(7); return; }
     if (at("[data-allpick]")) { state.picked = new Set(ORDER); savePicked(); refreshChoose(); haptic(10); return; }
     if (at("[data-clear]")) { state.picked = new Set(); savePicked(); refreshChoose(); haptic(6); return; }
     const op = at("[data-q]");
@@ -696,7 +658,6 @@ ${files}`;
       else save(new Blob([out.files[0].text], { type: "text/markdown" }), out.files[0].name);
       haptic(10); return;
     }
-    if (at("[data-refine]")) return refine(at("[data-refine]"));
   });
   $("#view").addEventListener("keydown", (e) => {
     if (state.view === "home") {
