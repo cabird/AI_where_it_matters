@@ -451,7 +451,7 @@
   function runGeneration() {
     clearTimeout(state.genTimer); (state.genSteps || []).forEach(clearTimeout);
     const n = state.picked.size, d = reduced() ? 2000 : Math.min(10000, 4500 + 160 * n), mine = sig();
-    const lines = [`Gathering your ${plural(n, "guideline")}…`, "Adding worked examples and the practices developers described…", "Applying your sign-off points and house rules…", `Formatting it for ${(FMT.find(([k]) => k === curFmt()) || [, "your agent"])[1]}…`, `Writing ${["claude", "copilot", "codex"].includes(curFmt()) ? "SKILL.md" : "your instructions"}…`];
+    const lines = [`Gathering your ${plural(n, "guideline")}…`, "Adding worked examples and the practices developers described…", "Applying your sign-off points and house rules…", `Writing ${["claude", "copilot", "codex"].includes(curFmt()) ? "SKILL.md" : "your instructions"}…`];
     requestAnimationFrame(() => { const b = $("#genBar"); if (b) { b.style.transitionDuration = d + "ms"; b.style.width = "100%"; } });
     state.genSteps = lines.slice(1).map((t, i) => setTimeout(() => { const el = $("#genStatus"); if (el) { el.classList.remove("swap"); void el.offsetWidth; el.textContent = t; el.classList.add("swap"); } }, (d * (i + 1)) / lines.length));
     state.genTimer = setTimeout(() => {
