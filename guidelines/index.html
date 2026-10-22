@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Guidelines for Responsibly Integrating AI</title>
+  <meta name="description" content="35 guidelines for responsibly integrating AI in software engineering, from 1,118 developers at Microsoft, GitHub, and Pfizer, with a generator that turns them into agent skills.">
+  <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='5' width='15' height='21' rx='3' fill='%2335577d' transform='rotate(-10 10 15)'/%3E%3Crect x='9' y='4' width='15' height='21' rx='3' fill='%230e7c9e'/%3E%3Crect x='14' y='6' width='15' height='21' rx='3' fill='%23c2661b' transform='rotate(10 21 16)'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Link to the paper; leave empty until it is public.
+    window.PAPER_URL = "";
+    // Optional: URL of the small proxy that refines a generated skill with Claude (see refine-worker/README.md).
+    // Leave empty to keep the generator fully in the browser.
+    window.SKILL_REFINE_URL = "";
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#/" aria-label="Guidelines home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-title">What Should I Do?</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#/explore" data-nav="explore">Guidelines</a>
+      <a href="#/skill" data-nav="skill">Skill generator</a>
+      <a href="../" class="hide-sm">AI Where It Matters</a>
+    </nav>
+    <button class="icon-btn" id="themeBtn" aria-label="Switch light or dark appearance"></button>
+  </header>
+
+  <main id="view" tabindex="-1"></main>
+
+  <div class="scrim" id="scrim" hidden></div>
+  <aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden></aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
