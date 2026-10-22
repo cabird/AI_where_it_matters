@@ -396,7 +396,7 @@
       <pre class="code" id="out">${esc(f.text)}</pre>
       <div class="out-actions"><button class="btn primary" data-copy>${I.copy} Copy</button><button class="btn" data-download>${I.dl} ${out.skill ? "Download skill (.zip)" : "Download"}</button>
         ${window.SKILL_REFINE_URL ? `<button class="btn" data-refine>${I.spark} Refine with Claude</button><span class="note">Up to 5 refinements an hour.</span>` : ""}</div>
-      <p class="refine-hint">Want it tailored to your codebase? <button class="linkish" data-rtab="prompt">Refine it with your agent ${I.arrow}</button></p>`;
+      <p class="refine-hint">Want it tailored to your project? <button class="linkish" data-rtab="prompt">Refine it with your agent ${I.arrow}</button></p>`;
     return `<div class="stage"><h2 class="stage-title">${state.refined ? "Your refined " : "Your "}${out.skill ? "skill" : "instructions"}${state.refined ? "" : out.skill ? " is ready" : " are ready"}</h2>
       <p class="stage-sub">${plural(state.picked.size, "guideline")}, grounded in the example scenarios, the practices developers described, and the task-level guidelines behind each one.</p>
       <div class="panel"><div class="result-top"><div class="seg">${tabs.map(([k, l]) => `<button data-rtab="${k}" aria-pressed="${state.tab === k}">${l}</button>`).join("")}</div>
