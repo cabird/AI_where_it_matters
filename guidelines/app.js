@@ -487,7 +487,7 @@
   const cleanDot = (s) => s.replace(/\s+$/, "").replace(/[.;:,]$/, "");
   const lc = (s) => s.charAt(0).toLowerCase() + s.slice(1);
   const joinAnd = (xs) => xs.length < 2 ? xs.join("") : xs.slice(0, -1).join("; ") + "; or " + xs[xs.length - 1];
-  const MARK = `<!-- Generated from "What Should I Do?" Guidelines for Responsibly Integrating AI in Software Engineering. Materials: https://doi.org/${D.meta.doi} -->`;
+  const MARK = `<!-- Generated from "What Should I Do?" Guidelines for Responsibly Integrating AI in Software Engineering: https://aka.ms/ai-where-it-matters/guidelines -->`;
 
   function build(fmt) {
     const a = A();
