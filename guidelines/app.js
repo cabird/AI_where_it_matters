@@ -288,8 +288,8 @@
      ===================================================================== */
   const STEPS = ["Choose", "Setup", "Skill"];
   const Q = [
-    { id: "autonomy", title: "How much may the agent do on its own?", hint: "Every level keeps people in charge of consequential decisions.", type: "radio", opts: [
-      ["suggest", "Suggest only", "Proposes plans and diffs; a person makes every change"], ["edit", "Edit with review", "Makes one change at a time and waits for review before the next"], ["act", "Act within guardrails", "Works through the whole task, stopping only at the sign-off points"]] },
+    { id: "autonomy", title: "When should the agent check in?", hint: "The sign-off points below apply at every level.", type: "radio", opts: [
+      ["suggest", "Propose only", "Plans and drafts; the developer makes every change"], ["plan", "Approve the plan first", "Shows its plan, waits for an OK, then carries it out"], ["act", "Sign-off points only", "Plans and carries out the whole task, stopping only at the sign-off points"]] },
     { id: "gates", title: "Where must a person sign off?", hint: "The agent stops and asks before any of these.", type: "check", opts: [
       ["merge", "Merging to a shared branch", ""], ["deps", "Adding or upgrading dependencies", ""], ["data", "Schema, data, or migrations", ""], ["api", "Public API changes", ""], ["delete", "Deleting files or rewriting history", ""], ["ci", "CI or build configuration", ""],
       ["comms", "Sending messages to people", "Drafting stays allowed"], ["deploy", "Deploying or touching production", "The agent prepares; a person applies"], ["security", "Security- or auth-critical choices", "The agent prepares; a person decides"]] },
@@ -297,9 +297,9 @@
       ["always", "Whenever something is unclear", "Asks before guessing at any gap"], ["risk", "Only when a wrong guess would be costly", "States small assumptions and keeps going"]] },
     { id: "check", when: () => has("QR4"), title: "How is AI's work checked before you see it?", hint: "No agent certifies its own work.", type: "radio", opts: [
       ["tests", "Tests and build must pass", "Deterministic checks gate the work"], ["second", "Also a second model reviews it", "A separate agent with fresh context checks the work"]] },
-    { id: "learn", when: () => has("DV5", "MW3"), title: "Is the developer learning this area?", hint: "Developers learned by doing the work with AI, not by reading its answers.", type: "radio", opts: [
+    { id: "learn", when: () => has("DV5", "MW3"), title: "Is the developer learning this area?", hint: "Turns on coaching for developers building skills in this area.", type: "radio", opts: [
       ["coach", "Yes, explain as you go", "Lets them try first; gives the answer when asked"], ["work", "No, just do the work", "Explains only when asked"]] },
-    { id: "data", title: "What data does the work touch?", hint: "Adds data-handling rules where they matter.", type: "check", opts: [
+    { id: "data", title: "What data does the work touch?", hint: "Pick any that apply to your project; each adds data-handling rules.", type: "check", opts: [
       ["pii", "Personal or customer data", ""], ["regulated", "A regulated domain", "e.g., healthcare, life sciences, finance"], ["secrets", "Secrets and credentials", ""]] },
     { id: "attrib", when: () => has("CC6"), title: "How should AI contributions be marked?", hint: "Makes AI's contributions visible to reviewers.", type: "radio", opts: [
       ["trailer", "Commit trailer", "Co-authored-by line on AI-assisted commits"], ["pr", "Pull-request note", "Say what AI produced in the description"], ["both", "Both", ""], ["none", "Not required", ""]] },
@@ -308,7 +308,7 @@
   // A question is shown, and its answer used, only when a picked card makes it matter.
   const shown = (qid) => { const q = Q.find((x) => x.id === qid); return !q.when || q.when(); };
   function suggestions() {
-    const s = { gates: new Set(), data: new Set(), autonomy: "edit", attrib: "none", clarify: "always", check: "tests", learn: "work" };
+    const s = { gates: new Set(), data: new Set(), autonomy: "plan", attrib: "none", clarify: "always", check: "tests", learn: "work" };
     if (has(...inCat("DV"), ...inCat("QR"), ...inCat("IO"))) { s.gates.add("merge"); s.gates.add("delete"); }
     if (has("DV4")) s.gates.add("api");
     if (has("DV1", "IO2", "IO3")) s.gates.add("ci");
@@ -317,11 +317,9 @@
     if (has("DV4", "IO2")) s.gates.add("data");
     if (has("DV2", "DV4")) s.gates.add("deps");
     if (has("MW1", "MW2", "IO5")) s.gates.add("comms");
-    if (has("QR3", "CC3")) s.data.add("pii");
-    if (has("QR3")) s.data.add("regulated");
-    if (has("IO4", "CC3")) s.data.add("secrets");
     if (has("CC6")) s.attrib = "trailer";
-    return { gates: [...s.gates], data: [...s.data], autonomy: s.autonomy, attrib: s.attrib, clarify: s.clarify, check: s.check, learn: s.learn };
+    const rules = RULE_SUGGEST.filter(([id]) => id !== "*" && state.picked.has(id)).map(([, r]) => r);
+    return { gates: [...s.gates], data: [...s.data], rules, autonomy: s.autonomy, attrib: s.attrib, clarify: s.clarify, check: s.check, learn: s.learn };
   }
   const RULE_SUGGEST = [
     ["DV4", "Keep each pull request focused on one change"], ["QR4", "Every change ships with tests that exercise the new behavior"], ["QR1", "Run the linter and test suite before proposing a change"],
@@ -329,15 +327,32 @@
     ["DP2", "Record design decisions in docs/adr/"], ["DV2", "Follow the conventions in CONTRIBUTING.md"], ["CC3", "Use synthetic data in tests and examples"], ["CC1", "List open questions before starting a task"],
     ["*", "Never edit generated files"], ["*", "Prefer existing utilities over new dependencies"],
   ];
-  const defaults = () => Object.assign({ project: "", rules: [], extra: "" }, suggestions());
-  const A = () => Object.assign(defaults(), state.answers);
+  // Answers are worked out from the picked cards every time; state.answers keeps only what the visitor changed.
+  // Multi-choice answers store the visitor's additions and removals, so suggestions still follow later card changes.
+  const MULTI = ["gates", "data", "rules"];
+  const ruleOpts = () => RULE_SUGGEST.filter(([id]) => id === "*" || state.picked.has(id)).map(([, r]) => r);
+  function A() {
+    const s = suggestions(), a = Object.assign({ project: "", extra: "" }, s);
+    for (const [k, v] of Object.entries(state.answers)) {
+      if (!MULTI.includes(k)) a[k] = k === "autonomy" && v === "edit" ? "plan" : v;
+      else if (v && !Array.isArray(v)) { const set = new Set(s[k]); (v.add || []).forEach((x) => set.add(x)); (v.del || []).forEach((x) => set.delete(x)); a[k] = [...set]; }
+    }
+    a.rules = a.rules.filter((r) => ruleOpts().includes(r));
+    return a;
+  }
+  function toggleMulti(k, v) {
+    const on = A()[k].includes(v), sug = new Set(suggestions()[k]);
+    const o = state.answers[k] && !Array.isArray(state.answers[k]) ? state.answers[k] : { add: [], del: [] };
+    o.add = (o.add || []).filter((x) => x !== v); o.del = (o.del || []).filter((x) => x !== v);
+    if (on && sug.has(v)) o.del.push(v); else if (!on && !sug.has(v)) o.add.push(v);
+    saveA(k, o); return !on;
+  }
   const saveA = (k, v) => { state.answers[k] = v; store.set("answers", state.answers); };
   // Suggested answers are filled in for questions the viewer has not answered yet.
-  function commitSuggestions() { const s = suggestions(); for (const k of Object.keys(s)) if (!(k in state.answers)) state.answers[k] = s[k]; store.set("answers", state.answers); }
   // Using a category template: keep the viewer's tool, reset the rest to what fits the new set of guidelines.
   function useTemplate(c) {
     state.picked = new Set(c === "all" ? ORDER : inCat(c)); savePicked();
-    state.answers = {}; commitSuggestions();
+    state.answers = {};
     state.fmt = null; state.file = 0; state.tab = "file"; state.step = 2; haptic(12);
     go("#/skill");
   }
@@ -375,7 +390,7 @@
   function setupHTML() {
     const a = A(), sug = suggestions();
     const chip = (field, v) => `<button class="chip" data-chip="${field}" data-val="${esc(v)}" aria-pressed="${(a[field] || []).includes(v)}">${esc(v)}</button>`;
-    const rules = RULE_SUGGEST.filter(([id]) => id === "*" || state.picked.has(id)).map(([, r]) => r);
+    const rules = ruleOpts();
     return `<div class="stage"><h2 class="stage-title">How does your team work with the agent?</h2>
       <p class="stage-sub">We filled in suggestions from your cards. Change anything that doesn't fit, or just create your skill.</p>
       <div class="panel">${Q.filter((q) => shown(q.id)).map((q) => optHTML(q, a, sug)).join("")}
@@ -533,8 +548,8 @@
     L.push(`- [ ] Report: what you changed, the evidence, what you assumed, anything waiting under "Needs approval", and your confidence (high, medium, or low, with one reason). Give the evidence, not a verdict on your own work${id("CC4")}`);
     L.push("```", "");
     L.push({ suggest: "Propose plans and diffs only; do not edit files or run commands that change state. The developer applies changes.",
-      edit: codey ? "You may edit files and run checks locally. After each change, show it and wait for the developer's review before you commit it or start the next one." : "You may draft and edit documents and work items. Show each one and wait for review before it is shared or you start the next.",
-      act: codey ? "You may carry out a multi-step task on your own (editing, testing, committing to your working branch, opening a pull request), stopping only at the approval points." : "You may carry out a multi-step task on your own, stopping only at the approval points." }[a.autonomy]);
+      plan: codey ? "For anything beyond a one-line change, show your plan and wait for the developer's OK before you change anything. Then carry it out on your own, stopping only at the approval points." : "For anything beyond a small edit, show your plan and wait for an OK before you draft or change anything. Then carry it out on your own, stopping only at the approval points.",
+      act: codey ? "You may plan and carry out the whole task on your own (editing, testing, committing to your working branch, opening a pull request), stopping only at the approval points." : "You may plan and carry out the whole task on your own, stopping only at the approval points." }[a.autonomy]);
     if (shown("learn") && a.learn === "coach") L.push("", "The developer is learning this area. Explain the reasoning behind each step and let them try the next step before you do it; if they ask for the answer, give it" + id("DV5", "MW3") + ".");
 
     if (ask.length || prep.length) {
@@ -669,9 +684,9 @@ ${files}`;
 
     // skill generator
     const pk = at("[data-peek]"); if (pk) { e.stopPropagation(); go("#/g/" + pk.dataset.peek); return; }
-    if (at("[data-step]")) { const n = +at("[data-step]").dataset.step; if (n === 0 || state.picked.size) { if (n > 0) commitSuggestions(); state.step = n; renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(6); } return; }
-    if (at("[data-next]")) { commitSuggestions(); state.step = Math.min(2, state.step + 1); renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(8); return; }
-    if (at("[data-make]")) { commitSuggestions(); state.step = 2; state.tab = "file"; state.file = 0; renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(14); return; }
+    if (at("[data-step]")) { const n = +at("[data-step]").dataset.step; if (n === 0 || state.picked.size) { state.step = n; renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(6); } return; }
+    if (at("[data-next]")) { state.step = Math.min(2, state.step + 1); renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(8); return; }
+    if (at("[data-make]")) { state.step = 2; state.tab = "file"; state.file = 0; renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(14); return; }
     if (at("[data-prev]")) { state.step = Math.max(0, state.step - 1); renderSkill(); scrollTo({ top: 0, behavior: "smooth" }); haptic(6); return; }
     const ac = at("[data-allcat]");
     if (ac) { const s = catState(ac.dataset.allcat); s.ids.forEach((id) => s.all ? state.picked.delete(id) : state.picked.add(id)); savePicked(); refreshChoose(); haptic(10); return; }
@@ -684,11 +699,11 @@ ${files}`;
     if (op) {
       const q = Q.find((x) => x.id === op.dataset.q), v = op.dataset.v;
       if (q.type === "radio") { saveA(q.id, v); $$(`[data-q="${q.id}"]`).forEach((b) => b.setAttribute("aria-pressed", b.dataset.v === v)); }
-      else { const cur = new Set(A()[q.id] || []); cur.has(v) ? cur.delete(v) : cur.add(v); saveA(q.id, [...cur]); op.setAttribute("aria-pressed", cur.has(v)); }
+      else op.setAttribute("aria-pressed", toggleMulti(q.id, v));
       haptic(6); return;
     }
     const ch = at("[data-chip]");
-    if (ch) { const f = ch.dataset.chip, v = ch.dataset.val, cur = new Set(A()[f] || []); cur.has(v) ? cur.delete(v) : cur.add(v); saveA(f, [...cur]); ch.setAttribute("aria-pressed", cur.has(v)); haptic(5); return; }
+    if (ch) { ch.setAttribute("aria-pressed", toggleMulti(ch.dataset.chip, ch.dataset.val)); haptic(5); return; }
     if (at("[data-rtab]")) { state.tab = at("[data-rtab]").dataset.rtab; renderSkill(true); haptic(5); return; }
     if (at("[data-fmt]")) { state.fmt = at("[data-fmt]").dataset.fmt; state.file = 0; renderSkill(true); haptic(5); return; }
     if (at("[data-file]")) { state.file = +at("[data-file]").dataset.file; renderSkill(true); haptic(4); return; }
