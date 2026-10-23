@@ -296,16 +296,22 @@
     { id: "gates", title: "Where must a person sign off?", hint: "The agent stops and asks before any of these.", type: "check", opts: [
       ["merge", "Merging to a shared branch", ""], ["deps", "Adding or upgrading dependencies", ""], ["data", "Schema, data, or migrations", ""], ["api", "Public API changes", ""], ["delete", "Deleting files or rewriting history", ""], ["ci", "CI or build configuration", ""],
       ["comms", "Sending messages to people", "Drafting stays allowed"], ["deploy", "Deploying or touching production", "The agent prepares; a person applies"], ["security", "Security- or auth-critical choices", "The agent prepares; a person decides"]] },
-    { id: "size", title: "How big may one change be?", hint: "Reviewable increments were among the most common practices developers described.", type: "radio", opts: [
-      ["200", "About 200 lines", "Small, focused pull requests"], ["400", "About 400 lines", "Medium pull requests"], ["none", "No fixed limit", "Split by logical unit"]] },
+    { id: "clarify", when: () => has("CC1"), title: "When should the agent stop to ask?", hint: "Developers wanted questions instead of guesses, but not so many that they interrupt the work.", type: "radio", opts: [
+      ["always", "Whenever something is unclear", "Asks before guessing at any gap"], ["risk", "Only when a wrong guess would be costly", "States small assumptions and keeps going"]] },
+    { id: "check", when: () => has("QR4"), title: "How is AI's work checked before you see it?", hint: "No agent certifies its own work.", type: "radio", opts: [
+      ["tests", "Tests and build must pass", "Deterministic checks gate the work"], ["second", "Also a second model reviews it", "A separate agent with fresh context checks the work"]] },
+    { id: "learn", when: () => has("DV5", "MW3"), title: "Is the developer learning this area?", hint: "Developers learned by doing the work with AI, not by reading its answers.", type: "radio", opts: [
+      ["coach", "Yes, explain as you go", "Lets them try first; gives the answer when asked"], ["work", "No, just do the work", "Explains only when asked"]] },
     { id: "data", title: "What data does the work touch?", hint: "Adds data-handling rules where they matter.", type: "check", opts: [
       ["pii", "Personal or customer data", ""], ["regulated", "A regulated domain", "e.g., healthcare, life sciences, finance"], ["secrets", "Secrets and credentials", ""]] },
-    { id: "attrib", title: "How should AI contributions be marked?", hint: "Makes AI's contributions visible to reviewers.", type: "radio", opts: [
+    { id: "attrib", when: () => has("CC6"), title: "How should AI contributions be marked?", hint: "Makes AI's contributions visible to reviewers.", type: "radio", opts: [
       ["trailer", "Commit trailer", "Co-authored-by line on AI-assisted commits"], ["pr", "Pull-request note", "Say what AI produced in the description"], ["both", "Both", ""], ["none", "Not required", ""]] },
   ];
   const has = (...ids) => ids.some((i) => state.picked.has(i));
+  // A question is shown, and its answer used, only when a picked card makes it matter.
+  const shown = (qid) => { const q = Q.find((x) => x.id === qid); return !q.when || q.when(); };
   function suggestions() {
-    const s = { gates: new Set(), data: new Set(), autonomy: "edit", attrib: "none", size: "400" };
+    const s = { gates: new Set(), data: new Set(), autonomy: "edit", attrib: "none", clarify: "always", check: "tests", learn: "work" };
     if (has(...inCat("DV"), ...inCat("QR"), ...inCat("IO"))) { s.gates.add("merge"); s.gates.add("delete"); }
     if (has("DV4")) s.gates.add("api");
     if (has("DV1", "IO2", "IO3")) s.gates.add("ci");
@@ -318,7 +324,7 @@
     if (has("QR3")) s.data.add("regulated");
     if (has("IO4", "CC3")) s.data.add("secrets");
     if (has("CC6")) s.attrib = "trailer";
-    return { gates: [...s.gates], data: [...s.data], autonomy: s.autonomy, attrib: s.attrib, size: s.size };
+    return { gates: [...s.gates], data: [...s.data], autonomy: s.autonomy, attrib: s.attrib, clarify: s.clarify, check: s.check, learn: s.learn };
   }
   const RULE_SUGGEST = [
     ["DV4", "Keep each pull request focused on one change"], ["QR4", "Every change ships with tests that exercise the new behavior"], ["QR1", "Run the linter and test suite before proposing a change"],
@@ -375,7 +381,7 @@
     const rules = RULE_SUGGEST.filter(([id]) => id === "*" || state.picked.has(id)).map(([, r]) => r);
     return `<div class="stage"><h2 class="stage-title">How does your team work with the agent?</h2>
       <p class="stage-sub">We filled in suggestions from your cards. Change anything that doesn't fit, or just create your skill.</p>
-      <div class="panel">${Q.map((q) => optHTML(q, a, sug)).join("")}
+      <div class="panel">${Q.filter((q) => shown(q.id)).map((q) => optHTML(q, a, sug)).join("")}
         <div class="q"><h3>House rules</h3><p class="hint">Optional. Suggested from your cards; each one you pick becomes a rule.</p><div class="chips">${rules.map((k) => chip("rules", k)).join("")}</div></div>
         <details class="more"><summary>Name it or write your own rules</summary>
           <div class="field"><label for="f-project">Team or project</label><input id="f-project" data-field="project" placeholder="e.g., Payments API" value="${esc(a.project)}"></div>
@@ -520,17 +526,20 @@
     L.push("IDs in parentheses refer to the guidelines these rules come from.");
 
     L.push("", "## Workflow", "", "For a question or a one-line change, answer directly and cite your sources. For anything larger, copy this checklist into your response and check items off as you go:", "", "```");
-    L.push(`- [ ] Clarify: ask about missing or unclear context instead of guessing${id("CC1")}`);
+    L.push(shown("clarify") && a.clarify === "risk" ? `- [ ] Clarify: ask before acting when a wrong guess about missing context would be costly or hard to undo; for small gaps, state your assumption and continue${id("CC1")}`
+      : `- [ ] Clarify: ask about missing or unclear context instead of guessing${id("CC1")}`);
     L.push(`- [ ] Plan: state the steps, the files or artifacts you will touch, and your assumptions${id("DV1", "DV2")}`);
     if (ask.length || prep.length) L.push("- [ ] Check the approval points below; if the task reaches one, stop there");
-    L.push(a.size !== "none" && codey ? `- [ ] Change: work in self-contained increments of about ${a.size} changed lines${id("DV4", "CC5")}` : `- [ ] Change: work in self-contained pieces a person can review on their own${id("DV4", "CC5")}`);
+    L.push(`- [ ] Change: work in self-contained pieces a person can review on their own${id("DV4", "CC5")}`);
     L.push(codey ? "- [ ] Verify: find the project's own test and lint commands (README, package.json, Makefile, CI config) and run them; if anything fails, fix it and run them again. If there are none, or you cannot run them, say so. Never mark this done without the command and its result"
       : "- [ ] Verify: check every claim, figure, and link against its source; fix any mismatch and check again");
+    if (shown("check") && a.check === "second") L.push(`- [ ] Second review: have a separate agent or model with fresh context review the work and its evidence, and report what it found. If you cannot start one, say so${id("QR4")}`);
     L.push(`- [ ] Report: what you changed, the evidence, what you assumed, anything waiting under "Needs approval", and your confidence (high, medium, or low, with one reason). Give the evidence, not a verdict on your own work${id("CC4")}`);
     L.push("```", "");
     L.push({ suggest: "Propose plans and diffs only; do not edit files or run commands that change state. The developer applies changes.",
       edit: codey ? "You may edit files and run checks locally; a person reviews every change before it lands." : "You may draft and edit documents and work items; a person reviews them before they are shared.",
       act: "You may carry out multi-step tasks on your own, stopping at the approval points." }[a.autonomy]);
+    if (shown("learn") && a.learn === "coach") L.push("", "The developer is learning this area. Explain the reasoning behind each step and let them try the next step before you do it; if they ask for the answer, give it" + id("DV5", "MW3") + ".");
 
     if (ask.length || prep.length) {
       L.push("", "## Approval points");
@@ -559,7 +568,7 @@
     if ((a.data || []).includes("regulated")) dataRules.push("This project is in a regulated domain: never mark your own output as validated or compliant; name the checks a qualified person must run.");
     if ((a.data || []).includes("secrets")) dataRules.push("Never print, log, copy, or commit secret values. If you must open a file that holds them, refer to keys by name only. Use the project's secret store if it has one.");
     if (dataRules.length) { L.push("", "## Data"); dataRules.forEach((r) => L.push(`- ${r}`)); }
-    const att = { trailer: "Add a `Co-authored-by:` trailer naming the AI agent to every commit you author.", pr: "Say in the pull-request description which parts you produced.", both: "Add a `Co-authored-by:` trailer to every commit you author, and say in the pull-request description which parts you produced.", none: "" }[a.attrib];
+    const att = { trailer: "Add a `Co-authored-by:` trailer naming the AI agent to every commit you author.", pr: "Say in the pull-request description which parts you produced.", both: "Add a `Co-authored-by:` trailer to every commit you author, and say in the pull-request description which parts you produced.", none: "" }[shown("attrib") ? a.attrib : "none"];
     if (att) L.push("", "## Marking your contributions", `- ${att}`);
     const rules = [...(a.rules || []), ...(a.extra || "").split("\n").map((r) => r.trim().replace(/^[-*]\s*/, "")).filter(Boolean)];
     if (rules.length) { L.push("", "## House rules"); rules.forEach((r) => L.push(`- ${r}`)); }
