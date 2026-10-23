@@ -289,7 +289,7 @@
   const STEPS = ["Choose", "Setup", "Skill"];
   const Q = [
     { id: "autonomy", title: "How much may the agent do on its own?", hint: "Every level keeps people in charge of consequential decisions.", type: "radio", opts: [
-      ["suggest", "Suggest only", "Proposes plans and diffs; the developer applies them"], ["edit", "Edit with review", "Edits and tests locally; every change is reviewed"], ["act", "Act within guardrails", "Runs multi-step tasks, stops at the sign-off points"]] },
+      ["suggest", "Suggest only", "Proposes plans and diffs; a person makes every change"], ["edit", "Edit with review", "Makes one change at a time and waits for review before the next"], ["act", "Act within guardrails", "Works through the whole task, stopping only at the sign-off points"]] },
     { id: "gates", title: "Where must a person sign off?", hint: "The agent stops and asks before any of these.", type: "check", opts: [
       ["merge", "Merging to a shared branch", ""], ["deps", "Adding or upgrading dependencies", ""], ["data", "Schema, data, or migrations", ""], ["api", "Public API changes", ""], ["delete", "Deleting files or rewriting history", ""], ["ci", "CI or build configuration", ""],
       ["comms", "Sending messages to people", "Drafting stays allowed"], ["deploy", "Deploying or touching production", "The agent prepares; a person applies"], ["security", "Security- or auth-critical choices", "The agent prepares; a person decides"]] },
@@ -533,8 +533,8 @@
     L.push(`- [ ] Report: what you changed, the evidence, what you assumed, anything waiting under "Needs approval", and your confidence (high, medium, or low, with one reason). Give the evidence, not a verdict on your own work${id("CC4")}`);
     L.push("```", "");
     L.push({ suggest: "Propose plans and diffs only; do not edit files or run commands that change state. The developer applies changes.",
-      edit: codey ? "You may edit files and run checks locally; a person reviews every change before it lands." : "You may draft and edit documents and work items; a person reviews them before they are shared.",
-      act: "You may carry out multi-step tasks on your own, stopping at the approval points." }[a.autonomy]);
+      edit: codey ? "You may edit files and run checks locally. After each change, show it and wait for the developer's review before you commit it or start the next one." : "You may draft and edit documents and work items. Show each one and wait for review before it is shared or you start the next.",
+      act: codey ? "You may carry out a multi-step task on your own (editing, testing, committing to your working branch, opening a pull request), stopping only at the approval points." : "You may carry out a multi-step task on your own, stopping only at the approval points." }[a.autonomy]);
     if (shown("learn") && a.learn === "coach") L.push("", "The developer is learning this area. Explain the reasoning behind each step and let them try the next step before you do it; if they ask for the answer, give it" + id("DV5", "MW3") + ".");
 
     if (ask.length || prep.length) {
