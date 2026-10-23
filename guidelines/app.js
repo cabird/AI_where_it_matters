@@ -288,7 +288,7 @@
      ===================================================================== */
   const STEPS = ["Choose", "Setup", "Skill"];
   const Q = [
-    { id: "tool", title: "Which AI agent will use it?", hint: "Sets the file format. You can switch at the end.", type: "radio", opts: [
+    { id: "tool", title: "Which AI agents will use it?", hint: "Pick every agent your team uses; you get a file for each.", type: "check", opts: [
       ["claude", "Claude Code", "Agent skill in .claude/skills/"], ["copilot", "GitHub Copilot", "Agent skill in .github/skills/"], ["codex", "Codex", "Agent skill in .agents/skills/"],
       ["cursor", "Cursor", "Rule in .cursor/rules/"], ["agents", "Another agent", "AGENTS.md"]] },
     { id: "autonomy", title: "How much may the agent do on its own?", hint: "Every level keeps people in charge of consequential decisions.", type: "radio", opts: [
@@ -332,8 +332,10 @@
     ["DP2", "Record design decisions in docs/adr/"], ["DV2", "Follow the conventions in CONTRIBUTING.md"], ["CC3", "Use synthetic data in tests and examples"], ["CC1", "List open questions before starting a task"],
     ["*", "Never edit generated files"], ["*", "Prefer existing utilities over new dependencies"],
   ];
-  const defaults = () => Object.assign({ tool: "claude", project: "", rules: [], extra: "" }, suggestions());
-  const A = () => Object.assign(defaults(), state.answers);
+  const defaults = () => Object.assign({ tool: ["claude"], project: "", rules: [], extra: "" }, suggestions());
+  // Older saved answers hold a single agent as a string.
+  const A = () => { const a = Object.assign(defaults(), state.answers); if (!Array.isArray(a.tool)) a.tool = [a.tool]; return a; };
+  const tools = () => { const t = FMT.map(([k]) => k).filter((k) => A().tool.includes(k)); return t.length ? t : ["claude"]; };
   const saveA = (k, v) => { state.answers[k] = v; store.set("answers", state.answers); };
   // Suggested answers are filled in for questions the viewer has not answered yet.
   function commitSuggestions() { const s = suggestions(); for (const k of Object.keys(s)) if (!(k in state.answers)) state.answers[k] = s[k]; store.set("answers", state.answers); }
@@ -401,25 +403,25 @@
     else body = `${out.files.length > 1 ? `<div class="files">${out.files.map((x, i) => `<button data-file="${i}" aria-pressed="${x === f}">${esc(x.name)}</button>`).join("")}</div>` : ""}
       <p class="path">${esc(out.dir ? out.dir + "/" + f.name : f.name)}</p>
       <pre class="code" id="out">${esc(f.text)}</pre>
-      <div class="out-actions"><button class="btn primary" data-copy>${I.copy} Copy</button><button class="btn" data-download>${I.dl} ${out.skill ? "Download skill (.zip)" : "Download"}</button>
+      <div class="out-actions"><button class="btn primary" data-copy>${I.copy} Copy</button><button class="btn" data-download>${I.dl} ${tools().length > 1 ? `Download for all ${tools().length} agents (.zip)` : out.skill ? "Download skill (.zip)" : "Download"}</button>
 </div>
       <p class="refine-hint">Want it tailored to your project? <button class="linkish" data-rtab="prompt">Refine it with your agent ${I.arrow}</button></p>`;
     return `<div class="stage"><h2 class="stage-title">Your ${out.skill ? "skill is" : "instructions are"} ready</h2>
       <p class="stage-sub">${plural(state.picked.size, "guideline")}, grounded in the example scenarios, the practices developers described, and the task-level guidelines behind each one.</p>
       <div class="panel"><div class="result-top"><div class="seg">${tabs.map(([k, l]) => `<button data-rtab="${k}" aria-pressed="${state.tab === k}">${l}</button>`).join("")}</div>
-        ${state.tab !== "next" ? `<div class="seg">${FMT.map(([k, l]) => `<button data-fmt="${k}" aria-pressed="${curFmt() === k}">${l}</button>`).join("")}</div>` : ""}</div>${body}</div></div>`;
+        ${state.tab !== "next" && tools().length > 1 ? `<div class="seg">${FMT.filter(([k]) => tools().includes(k)).map(([k, l]) => `<button data-fmt="${k}" aria-pressed="${curFmt() === k}">${l}</button>`).join("")}</div>` : ""}</div>${body}</div></div>`;
   }
   function nextHTML(out) {
     const where = out.dir ? `the <code>${esc(out.dir)}/</code> folder` : `<code>${esc(out.files[0].name)}</code>`;
     return `<ol class="next-steps">
-      <li><b>Add it to your repository.</b> Unzip or save it as ${where}${out.skill ? ", keeping the references folder next to SKILL.md" : ""}. Or use the “Refine with your agent” tab to have your AI agent tailor it to your project first.</li>
+      <li><b>Add it to your repository.</b> ${tools().length > 1 ? "Unzip the download at the root of your repository; it puts each agent's file in that agent's folder (folders starting with a dot may be hidden on your computer)" : `Unzip or save it as ${where}${out.skill ? ", keeping the references folder next to SKILL.md" : ""}`}. Or use the “Refine with your agent” tab to have your AI agent tailor it to your project first.</li>
       <li><b>Fill in the specifics.</b> Add your real build, lint, and test commands and the paths reviewers care about.</li>
       <li><b>Try it on a small task.</b> Ask for a change you would normally review, and check that the agent plans first, keeps the change small, and stops at your approval points.</li>
       ${out.skill ? "<li><b>Need the rules on every task?</b> A skill loads only when the agent decides a task needs it. To make the approval points apply everywhere, also copy them into <code>AGENTS.md</code> or <code>CLAUDE.md</code>.</li>" : ""}
       <li><b>Agree on it as a team.</b> Decide together where your team draws each line, and edit the file to match.</li>
       <li><b>Revisit it.</b> As tools and your trust in them change, move the sign-off points with them.</li></ol>`;
   }
-  const curFmt = () => state.fmt || A().tool;
+  const curFmt = () => tools().includes(state.fmt) ? state.fmt : tools()[0];
 
   function barHTML() {
     const n = state.picked.size, s = state.step;
@@ -458,7 +460,7 @@
   function runGeneration() {
     clearTimeout(state.genTimer); (state.genSteps || []).forEach(clearTimeout);
     const n = state.picked.size, d = reduced() ? 2000 : Math.min(10000, 4500 + 160 * n), mine = sig();
-    const lines = [`Gathering your ${plural(n, "guideline")}…`, "Adding worked examples and the practices developers described…", "Applying your sign-off points and house rules…", `Writing ${["claude", "copilot", "codex"].includes(curFmt()) ? "SKILL.md" : "your instructions"}…`];
+    const lines = [`Gathering your ${plural(n, "guideline")}…`, "Adding worked examples and the practices developers described…", "Applying your sign-off points and house rules…", `Writing ${tools().length > 1 ? `files for ${tools().length} agents` : ["claude", "copilot", "codex"].includes(curFmt()) ? "SKILL.md" : "your instructions"}…`];
     requestAnimationFrame(() => { const b = $("#genBar"); if (b) { b.style.transitionDuration = d + "ms"; b.style.width = "100%"; } });
     state.genSteps = lines.slice(1).map((t, i) => setTimeout(() => { const el = $("#genStatus"); if (el) { el.classList.remove("swap"); void el.offsetWidth; el.textContent = t; el.classList.add("swap"); } }, (d * (i + 1)) / lines.length));
     state.genTimer = setTimeout(() => {
@@ -688,7 +690,12 @@ ${files}`;
     if (op) {
       const q = Q.find((x) => x.id === op.dataset.q), v = op.dataset.v;
       if (q.type === "radio") { saveA(q.id, v); $$(`[data-q="${q.id}"]`).forEach((b) => b.setAttribute("aria-pressed", b.dataset.v === v)); if (q.id === "tool") state.fmt = null; }
-      else { const cur = new Set(A()[q.id] || []); cur.has(v) ? cur.delete(v) : cur.add(v); saveA(q.id, [...cur]); op.setAttribute("aria-pressed", cur.has(v)); }
+      else {
+        const cur = new Set(A()[q.id] || []);
+        if (q.id === "tool" && cur.has(v) && cur.size === 1) { toast("Pick at least one agent"); return; }
+        cur.has(v) ? cur.delete(v) : cur.add(v); saveA(q.id, [...cur]); op.setAttribute("aria-pressed", cur.has(v));
+        if (q.id === "tool") state.fmt = null;
+      }
       haptic(6); return;
     }
     const ch = at("[data-chip]");
@@ -698,6 +705,12 @@ ${files}`;
     if (at("[data-file]")) { state.file = +at("[data-file]").dataset.file; renderSkill(true); haptic(4); return; }
     if (at("[data-copy]")) { try { await navigator.clipboard.writeText($("#out").textContent); toast("Copied"); haptic(10); } catch { toast("Select the text and copy it"); } return; }
     if (at("[data-download]")) {
+      if (tools().length > 1) {
+        // One zip laid out like the repository: unzip at its root and each agent finds its own file.
+        const outs = tools().map(build);
+        save(zip(outs.flatMap((o) => o.files.map((f) => ({ name: `${o.dir ? o.dir + "/" : ""}${f.name}`, text: f.text })))), `${outs[0].name}.zip`);
+        haptic(10); return;
+      }
       const out = build(curFmt());
       if (out.skill) save(zip(out.files.map((f) => ({ name: `${out.name}/${f.name}`, text: f.text }))), `${out.name}.zip`);
       else save(new Blob([out.files[0].text], { type: "text/markdown" }), out.files[0].name);
