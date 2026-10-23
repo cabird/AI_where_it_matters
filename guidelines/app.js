@@ -297,7 +297,7 @@
       ["always", "Whenever something is unclear", "Asks before guessing at any gap"], ["risk", "Only when a wrong guess would be costly", "States small assumptions and keeps going"]] },
     { id: "check", when: () => has("QR4"), title: "How is AI's work checked before you see it?", hint: "No agent certifies its own work.", type: "radio", opts: [
       ["tests", "Tests and build must pass", "Deterministic checks gate the work"], ["second", "Also a second model reviews it", "A separate agent with fresh context checks the work"]] },
-    { id: "learn", when: () => has("DV5", "MW3"), title: "Is the developer learning this area?", hint: "Turns on coaching for developers building skills in this area.", type: "radio", opts: [
+    { id: "learn", when: () => has("DV5", "MW3"), title: "Is the developer learning this area?", hint: "Optional. If you skip it, the agent explains only when asked.", type: "radio", opts: [
       ["coach", "Yes, explain as you go", "Lets them try first; gives the answer when asked"], ["work", "No, just do the work", "Explains only when asked"]] },
     { id: "data", title: "What data does the work touch?", hint: "Pick any that apply to your project; each adds data-handling rules.", type: "check", opts: [
       ["pii", "Personal or customer data", ""], ["regulated", "A regulated domain", "e.g., healthcare, life sciences, finance"], ["secrets", "Secrets and credentials", ""]] },
@@ -308,7 +308,7 @@
   // A question is shown, and its answer used, only when a picked card makes it matter.
   const shown = (qid) => { const q = Q.find((x) => x.id === qid); return !q.when || q.when(); };
   function suggestions() {
-    const s = { gates: new Set(), data: new Set(), autonomy: "plan", attrib: "none", clarify: "always", check: "tests", learn: "work" };
+    const s = { gates: new Set(), data: new Set(), autonomy: "plan", attrib: "none", clarify: "always", check: "tests" };
     if (has(...inCat("DV"), ...inCat("QR"), ...inCat("IO"))) { s.gates.add("merge"); s.gates.add("delete"); }
     if (has("DV4")) s.gates.add("api");
     if (has("DV1", "IO2", "IO3")) s.gates.add("ci");
