@@ -136,7 +136,7 @@
       <p class="affils"><span><sup>1</sup>Oregon State University</span><span><sup>2</sup>Microsoft</span><span><sup>3</sup>DX</span></p>
       <div class="hero-actions">
         <a class="btn primary" href="#/explore">Explore the guidelines</a>
-        <a class="btn" href="#/video">${I.play} See the guidelines in action</a>
+        <a class="btn" href="#/video">${I.play} Video summary</a>
         <a class="btn" href="#/skill">${I.spark} Create agent skills</a>
         <a class="btn" href="${esc(window.PAPER_URL || "#")}" data-paper ${window.PAPER_URL ? 'target="_blank" rel="noopener"' : ""}>${I.paper} Read the paper</a>
       </div>
