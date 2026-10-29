@@ -520,3 +520,12 @@ code { font: .9em ui-monospace, SFMono-Regular, Menlo, monospace; background: va
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+
+/* the explainer video dialog */
+.video-dlg { padding: 0; border: 0; background: transparent; width: min(1100px, calc(100vw - 32px)); max-width: none; max-height: none; overflow: visible; }
+.video-dlg::backdrop { background: rgba(0,0,0,.78); }
+.video-dlg video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: #000; }
+.video-dlg .vclose { position: absolute; top: -44px; right: 0; color: #fff; background: rgba(255,255,255,.16); }
+.video-dlg .vclose:hover { background: rgba(255,255,255,.26); }
+.video-dlg .vcap { margin: 12px 0 0; text-align: center; font-size: 14px; color: rgba(255,255,255,.78); }
+.video-dlg .vcap a { color: #8ab4f8; }

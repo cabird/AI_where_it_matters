@@ -53,6 +53,7 @@
     copy: svg('<rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>'),
     dl: svg('<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>'), back: svg('<path d="M15 6l-6 6 6 6"/>', 2.4),
     info: svg('<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>', 2), arrow: svg('<path d="M5 12h14M13 6l6 6-6 6"/>', 2.2),
+    play: svg('<path d="M8 5.5v13l10.5-6.5Z" fill="currentColor"/>', 1.6),
     paper: svg('<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>'),
   };
 
@@ -135,6 +136,7 @@
       <p class="affils"><span><sup>1</sup>Oregon State University</span><span><sup>2</sup>Microsoft</span><span><sup>3</sup>DX</span></p>
       <div class="hero-actions">
         <a class="btn primary" href="#/explore">Explore the guidelines</a>
+        <a class="btn" href="#/video">${I.play} See the guidelines in action</a>
         <a class="btn" href="#/skill">${I.spark} Create agent skills</a>
         <a class="btn" href="${esc(window.PAPER_URL || "#")}" data-paper ${window.PAPER_URL ? 'target="_blank" rel="noopener"' : ""}>${I.paper} Read the paper</a>
       </div>
@@ -727,6 +729,21 @@ ${files}`;
     const f = e.target.closest("[data-field]"); if (f) saveA(f.dataset.field, f.value);
   });
 
+  /* ---------- the explainer video, in a dialog over the page ---------- */
+  function openVideo() {
+    const dlg = $("#videoDlg"), base = window.VIDEO_BASE;
+    if (!base) return go("#/");
+    if (!dlg.firstChild) dlg.innerHTML = `<button class="icon-btn vclose" data-vclose aria-label="Close the video">${I.close}</button>
+      <video controls playsinline preload="metadata" poster="${esc(base)}poster.jpg">
+        <source src="${esc(base)}What_Should_I_Do_1080p.mp4" type="video/mp4" media="(min-width: 900px)">
+        <source src="${esc(base)}What_Should_I_Do_720p.mp4" type="video/mp4"></video>
+      <p class="vcap">One developer, one task, with and without the guidelines. <a href="${esc(base)}" target="_blank" rel="noopener">Share or download it</a></p>`;
+    if (!dlg.open) dlg.showModal();
+    $("video", dlg).play().catch(() => { /* autoplay with sound can be blocked; the controls are there */ });
+  }
+  $("#videoDlg").addEventListener("click", (e) => { if (e.target.id === "videoDlg" || e.target.closest("[data-vclose]")) $("#videoDlg").close(); });
+  $("#videoDlg").addEventListener("close", () => { $("video", $("#videoDlg"))?.pause(); if (location.hash === "#/video") go("#/"); });
+
   /* ---------- routing ---------- */
   function go(h) { if (location.hash !== h) location.hash = h; else route(); }
   let prevHash = null;
@@ -737,6 +754,7 @@ ${files}`;
     $$(".nav [data-nav]").forEach((a) => a.setAttribute("aria-current", (a.dataset.nav === "skill") === inSkill));
     if (h.startsWith("#/g/")) { if (!state.view) renderHome(); openSheet(h.slice(4)); return; }
     if (!$("#sheet").hidden) closeSheet();
+    if (h === "#/video") { if (state.view !== "home") renderHome(); openVideo(); return; }
     if (h.startsWith("#/skill")) {
       state.lastBase = "#/skill";
       if (state.view !== "skill") { renderSkill(); scrollTo({ top: 0 }); }
